@@ -41,12 +41,16 @@ Use exactly these H2 section titles in this order:
 - Keep this section generic and industry-wide, not vendor-specific.
 
 ## Main Advantages
-- List the top advantages.
-- For each advantage, add one practical implication (performance, cost, flexibility, team workflow, reliability, etc.).
+- List only 1-3 top advantages.
+- Use one line per bullet in this exact format: `**Advantage**: practical implication.`
+- Do not use sub-bullets in this section.
 
 ## Real-World Use Cases
-- Provide 3-5 real usage patterns.
-- Explain why the concept fits each use case.
+- First identify the main company most associated with implementing the concept, then find 1-2 use cases from that company's official site.
+- Prefer first-party customer stories, solution pages, or product use-case pages from that company.
+- Write this section as short explanatory paragraphs, not bullets.
+- For each example, explain how the concept changes the operating approach, not just what the company does.
+- Include inline markdown links to the official source pages used.
 
 ## Relevant Companies and Systems
 - List well-known examples with one line each.
@@ -56,13 +60,11 @@ Use exactly these H2 section titles in this order:
   - Neon (Postgres) - serverless Postgres architecture with decoupled storage and compute.
 
 ## Tradeoffs, Disadvantages, and Limits
-- Explain real drawbacks, not generic warnings.
-- Include latency/performance caveats when relevant.
-- Include cost and operational complexity risks.
-
-## When This Is Not a Good Solution
-- Give concrete scenarios where another architecture may be better.
-- Include at least 3 "not a fit" cases.
+- Start this section with a short narrative sentence such as: `Of course, there are also real disadvantages and tradeoffs to this approach.`
+- Merge drawbacks and "not a good fit" guidance into this single section.
+- Use only 2-3 bullets in this section.
+- Each bullet must be one line in this exact format: `**Subject**: explanation.`
+- Include both architectural drawbacks and scenarios where another approach may be a better fit.
 
 ## Practical Decision Framework
 - Provide a short checklist to decide whether to adopt this concept.

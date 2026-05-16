@@ -36,37 +36,17 @@ The concept is designed to solve flexibility and elasticity problems first. It i
 
 ## Main Advantages
 
-Independent scaling
-- Teams can increase compute for a high-concurrency reporting window without changing storage footprint.
+In practice, teams adopt this model not for one abstract reason, but because it consistently improves how they scale, isolate workloads, and control spend as demand changes.
 
-Better workload isolation
-- Different departments or use cases can run on separate compute pools against shared data, reducing noisy-neighbor issues.
-
-Cost control and transparency
-- Storage and compute can be monitored and optimized separately, making usage patterns easier to understand.
-
-Operational elasticity
-- Compute can be paused, resumed, or resized faster in many cloud-native systems.
-
-Faster experimentation
-- New workloads can start with dedicated compute against existing shared data, with less migration overhead.
+- **Independent scaling**: Teams can increase compute for a high-concurrency reporting window without changing storage footprint.
+- **Better workload isolation**: Different departments or use cases can run on separate compute pools against shared data, reducing noisy-neighbor issues.
+- **Cost control and transparency**: Storage and compute can be monitored and optimized separately, making usage patterns easier to understand.
 
 ## Real-World Use Cases
 
-Burst analytics for business reporting
-- A finance team can run heavy month-end queries on a temporary larger compute tier without re-architecting storage.
+[Snowflake](https://www.snowflake.com/en/) is the clearest mainstream example of this model in practice, so its customer stories are a good way to see what the architecture changes operationally. In [AT&T's case study](https://www.snowflake.com/en/customers/all-customers/case-study/att/), Snowflake highlights self-service dashboards and major cost savings tied to caching and a unified data platform. The important architectural shift is not just faster reporting. It is that teams move away from provisioning around peak demand on one fixed system and toward an operating model where compute behavior can be tuned around query demand while storage remains shared and persistent.
 
-Multi-tenant analytics platforms
-- Different internal teams or customers can get isolated compute resources while using a common data foundation.
-
-Mixed BI and data science access
-- BI dashboards and exploratory workloads can use different compute configurations against the same underlying datasets.
-
-Cloud-native data platforms with variable demand
-- Organizations with uneven query patterns benefit from scaling compute to demand while keeping storage stable.
-
-Developer-friendly database branching and ephemeral environments
-- Decoupled models can support fast creation of short-lived compute endpoints while reusing durable storage.
+The same pattern appears in [KFC's case study](https://www.snowflake.com/en/customers/all-customers/case-study/kfc/), where Snowflake says data sharing went from days to seconds and database operational costs fell. What changes here is the coordination model: instead of routing every team through one tightly coupled platform with more operational overhead, organizations can let multiple teams work against the same data foundation with less contention and less infrastructure coupling.
 
 ## Relevant Companies and Systems
 
@@ -82,34 +62,11 @@ Developer-friendly database branching and ephemeral environments
 
 ## Tradeoffs, Disadvantages, and Limits
 
-Network distance penalties
-- When data is remote from compute, access latency and bandwidth can become bottlenecks versus local-disk execution.
+Of course, there are also real disadvantages and tradeoffs to this approach, especially when data locality, simplicity, or predictable performance matter more than elasticity.
 
-Potential performance gap for some OLAP patterns
-- Co-located, memory-first architectures can still outperform decoupled designs on certain high-intensity workloads.
-
-More moving parts
-- You gain flexibility, but distributed coordination, caching behavior, and storage-service dependencies add complexity.
-
-Cost surprises from poor governance
-- While decoupling can lower costs, always-on warehouses, inefficient query patterns, or egress-heavy workflows can erase benefits.
-
-Operational tuning is still required
-- Decoupled does not remove the need for partitioning strategy, query optimization, and data layout discipline.
-
-## When This Is Not a Good Solution
-
-Ultra-low-latency workloads where every millisecond matters
-- If your primary requirement is maximum local read speed and predictable tail latency, co-located architectures may be better.
-
-Highly stable workloads with fixed capacity profiles
-- If demand is constant and well-understood, the flexibility premium of decoupled architecture may not pay off.
-
-Teams without cloud cost controls or performance observability
-- Decoupling can create spend/performance drift without strong governance, query discipline, and monitoring.
-
-Workloads heavily dependent on local-state optimizations
-- Some systems benefit from tight data locality and in-memory patterns that are harder to replicate with remote storage.
+- **Network overhead**: Because storage is remote from compute, decoupled systems can add latency and bandwidth penalties compared with co-located architectures.
+- **Higher system complexity**: Separate storage, compute, caching, and governance layers create more moving parts, which raises the operational bar for teams that want a simpler platform.
+- **Not ideal for every workload**: If demand is stable or the workload depends on maximum local-disk and memory-first performance, a tightly coupled architecture may be a better fit.
 
 ## Practical Decision Framework
 

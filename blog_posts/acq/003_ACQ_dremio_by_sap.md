@@ -50,7 +50,7 @@ Dremio's own announcement reinforces the same idea from the other direction. The
 
 The open-source angle also matters. SAP explicitly says it will continue investing in projects central to Dremio's platform, including Apache Iceberg, Apache Polaris, and Apache Arrow. That commitment will be important to watch. If SAP preserves Dremio's credibility in open ecosystems while tightening integration into its own stack, this could strengthen SAP's position well beyond its installed base.
 
-## Relevant Official Links
+## Relevant Tools
 
 [SAP acquisition announcement](https://news.sap.com/2026/05/sap-to-acquire-dremio-unify-sap-and-non-sap-data-power-agentic-ai/) - SAP's official statement of the deal, product rationale, and expected close timing.
 

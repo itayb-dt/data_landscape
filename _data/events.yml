@@ -2,7 +2,7 @@
 #
 # Required:  type (acq|fund), date, when
 #            acq:  acquirer, target, value  (status is only needed for events with a card)
-#            fund: company, stage, amount
+#            fund: company, stage  (amount and valuation are optional)
 # Optional:  source  (URL of the announcement, shown for events without analysis)
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
@@ -240,3 +240,62 @@
   target: PeerDB
   value: "Undisclosed"
   source: https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration
+
+- type: acq
+  date: 2026-05-06
+  # The deal covers GX Cloud (the SaaS product). Separately, Fivetran becomes steward of the open source GX Core.
+  when: "May 6"
+  acquirer: FICO
+  target: Great Expectations (GX Cloud)
+  value: "Undisclosed"
+  source: https://greatexpectations.io/blog/an-update-from-great-expectations/
+
+# Databricks funding rounds, last three years (source = Databricks press release).
+- type: fund
+  date: 2026-08-13
+  # Closes the round first announced Jul 16, 2026 at a $188B valuation (term sheet, amount not stated). Lead: Coatue.
+  when: "Aug 13"
+  company: Databricks
+  stage: Strategic round
+  amount: "$5B"
+  valuation: "$190B"
+  source: https://www.databricks.com/company/newsroom/press-releases/databricks-grows-80-yoy-surpasses-7b-revenue-run-rate-scales
+
+- type: fund
+  date: 2025-12-16
+  # Announced as ">$4B". The Feb 9, 2026 release says the round completed with ~$5B equity at $134B plus ~$2B of debt capacity.
+  # Leads: Insight Partners, Fidelity, J.P. Morgan Asset Management.
+  when: "Dec 16"
+  company: Databricks
+  stage: Series L
+  amount: ">$4B"
+  valuation: "$134B"
+  source: https://www.databricks.com/company/newsroom/press-releases/databricks-surpasses-4-8b-revenue-run-rate-growing-55-year-over-year
+
+- type: fund
+  date: 2025-08-19
+  # Term sheet signed; amount and investors not disclosed in the release.
+  when: "Aug 19"
+  company: Databricks
+  stage: Series K
+  valuation: ">$100B"
+  source: https://www.databricks.com/company/newsroom/press-releases/databricks-raising-series-k-investment-100-billion-valuation
+
+- type: fund
+  date: 2024-12-17
+  # Release says $10B is being raised, with $8.6B completed to date. Lead: Thrive Capital.
+  when: "Dec 17"
+  company: Databricks
+  stage: Series J
+  amount: "$10B"
+  valuation: "$62B"
+  source: https://www.databricks.com/company/newsroom/press-releases/databricks-raising-10b-series-j-investment-62b-valuation
+
+- type: fund
+  date: 2023-11-10
+  # Close of Series I with more strategic investors; the release gives no amount. The original $500M+ raise was Sep 14, 2023, outside the window.
+  when: "Nov 10"
+  company: Databricks
+  stage: Series I (close)
+  valuation: "$43B"
+  source: https://www.databricks.com/company/newsroom/press-releases/databricks-closes-series-i-investment-additional-participation

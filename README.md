@@ -17,6 +17,15 @@ Example: [001 — About This Blog](blog_posts/general/001_about_this_blog.md)
 
 ---
 
+### Random Thoughts
+**Folder:** [blog_posts/random/](blog_posts/random/)
+
+Opinions and observations that don't fit a funding round, an acquisition or a product review. Listed under Random Thoughts on the site.
+
+Example: [014 — The Unstoppable Rise of PostgreSQL](blog_posts/random/014_RND_unstoppable_rise_of_postgresql.md)
+
+---
+
 ### ACQ — Acquisition Analysis
 **Prompt:** [acquisition_blog_post_prompt.md](prompts/acquisition_blog_post_prompt.md)
 **Folder:** [blog_posts/acq/](blog_posts/acq/)

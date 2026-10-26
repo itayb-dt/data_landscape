@@ -330,3 +330,19 @@
   target: Elementary Data
   value: "~$40-45M (reported)"
   source: https://boomi.com/resources/resources-library/boomi-acquires-elementary/
+
+- type: fund
+  date: 2025-05-27
+  # Amount and round not disclosed. Investor: Snowflake Ventures.
+  when: "May 27"
+  company: Honeydew
+  stage: investment from Snowflake Ventures
+  source: https://snowflake.com/en/blog/investment-honeydew-business-intelligence/
+
+- type: acq
+  date: 2025-10-01
+  when: "Oct 1"
+  acquirer: Databricks
+  target: Mooncake Labs
+  value: "Undisclosed"
+  source: https://www.databricks.com/blog/mooncake-labs-joins-databricks-accelerate-vision-lakebase

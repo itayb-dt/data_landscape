@@ -1,0 +1,14 @@
+---
+layout: default
+title: Random Thoughts
+permalink: /random/
+---
+<section class="hero">
+  <div class="eyebrow">Random Thoughts</div>
+  <h1>Random thoughts</h1>
+  <p class="sub">Opinions and observations that don't fit a funding round, an acquisition or a product review.</p>
+</section>
+{% assign posts = site.pages | where: "category", "Random Thoughts" | sort: "path" | reverse %}
+<section class="group">
+  {% for p in posts %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% endfor %}
+</section>

@@ -50,3 +50,7 @@ defaults:
       path: blog_posts/general
     values:
       category: General
+  - scope:
+      path: blog_posts/random
+    values:
+      category: Random Thoughts

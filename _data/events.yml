@@ -321,3 +321,12 @@
   stage: Series I (close)
   valuation: "$43B"
   source: https://www.databricks.com/company/newsroom/press-releases/databricks-closes-series-i-investment-additional-participation
+
+- type: acq
+  date: 2026-10-19
+  # Value is from press reports (Calcalist: $40-45M; Dealroom: ~$43M in cash and stock), not from Boomi's announcement.
+  when: "Oct 19"
+  acquirer: Boomi
+  target: Elementary Data
+  value: "~$40-45M (reported)"
+  source: https://boomi.com/resources/resources-library/boomi-acquires-elementary/

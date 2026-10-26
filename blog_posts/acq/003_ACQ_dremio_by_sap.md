@@ -1,3 +1,7 @@
+---
+title: "Dremio acquired by SAP"
+show_title: true
+---
 ## Opening Context
 
 On May 4, 2026, [SAP](https://www.sap.com/) announced that it has agreed to acquire [Dremio](https://www.dremio.com/) in a move aimed at unifying SAP and non-SAP data for analytics and agentic AI. The official announcement, [SAP to Acquire Dremio to Unify SAP and Non-SAP Data to Power Agentic AI](https://news.sap.com/2026/05/sap-to-acquire-dremio-unify-sap-and-non-sap-data-power-agentic-ai/), makes the strategic intent unusually clear: this is not just a product tuck-in, it is infrastructure for SAP's broader data and AI stack. The exact terms of the transaction were not disclosed, and SAP said the deal is expected to close in Q3 2026, subject to regulatory approvals.

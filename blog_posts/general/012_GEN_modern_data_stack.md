@@ -1,3 +1,6 @@
+---
+title: 'What does "the modern data stack" actually mean?'
+---
 # What Does "The Modern Data Stack" Actually Mean?
 
 You have heard the term. It shows up in job descriptions, vendor pitches, and conference talks. But ask five data engineers what the Modern Data Stack is and you will get five different answers — usually involving Snowflake, dbt, and Fivetran, with some hand-waving about "best-of-breed" tools.

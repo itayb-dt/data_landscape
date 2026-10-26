@@ -1,3 +1,6 @@
+---
+title: "SereneDB: a unified search and analytics database"
+---
 # DB: SereneDB — A Unified Search and Analytics Database
 
 ## Opening Context

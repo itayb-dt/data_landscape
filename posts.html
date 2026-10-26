@@ -1,0 +1,17 @@
+---
+layout: default
+title: All Posts
+permalink: /posts/
+---
+<section class="hero">
+  <div class="eyebrow">Archive</div>
+  <h1>All posts</h1>
+</section>
+{% assign posts = site.pages | where_exp: "p", "p.path contains 'blog_posts/'" | sort: "path" %}
+{% assign cats = posts | map: "category" | uniq %}
+{% for c in cats %}
+<section class="group">
+  <h2>{{ c }}</h2>
+  {% for p in posts %}{% if p.category == c %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% endif %}{% endfor %}
+</section>
+{% endfor %}

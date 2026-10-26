@@ -1,3 +1,7 @@
+---
+title: "Separation of storage and compute"
+show_title: true
+---
 ## Opening Context
 
 Separation of storage and compute is a core architectural pattern behind many modern analytics and cloud database platforms. Instead of tying data and processing to the same machines, it decouples them so each layer can scale independently.

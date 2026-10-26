@@ -1,3 +1,6 @@
+---
+title: "OpenAI acquires Rockset and pulls the plug on its customers"
+---
 # OpenAI Acquires Rockset — And Pulls the Plug on Its Customers
 
 ## Opening Context

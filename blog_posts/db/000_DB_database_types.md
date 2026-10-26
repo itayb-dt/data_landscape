@@ -1,3 +1,6 @@
+---
+title: "Database types: a map of the landscape"
+---
 # Database Types: A Map of the Landscape
 
 Databases are not interchangeable. Every category was built to solve a specific set of tradeoffs — and choosing the wrong one for a workload is one of the most expensive architectural mistakes a team can make. This page maps the major categories, explains what each one is optimized for, and links to reviews of specific products.

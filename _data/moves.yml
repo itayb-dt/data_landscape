@@ -1,0 +1,100 @@
+# One entry per Market Moves card. Facts come from the matching post in blog_posts/.
+# `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
+- type: fund
+  date: 2026-09-20      # approximate: post commit date, not the announcement date. Please verify.
+  when: "Sep"
+  company: Keewano
+  abbr: KW
+  color: "#5fd3a6"
+  headline: Keewano raises $12M seed to build a platform for AI agent memory
+  stage: Seed
+  amount: "$12M"
+  lead: Hetz Ventures
+  area: Event history for AI agents
+  investors:
+    - {name: Hetz Ventures, lead: true}
+    - {name: a16z speedrun}
+    - {name: Remagine Ventures}
+    - {name: DIG Ventures}
+    - {name: Angel investors}
+  signal: AI agents need durable, queryable memory. Keewano bets that is a platform category to be won before warehouses and vector stores absorb it.
+  post: /blog_posts/fund/010_FUND_keewano_12m_seed.html
+
+- type: acq
+  date: 2026-05-04
+  when: "May 4"
+  acquirer: SAP
+  acquirer_abbr: SA
+  acquirer_color: "#7cc4ff"
+  target: Dremio
+  target_abbr: DR
+  target_color: "#c792ea"
+  status: Pending
+  value: Undisclosed
+  headline: SAP to acquire Dremio to unify SAP and non-SAP data for agentic AI
+  tldr: An open lakehouse, federation and a semantic layer join SAP Business Data Cloud. Expected to close in Q3 2026, subject to regulatory approval.
+  why:
+    - "<b>Agents need unified data.</b> Enterprise AI stalls on fragmented data, not on model quality."
+    - "<b>Customers run on more than SAP.</b> Business Data Cloud has to reach warehouses, lakehouses and SaaS data."
+    - "<b>A universal open catalog.</b> Built on Apache Polaris and the Iceberg REST Catalog API, it becomes the discovery and semantic layer."
+  take: SAP says it will keep investing in Iceberg, Polaris and Arrow. Whether it preserves Dremio's credibility in open ecosystems is the thing to watch.
+  facts:
+    - {label: Announced, value: "May 4, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Lakehouse}
+    - {label: Last round, value: "$160M Series E (Jan 2022)"}
+  links:
+    - {label: SAP announcement, src: news.sap.com, abbr: SA, color: "#7cc4ff", url: "https://news.sap.com/2026/05/sap-to-acquire-dremio-unify-sap-and-non-sap-data-power-agentic-ai/"}
+    - {label: Dremio blog post, src: dremio.com, abbr: DR, color: "#c792ea", url: "https://www.dremio.com/blog/sap-intends-to-acquire-dremio/"}
+  post: /blog_posts/acq/003_ACQ_dremio_by_sap.html
+
+- type: acq
+  date: 2025-08-01      # approximate (month only). Please verify.
+  when: "Aug"
+  acquirer: Salesforce
+  acquirer_abbr: SF
+  acquirer_color: "#7cc4ff"
+  target: Waii
+  target_abbr: WA
+  target_color: "#ffb86b"
+  status: Announced
+  value: Undisclosed
+  headline: Salesforce acquires Waii to bring natural language to SQL into Data Cloud
+  tldr: Waii's knowledge-graph approach to text-to-SQL will become the base of Tableau's next-generation semantic engine.
+  why:
+    - "<b>Text-to-SQL is a context problem.</b> Business meaning and governance matter more than syntax."
+    - "<b>Millions of non-technical users.</b> The Salesforce ecosystem depends on technical teams to answer data questions."
+    - "<b>Data Cloud, Tableau Next and Agentforce.</b> Waii plugs into all three after close."
+  take: The live metadata knowledge graph is the asset, more than the translation itself.
+  facts:
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Text-to-SQL}
+    - {label: Expected close, value: "Q3 FY26"}
+  post: /blog_posts/acq/002_ACQ_waii_by_salesforce.html
+
+- type: acq
+  date: 2024-06-01      # approximate (month only). Please verify.
+  when: "Jun"
+  acquirer: OpenAI
+  acquirer_abbr: OA
+  acquirer_color: "#5fd3a6"
+  target: Rockset
+  target_abbr: RS
+  target_color: "#ff8a7a"
+  status: Closed
+  value: Undisclosed
+  headline: OpenAI acquires Rockset and shuts the product down for customers
+  tldr: Rockset's retrieval infrastructure moves in-house. Customers were told the cloud service would be wound down within months.
+  why:
+    - "<b>Retrieval is core to OpenAI's products.</b> ChatGPT and the API depend on fast, real-time context."
+    - "<b>Infrastructure, not a database business.</b> An acqui-hire at infrastructure scale."
+    - "<b>No runway for customers.</b> There was no drop-in replacement for Rockset's converged index."
+  take: Customers migrated to combinations such as ClickHouse, StarRocks or Apache Pinot. Dependence on a startup's managed service carries acquisition risk.
+  facts:
+    - {label: Announced, value: "June 2024"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Real-time analytics}
+    - {label: Last round, value: "$105M Series B (2021)"}
+  links:
+    - {label: OpenAI announcement, src: openai.com, abbr: OA, color: "#5fd3a6", url: "https://openai.com/index/openai-acquires-rockset/"}
+  post: /blog_posts/acq/008_ACQ_rockset_by_openai.html

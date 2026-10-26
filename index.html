@@ -1,0 +1,109 @@
+---
+layout: default
+title: Market Moves
+---
+{% assign moves = site.data.moves | sort: "date" | reverse %}
+{% assign acq_count = moves | where: "type", "acq" | size %}
+{% assign fund_count = moves | where: "type", "fund" | size %}
+{% assign first = moves | last %}
+{% assign last = moves | first %}
+{% assign min_s = first.date | date: "%s" | plus: 0 %}
+{% assign max_s = last.date | date: "%s" | plus: 0 %}
+{% assign span = max_s | minus: min_s | times: 1.0 %}
+{% assign min_y = first.date | date: "%Y" | plus: 0 %}
+{% assign max_y = last.date | date: "%Y" | plus: 0 %}
+
+<section class="hero">
+  <div class="eyebrow">Market Moves</div>
+  <h1>Who's buying, who's raising, and why</h1>
+  <p class="sub">Acquisitions and funding rounds across the data landscape, with the facts, official sources, and what they mean for the market.</p>
+
+  <div class="tabs" id="tabs">
+    <span class="tab on" data-f="all">All</span>
+    <span class="tab" data-f="acq"><i class="dot" style="background:var(--acq)"></i>Acquisitions<span class="count">{{ acq_count }}</span></span>
+    <span class="tab" data-f="fund"><i class="dot" style="background:var(--fund)"></i>Funding rounds<span class="count">{{ fund_count }}</span></span>
+  </div>
+</section>
+
+{% if moves.size > 1 %}
+<section class="strip">
+  <div class="strip-head"><span>{{ min_y }} to {{ max_y }} at a glance</span><span><b style="color:var(--acq)">●</b> Acquisition &nbsp; <b style="color:var(--fund)">●</b> Funding &nbsp; hover a dot</span></div>
+  <div class="track">
+    <div class="axis"></div>
+    {% for y in (min_y..max_y) %}
+      {% capture jan %}{{ y }}-01-01{% endcapture %}
+      {% assign jan_s = jan | date: "%s" | plus: 0 %}
+      {% if jan_s >= min_s and jan_s <= max_s %}
+        <span class="m" style="left:{{ jan_s | minus: min_s | times: 88.0 | divided_by: span | plus: 6 }}%">{{ y }}</span>
+      {% endif %}
+    {% endfor %}
+    {% for m in moves %}
+      {% assign s = m.date | date: "%s" | plus: 0 %}
+      {% assign name = m.company | default: m.target %}
+      <i class="ev" data-type="{{ m.type }}" style="left:{{ s | minus: min_s | times: 88.0 | divided_by: span | plus: 6 }}%;background:var(--{% if m.type == 'acq' %}acq{% else %}fund{% endif %})" data-t="{% if m.type == 'acq' %}{{ m.acquirer }} → {{ m.target }}{% else %}{{ m.company }} · {{ m.amount }} {{ m.stage }}{% endif %}"></i>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="timeline">
+{% for m in moves %}
+  <article class="item {{ m.type }}" data-type="{{ m.type }}">
+    <div class="date"><b>{{ m.when }}</b><small>{{ m.date | date: "%Y" }}</small></div>
+    <i class="node"></i>
+
+    {% if m.type == "acq" %}
+    <div class="card">
+      <div class="card-top">
+        <div class="co"><div class="logo" style="background:{{ m.acquirer_color }}">{{ m.acquirer_abbr }}</div><div><div class="r">Acquirer</div><div class="n">{{ m.acquirer }}</div></div></div>
+        <div class="arrow">→</div>
+        <div class="co"><div class="logo" style="background:{{ m.target_color }}">{{ m.target_abbr }}</div><div><div class="r">Startup</div><div class="n">{{ m.target }}</div></div></div>
+        <div class="meta"><span class="tag type">Acquisition</span><span class="tag {% if m.status == 'Closed' %}ok{% elsif m.status == 'Pending' %}pend{% endif %}">{{ m.status }}</span><span class="tag">{{ m.value }}</span></div>
+      </div>
+      <div class="card-body">
+        <div class="main">
+          <h2>{{ m.headline }}</h2>
+          <p class="tldr">{{ m.tldr }}</p>
+          <div class="why">
+            <h3>Why it happened</h3>
+            <ol>{% for w in m.why %}<li>{{ w }}</li>{% endfor %}</ol>
+          </div>
+          <div class="take"><b>Worth watching</b><p>{{ m.take }}</p></div>
+        </div>
+        <aside class="side">
+          <h3>Key facts</h3>
+          <dl class="facts">{% for f in m.facts %}<dt>{{ f.label }}</dt><dd>{{ f.value }}</dd>{% endfor %}</dl>
+          {% if m.links %}
+          <h3>Official announcements</h3>
+          <div class="links">
+            {% for l in m.links %}<a href="{{ l.url }}" target="_blank" rel="noopener"><span class="ic" style="background:{{ l.color }}">{{ l.abbr }}</span>{{ l.label }}<span class="src">{{ l.src }} ↗</span></a>{% endfor %}
+          </div>
+          {% endif %}
+        </aside>
+      </div>
+      <div class="card-foot"><span>{{ m.target }} · {{ m.date | date: "%Y" }}</span><a href="{{ m.post | relative_url }}">Read full analysis →</a></div>
+    </div>
+
+    {% else %}
+    <div class="card fund">
+      <div class="fund-top">
+        <div class="co"><div class="logo" style="background:{{ m.color }}">{{ m.abbr }}</div><div><div class="r">Raised</div><div class="n">{{ m.company }}</div></div></div>
+        <div class="meta"><span class="tag type">Funding round</span><span class="tag">{{ m.stage }}</span></div>
+      </div>
+      <div class="nums">
+        <div class="num"><small>Amount</small><b>{{ m.amount }}</b></div>
+        <div class="num"><small>Round</small><b>{{ m.stage }}</b></div>
+        <div class="num"><small>Lead</small><b style="font-size:18px">{{ m.lead }}</b></div>
+      </div>
+      <div class="fund-body">
+        <h2>{{ m.headline }}</h2>
+        <h3>Investors</h3>
+        <div class="investors">{% for i in m.investors %}<span{% if i.lead %} class="lead"{% endif %}>{{ i.name }}</span>{% endfor %}</div>
+        <div class="signal"><b>Signal</b>{{ m.signal }}</div>
+      </div>
+      <div class="card-foot"><span>{{ m.area }}</span><a href="{{ m.post | relative_url }}">Read full analysis →</a></div>
+    </div>
+    {% endif %}
+  </article>
+{% endfor %}
+</section>

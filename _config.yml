@@ -1,0 +1,51 @@
+title: Data Landscape
+description: Funding rounds, acquisitions, technical concepts and product reviews across the data and AI landscape.
+# Project site: https://itayb-dt.github.io/data_landscape/
+baseurl: /data_landscape
+url: https://itayb-dt.github.io
+
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: false
+
+exclude:
+  - prompts
+  - backlog
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      path: blog_posts
+    values:
+      layout: post
+  - scope:
+      path: blog_posts/acq
+    values:
+      category: Acquisitions
+  - scope:
+      path: blog_posts/fund
+    values:
+      category: Funding
+  - scope:
+      path: blog_posts/cncpt
+    values:
+      category: Concepts
+  - scope:
+      path: blog_posts/db
+    values:
+      category: Databases
+  - scope:
+      path: blog_posts/techrev
+    values:
+      category: Tech Reviews
+  - scope:
+      path: blog_posts/general
+    values:
+      category: General

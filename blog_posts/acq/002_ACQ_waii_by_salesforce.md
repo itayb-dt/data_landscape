@@ -1,3 +1,7 @@
+---
+title: "Waii acquired by Salesforce"
+show_title: true
+---
 We recently learned about the acquisition of Waii by Salesforce. The exact details of the deal were not disclosed. 
 
 The Problem: Text2SQL Challenges

@@ -1,3 +1,7 @@
+---
+title: "LangSmith SmithDB: the data layer for agent observability"
+show_title: true
+---
 # TECHREV_LangSmith_SmithDB_Agent_Observability_Data_Layer
 
 ## Opening Context

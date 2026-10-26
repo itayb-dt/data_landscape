@@ -1,3 +1,7 @@
+---
+title: "About this blog"
+show_title: true
+---
 Welcome to the first post in my "Data Landscape" series, where I'll be sharing insights from my journey as a founder, CTO, and product leader in the data ecosystem.
 
 

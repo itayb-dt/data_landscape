@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="{{ '/' | relative_url }}">Data<span>/</span>Landscape</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="on"{% endif %}>Market Moves</a>
+      <a href="{{ '/posts/' | relative_url }}"{% if page.url == '/posts/' %} class="on"{% endif %}>All Posts</a>
+      <a href="{{ '/blog_posts/general/001_about_this_blog.html' | relative_url }}">About</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+{{ content }}
+</main>
+<footer class="wrap site-foot">
+  <a href="https://github.com/itayb-dt/data_landscape">Source on GitHub</a>
+</footer>
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body>
+</html>

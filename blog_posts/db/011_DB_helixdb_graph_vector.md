@@ -1,3 +1,6 @@
+---
+title: "HelixDB: one database for graph, vector, and full-text"
+---
 # DB: HelixDB — One Database for Graph, Vector, and Full-Text
 
 ## Opening Context

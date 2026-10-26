@@ -1,3 +1,6 @@
+---
+title: "Keewano raises $12M seed to build a platform for AI agent memory"
+---
 # Keewano Raises $12M Seed to Build a Platform for AI Agent Memory
 
 ## Technical Overview

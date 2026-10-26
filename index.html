@@ -72,7 +72,7 @@ title: Market Moves
             <h3>Why it happened</h3>
             <ol>{% for w in m.why %}<li>{{ w }}</li>{% endfor %}</ol>
           </div>
-          <div class="take"><b>Worth watching</b><p>{{ m.take }}</p></div>
+          <div class="take"><b>{{ m.take_label | default: "Worth watching" }}</b><p>{{ m.take }}</p></div>
         </div>
         <aside class="side">
           <h3>Key facts</h3>

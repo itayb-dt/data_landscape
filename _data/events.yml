@@ -179,9 +179,31 @@
   date: 2026-08-26
   when: "Aug 26"
   acquirer: AWS
+  acquirer_abbr: AW
+  acquirer_color: "#ffb86b"
   target: DuckLabs
+  target_abbr: DL
+  target_color: "#f4e04d"
+  status: Pending
   value: "Undisclosed"
-  source: https://www.aboutamazon.com/news/company-news/aws-ducklabs
+  headline: AWS buys the company behind DuckDB
+  tldr: AWS acquires DuckLabs, not the DuckDB project. DuckDB stays MIT-licensed under the independent DuckDB Foundation.
+  why:
+    - "<b>They already worked together.</b> DuckDB support landed in Amazon S3 Tables and SageMaker Lakehouse."
+    - "<b>More analytics against S3.</b> The more queries run on data in S3, the more AWS wins."
+    - "<b>A sustainable home for the project.</b> AWS will fund the open source work instead of support contracts."
+  take_label: My take
+  take: "DuckDB, S3 and SQL give users what they want: fast reads on a lot of data, cheap storage, and simplicity. Postgres is again the starting point, even for analytics."
+  facts:
+    - {label: Announced, value: "Aug 26, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Embedded OLAP}
+    - {label: Open source, value: "Stays MIT (DuckDB Foundation)"}
+  links:
+    - {label: AWS announcement, src: aboutamazon.com, abbr: AW, color: "#ffb86b", url: "https://www.aboutamazon.com/news/company-news/aws-ducklabs"}
+    - {label: DuckLabs announcement, src: ducklabs.com, abbr: DL, color: "#f4e04d", url: "https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws"}
+    - {label: DuckDB announcement, src: duckdb.org, abbr: DD, color: "#f4e04d", url: "https://duckdb.org/2026/08/26/ducklabs-to-join-aws"}
+  post: /blog_posts/acq/013_ACQ_ducklabs_by_aws.html
 
 - type: acq
   date: 2026-08-17

@@ -2,7 +2,7 @@
 layout: default
 title: Market Moves
 ---
-{% assign moves = site.data.moves | sort: "date" | reverse %}
+{% assign moves = site.data.events | sort: "date" | reverse %}
 {% assign acq_count = moves | where: "type", "acq" | size %}
 {% assign fund_count = moves | where: "type", "fund" | size %}
 {% assign first = moves | last %}
@@ -22,6 +22,10 @@ title: Market Moves
     <span class="tab on" data-f="all">All</span>
     <span class="tab" data-f="acq"><i class="dot" style="background:var(--acq)"></i>Acquisitions<span class="count">{{ acq_count }}</span></span>
     <span class="tab" data-f="fund"><i class="dot" style="background:var(--fund)"></i>Funding rounds<span class="count">{{ fund_count }}</span></span>
+  </div>
+  <div class="tabs views" id="views">
+    <span class="tab on" data-v="detailed">Detailed</span>
+    <span class="tab" data-v="compact">Compact</span>
   </div>
 </section>
 
@@ -47,7 +51,7 @@ title: Market Moves
 {% endif %}
 
 <section class="timeline">
-{% for m in moves %}
+{% for m in moves %}{% if m.post %}
   <article class="item {{ m.type }}" data-type="{{ m.type }}">
     <div class="date"><b>{{ m.when }}</b><small>{{ m.date | date: "%Y" }}</small></div>
     <i class="node"></i>
@@ -105,5 +109,17 @@ title: Market Moves
     </div>
     {% endif %}
   </article>
-{% endfor %}
+{% endif %}{% endfor %}
+</section>
+
+<section class="compact" aria-label="All events">
+  {% for m in moves %}
+  <div class="row" data-type="{{ m.type }}">
+    <span class="when">{{ m.when }} {{ m.date | date: "%Y" }}</span>
+    <i class="pill {{ m.type }}">{% if m.type == 'acq' %}Acquisition{% else %}Funding{% endif %}</i>
+    <span class="what">{% if m.type == 'acq' %}<b>{{ m.acquirer }}</b> acquired <b>{{ m.target }}</b>{% else %}<b>{{ m.company }}</b> raised <b>{{ m.amount }}</b> {{ m.stage }}{% endif %}</span>
+    <span class="val">{% if m.type == 'acq' %}{{ m.value }}{% endif %}</span>
+    <span class="link">{% if m.post %}<a class="badge" href="{{ m.post | relative_url }}">Analysis →</a>{% elsif m.source %}<a class="src" href="{{ m.source }}" target="_blank" rel="noopener">source ↗</a>{% endif %}</span>
+  </div>
+  {% endfor %}
 </section>

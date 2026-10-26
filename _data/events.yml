@@ -1,4 +1,11 @@
-# One entry per Market Moves card. Facts come from the matching post in blog_posts/.
+# Main events file. Every funding round and acquisition worth recording goes here.
+#
+# Required:  type (acq|fund), date, when
+#            acq:  acquirer, target, value  (status is only needed for events with a card)
+#            fund: company, stage, amount
+# Optional:  source  (URL of the announcement, shown for events without analysis)
+#            post    (URL of our analysis; marks the event as analysed and adds a card
+#                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
 - type: fund
   date: 2026-09-20      # approximate: post commit date, not the announcement date. Please verify.
@@ -98,3 +105,138 @@
   links:
     - {label: OpenAI announcement, src: openai.com, abbr: OA, color: "#5fd3a6", url: "https://openai.com/index/openai-acquires-rockset/"}
   post: /blog_posts/acq/008_ACQ_rockset_by_openai.html
+
+# Events without analysis: one line each, no card.
+- type: fund
+  date: 2022-01-25
+  when: "Jan 25"
+  company: Dremio
+  stage: Series E
+  amount: "$160M"
+  source: https://www.dremio.com/blog/dremios-2b-valuation/
+
+- type: fund
+  date: 2021-01-08
+  when: "Jan 8"
+  company: Dremio
+  stage: Series D
+  amount: "$135M"
+  source: https://www.dremio.com/blog/dremio-135m-series-d/
+
+- type: fund
+  date: 2021-06-01      # approximate (year only). Please verify.
+  when: "2021"
+  company: Rockset
+  stage: Series B
+  amount: "$105M"
+  source: https://rockset.com/blog/rockset-raises-105m-to-power-real-time-data-applications/
+
+- type: fund
+  date: 2020-03-26
+  when: "Mar 26"
+  company: Dremio
+  stage: Series C
+  amount: "$70M"
+  source: https://www.dremio.com/blog/announcing-our-series-c-fundraise/
+
+- type: fund
+  date: 2018-06-05
+  when: "Jun 5"
+  company: Rockset
+  stage: Series A
+  amount: "$21.5M"
+  source: https://techcrunch.com/2018/06/05/rockset-raises-21-5m-series-a/
+
+# Acquisitions without analysis (source = official announcement).
+
+- type: acq
+  date: 2026-10-23
+  # Chroma's post says it is "joining" Replit (definitive agreement); Chroma Cloud is being wound down.
+  when: "Oct 23"
+  acquirer: Replit
+  target: Chroma
+  value: "Undisclosed"
+  source: https://www.trychroma.com/blog/chroma-joins-replit
+
+- type: acq
+  date: 2026-10-09
+  # Announcement is the banner on Responsive's homepage; replace with a permalink if one appears.
+  when: "Oct 9"
+  acquirer: Databricks
+  target: Responsive
+  value: "Undisclosed"
+  source: https://www.responsive.dev/
+
+- type: acq
+  date: 2026-10-02
+  when: "Oct 2"
+  acquirer: Supabase
+  target: Turso
+  value: "Undisclosed"
+  source: https://supabase.com/blog/supabase-is-acquiring-turso
+
+- type: acq
+  date: 2026-08-26
+  when: "Aug 26"
+  acquirer: AWS
+  target: DuckLabs
+  value: "Undisclosed"
+  source: https://www.aboutamazon.com/news/company-news/aws-ducklabs
+
+- type: acq
+  date: 2026-08-17
+  when: "Aug 17"
+  acquirer: Dash0
+  target: Polar Signals
+  value: "Undisclosed"
+  source: https://www.dash0.com/blog/dash0-acquires-polar-signals
+
+- type: acq
+  date: 2026-08-11
+  # Databricks' post says Electric is "joining" Databricks.
+  when: "Aug 11"
+  acquirer: Databricks
+  target: Electric (ElectricSQL)
+  value: "Undisclosed"
+  source: https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes
+
+- type: acq
+  date: 2025-06-02
+  when: "Jun 2"
+  acquirer: Snowflake
+  target: Crunchy Data
+  value: "Undisclosed"
+  source: https://www.businesswire.com/news/home/20250602455530/en/Snowflake-Acquires-Crunchy-Data-to-Bring-Enterprise-Ready-Postgres-Offering-to-the-AI-Data-Cloud
+
+- type: acq
+  date: 2025-05-14
+  # Value is from press reports, not the announcement.
+  when: "May 14"
+  acquirer: Databricks
+  target: Neon
+  value: "~$1B (reported)"
+  source: https://www.databricks.com/company/newsroom/press-releases/databricks-agrees-acquire-neon-help-developers-deliver-ai-systems
+
+- type: acq
+  date: 2025-04-10
+  when: "Apr 10"
+  acquirer: Cloudflare
+  target: Arroyo
+  value: "Undisclosed"
+  source: https://blog.cloudflare.com/cloudflare-acquires-arroyo-pipelines-streaming-ingestion-beta/
+
+- type: acq
+  date: 2025-01-14
+  when: "Jan 14"
+  acquirer: dbt Labs
+  target: SDF Labs
+  value: "Undisclosed"
+  source: https://www.getdbt.com/blog/dbt-labs-acquires-sdf-labs
+
+- type: acq
+  date: 2024-07-30
+  when: "Jul 30"
+  acquirer: ClickHouse
+  target: PeerDB
+  value: "Undisclosed"
+  source: https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration

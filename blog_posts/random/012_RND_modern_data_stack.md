@@ -1,5 +1,6 @@
 ---
 title: 'What does "the modern data stack" actually mean?'
+published: 2026-10-28
 ---
 # What Does "The Modern Data Stack" Actually Mean?
 

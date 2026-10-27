@@ -40,6 +40,8 @@ layout: default
       </li>
       {% endif %}
     </ul>
+  {% elsif page.published %}
+    <p class="post-date">{{ page.published | date: "%b %d, %Y" }}</p>
   {% endif %}
 
   <div class="post-body">

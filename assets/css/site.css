@@ -109,22 +109,20 @@ h1{margin:6px 0 8px;font-size:32px}
 .post-hero{background:linear-gradient(135deg,var(--cat-bg),rgba(23,26,33,.2) 70%),var(--panel);border:1px solid var(--line);border-top:3px solid var(--cat);border-radius:16px;padding:26px 28px 22px;margin-bottom:34px}
 .post-hero .eyebrow{color:var(--cat)}
 .post-hero h1{font-size:34px;line-height:1.2;margin:8px 0 18px}
-.post-deal{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:16px}
-.deal-num{padding-left:18px;border-left:1px solid var(--line)}
-.deal-num small{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
-.deal-num b{font-size:22px}
-.post-meta{display:flex;gap:8px;flex-wrap:wrap}
-.post-meta .tag em{font-style:normal;color:var(--muted);margin-right:4px}
-.post-meta .tag.type{color:var(--cat);border-color:var(--cat)}
+.post-props{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 28px;margin:6px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+.post-props dt{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.post-props dd{margin:0;font-weight:600}
+.post-props .status-pending{color:#ffd166}
+.post-props .status-closed{color:var(--fund)}
+.post-hero .eyebrow .read{color:var(--muted);font-weight:500;letter-spacing:.4px;text-transform:none}
 .post-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .post-links a{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);font-size:13px}
 .post-links a:hover{border-color:var(--cat);text-decoration:none}
 .post-links .ic{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:10px;font-weight:700;color:#0f1115}
 
-.post-body{font-size:16.5px;line-height:1.75;counter-reset:sec}
+.post-body{font-size:16.5px;line-height:1.75}
 .post-body > h1{display:none}
-.post-body h2{display:flex;align-items:center;gap:12px;counter-increment:sec;color:var(--cat);font-size:23px;margin:44px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-.post-body h2::before{content:counter(sec);flex:none;width:28px;height:28px;border-radius:8px;background:var(--cat-bg);border:1px solid var(--cat);font-size:14px;display:grid;place-items:center}
+.post-body h2{color:var(--cat);font-size:23px;margin:44px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .post-body h3{font-size:17px;margin:28px 0 8px;color:var(--cat);letter-spacing:.2px}
 .post-body p{margin:0 0 16px}
 .post-body strong{color:#fff}

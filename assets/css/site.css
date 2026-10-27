@@ -106,19 +106,16 @@ h1{margin:6px 0 8px;font-size:32px}
 .cat-gen{--cat:var(--accent);--cat-bg:rgba(124,156,255,.13)}
 
 .post{max-width:860px;padding:32px 0 60px}
-.post-hero{background:linear-gradient(135deg,var(--cat-bg),rgba(23,26,33,.2) 70%),var(--panel);border:1px solid var(--line);border-top:3px solid var(--cat);border-radius:16px;padding:26px 28px 22px;margin-bottom:34px}
-.post-hero .eyebrow{color:var(--cat)}
-.post-hero h1{font-size:34px;line-height:1.2;margin:8px 0 18px}
-.post-props{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 28px;margin:6px 0 0;padding-top:18px;border-top:1px solid var(--line)}
-.post-props dt{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
-.post-props dd{margin:0;font-weight:600}
-.post-props .status-pending{color:#ffd166}
-.post-props .status-closed{color:var(--fund)}
-.post-hero .eyebrow .read{color:var(--muted);font-weight:500;letter-spacing:.4px;text-transform:none}
-.post-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.post-links a{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);font-size:13px}
-.post-links a:hover{border-color:var(--cat);text-decoration:none}
-.post-links .ic{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:10px;font-weight:700;color:#0f1115}
+.post .eyebrow{color:var(--cat)}
+.post .eyebrow .read{color:var(--muted);font-weight:500;letter-spacing:.4px;text-transform:none}
+.post-title{font-size:34px;line-height:1.2;margin:8px 0 10px;color:var(--cat)}
+.post-date{margin:0 0 18px;color:var(--muted);font-size:14px}
+.post-facts{list-style:none;margin:0 0 30px;padding:0 0 22px;border-bottom:1px solid var(--line);font-size:15px}
+.post-facts li{margin-bottom:4px}
+.post-facts b{color:var(--muted);font-weight:600}
+.post-facts ul{margin:4px 0 0;padding-left:20px;list-style:disc}
+.post-facts ul li::marker{color:var(--cat)}
+.post-facts a{color:var(--accent)}
 
 .post-body{font-size:16.5px;line-height:1.75}
 .post-body > h1{display:none}

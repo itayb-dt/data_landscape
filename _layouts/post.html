@@ -18,32 +18,28 @@ layout: default
   {% else %}{% assign kind = page.category %}
 {% endcase %}
 <article class="post cat-{{ cat }}">
-  <header class="post-hero">
-    <div class="eyebrow">{{ kind }}<span class="read"> · {{ mins }} min read</span></div>
-    <h1>{{ page.title }}</h1>
-
-    {% if ev %}
-      {% assign ann = ev.facts | where: "label", "Announced" | first %}
-      {% assign catf = ev.facts | where: "label", "Category" | first %}
-      <dl class="post-props">
-        <div><dt>Date</dt><dd>{% if ann %}{{ ann.value }}{% else %}{{ ev.when }} {{ ev.date | date: "%Y" }}{% endif %}</dd></div>
-        {% if ev.type == "acq" %}
-          <div><dt>Acquisition amount</dt><dd>{{ ev.value }}</dd></div>
-          {% if catf %}<div><dt>Category</dt><dd>{{ catf.value }}</dd></div>{% endif %}
-          {% if ev.status %}<div><dt>Status</dt><dd class="status-{{ ev.status | downcase }}">{{ ev.status }}</dd></div>{% endif %}
-        {% else %}
-          <div><dt>Amount raised</dt><dd>{{ ev.amount }}</dd></div>
-          <div><dt>Round</dt><dd>{{ ev.stage }}</dd></div>
-          {% if ev.lead %}<div><dt>Lead investor</dt><dd>{{ ev.lead }}</dd></div>{% endif %}
-        {% endif %}
-      </dl>
-      {% if ev.links %}
-      <div class="post-links">
-        {% for l in ev.links %}<a href="{{ l.url }}" target="_blank" rel="noopener"><span class="ic" style="background:{{ l.color }}">{{ l.abbr }}</span>{{ l.label }} ↗</a>{% endfor %}
-      </div>
+  <div class="eyebrow">{{ kind }}<span class="read"> · {{ mins }} min read</span></div>
+  <h1 class="post-title">{{ page.title }}</h1>
+  {% if ev %}
+    {% assign ann = ev.facts | where: "label", "Announced" | first %}
+    {% assign catf = ev.facts | where: "label", "Category" | first %}
+    <p class="post-date">{% if ann %}{{ ann.value }}{% else %}{{ ev.when }} {{ ev.date | date: "%Y" }}{% endif %}</p>
+    <ul class="post-facts">
+      {% if ev.type == "acq" %}
+        <li><b>Amount:</b> {{ ev.value }}</li>
+        {% if catf %}<li><b>Category:</b> {{ catf.value }}</li>{% endif %}
+      {% else %}
+        <li><b>Amount raised:</b> {{ ev.amount }}</li>
+        <li><b>Round:</b> {{ ev.stage }}</li>
+        {% if ev.lead %}<li><b>Lead investor:</b> {{ ev.lead }}</li>{% endif %}
       {% endif %}
-    {% endif %}
-  </header>
+      {% if ev.links %}
+      <li><b>Announcements:</b>
+        <ul>{% for l in ev.links %}<li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a></li>{% endfor %}</ul>
+      </li>
+      {% endif %}
+    </ul>
+  {% endif %}
 
   <div class="post-body">
     {{ content }}

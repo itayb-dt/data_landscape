@@ -44,6 +44,7 @@ If a credible estimate of the deal value exists, state it here with inline links
 
 ### 1. `## The Problem: <short, specific problem>`
 - Example: `The Problem: Enterprise AI can't reason over fragmented data`
+- Phrase it as a problem, not as a solution or a wish. Write `Analytics needs a data warehouse, with all its complexity`, not `Analytics shouldn't require a warehouse`.
 - Explain the industry-wide challenge in depth: why it is hard, and why validation, trust and context matter.
 - Include at least one realistic example showing ambiguity in interpretation.
 - Frame it as an industry problem, not a weakness of one company.
@@ -77,6 +78,13 @@ This title is fixed.
 ### 5. `## My Take` (optional)
 The author's own opinion in first person. Write it only when the author provides it. Do not invent opinions.
 
+### 6. `## Updates` (optional)
+Articles are live. When the market moves (for example, the buyer ships the integration), add a dated entry here instead of rewriting the article.
+- Start the section with an italic line saying these are late additions, published after the original article, and not part of the official announcements.
+- Each entry is `### <Date>: <short title>`, newest last, with sourced facts and inline links.
+- Do not add update sources to the `links` list in `_data/events.yml`. That list is for the original announcements only.
+- Mention the update from Understanding the Acquisition or My Take with a link to `#updates` when it changes the picture.
+
 ## Content Requirements
 - Use specific facts provided (names, timeline, product names) accurately.
 - If a fact is unknown, say it is not publicly disclosed.
@@ -101,5 +109,5 @@ The author's own opinion in first person. Write it only when the author provides
 - Author's take (optional): {{my_take}}
 
 ## After Writing
-1. Save the article as `blog_posts/acq/NNN_ACQ_<target>_by_<acquirer>.md` with front matter containing only `title`.
+1. Save the article as `blog_posts/acq/NNN_ACQ_<target>_by_<acquirer>.md` with front matter containing `title` and `published` (the date the article was written, `YYYY-MM-DD`). The page header shows both the announcement date (from the event) and the written date, so readers can tell them apart.
 2. Add or update the event in `_data/events.yml`: set `post` to the article's `.html` path, and add the card fields (see the other analysed events). Keep `headline` identical to the title.

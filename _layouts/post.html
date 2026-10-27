@@ -23,7 +23,8 @@ layout: default
   {% if ev %}
     {% assign ann = ev.facts | where: "label", "Announced" | first %}
     {% assign catf = ev.facts | where: "label", "Category" | first %}
-    <p class="post-date">{% if ann %}{{ ann.value }}{% else %}{{ ev.when }} {{ ev.date | date: "%Y" }}{% endif %}</p>
+    {% capture announced %}{% if ann %}{{ ann.value }}{% else %}{{ ev.when }} {{ ev.date | date: "%Y" }}{% endif %}{% endcapture %}
+    <p class="post-date">{% if page.published %}{{ page.published | date: "%b %d, %Y" }}{% else %}{{ announced }}{% endif %}</p>
     <ul class="post-facts">
       {% if ev.type == "acq" %}
         <li><b>Amount:</b> {{ ev.value }}</li>
@@ -34,7 +35,7 @@ layout: default
         {% if ev.lead %}<li><b>Lead investor:</b> {{ ev.lead }}</li>{% endif %}
       {% endif %}
       {% if ev.links %}
-      <li><b>Announcements:</b>
+      <li><b>Announcements ({{ announced }}):</b>
         <ul>{% for l in ev.links %}<li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a></li>{% endfor %}</ul>
       </li>
       {% endif %}

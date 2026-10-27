@@ -1,13 +1,10 @@
 ---
 title: "AWS acquires DuckLabs to bring DuckDB's in-process analytics closer to S3"
+published: 2026-09-02
 ---
-On August 26, 2026, Amazon [announced](https://www.aboutamazon.com/news/company-news/aws-ducklabs) that AWS has signed a definitive agreement to acquire [DuckLabs](https://ducklabs.com/), the Amsterdam-based company behind the [DuckDB](https://duckdb.org/) analytical database. DuckLabs published its own [announcement](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws) the same day, saying the move is expected to take effect in early September. Deal terms were not disclosed.
+AWS is acquiring DuckLabs, the Amsterdam company behind DuckDB, but [not the DuckDB project itself](https://www.aboutamazon.com/news/company-news/aws-ducklabs), which stays open source under the MIT license and the independent DuckDB Foundation. DuckLabs is small: about 30 people ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)) and, according to [Dealroom](https://app.dealroom.co/companies/ducklabs_1), bootstrapped, living on support contracts rather than venture capital.
 
-One point matters more than the price. Amazon states that it is "not acquiring the DuckDB open source project." DuckDB stays free and open source under the MIT license, governed by the independent, non-profit DuckDB Foundation.
-
-Deal terms were not disclosed ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)), and no credible estimate has been published. For scale: the team is about 30 people ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)), and Dealroom's [profile](https://app.dealroom.co/companies/ducklabs_1) describes the company as bootstrapped, with no venture funding, living on support contracts and feature partnerships.
-
-## The Problem: Analytics shouldn't require a warehouse
+## The Problem: Analytics needs a data warehouse, with all its complexity
 
 Most analytical questions are not big data problems. They are medium data problems: a few hundred gigabytes to a few terabytes of events, orders or logs that someone wants to slice quickly. The standard answer has been a cloud data warehouse or a cluster: load the data, size the compute, wait for it to start, and pay for it while it sits idle.
 
@@ -42,13 +39,15 @@ The strategic logic is about where analytics runs. AWS already holds a very larg
 
 The two companies already worked together. AWS and DuckLabs collaborated on DuckDB support for Amazon S3 Tables and Amazon SageMaker Lakehouse, according to SiliconANGLE. Amazon says the relationship goes back further: Andy Warfield, an AWS VP and distinguished engineer, said in the announcement, "We've been working closely with the DuckLabs team for the past two years."
 
+AWS was explicit about the direction on day one. In its [announcement post](https://aws.amazon.com/blogs/big-data/aws-and-ducklabs-building-the-future-of-analytics-together/) on August 26, Mai-Lan Tomsen Bukovec, an AWS technology VP, wrote that AWS will "continue to invest in deep integration between DuckDB and our building block services" and will look at how to "integrate DuckDB's performance and simplicity in our other AWS services." The stated aim is to combine DuckDB's strength on everyday queries of a terabyte or less with AWS scale. The first concrete example arrived more than a month later: Aurora PostgreSQL now runs lake queries on DuckDB's engine (see [Updates](#updates)).
+
 The deal also solves a sustainability question. A small company maintaining a project used by millions is hard to fund through support contracts. SiliconANGLE reports AWS will now fund the open source work. The [DuckDB announcement](https://duckdb.org/2026/08/26/ducklabs-to-join-aws) says the Foundation will set up a Technical Advisory Board that can influence the projects' direction, and DuckLabs plans to let DuckDB run extensions signed by other developers and organizations.
 
 For users, nothing changes for now. The roadmap, licensing and governance model stay the same. The thing to watch is influence: who sits on the advisory board, who contributes, and whether the open extension model ends up opening the ecosystem or tilting it towards AWS services.
 
 ## Relevant Products and Companies
 
-[MotherDuck](https://motherduck.com/): a managed cloud service built on DuckDB, and the company most tightly coupled to DuckLabs. It has [partnered](https://www.cwi.nl/en/news/cwi-spin-off-duckdb-labs-partners-with-motherduck-who-raises-47-5-million-1/) with DuckDB Labs since 2022.
+[MotherDuck](https://motherduck.com/): DuckDB as a serverless cloud service, and the company most tightly coupled to DuckLabs. It was [started in partnership with the DuckLabs team](https://motherduck.com/blog/duckdb-amazon/), has submitted hundreds of patches to DuckDB, and has three engineers among the project's top 10 outside contributors. It raised a [$52.5M Series B at a $400M valuation](https://theregister.com/2023/09/21/motherduck_funding/) in 2023. Its pitch after the AWS deal is the product around the engine: developer ergonomics, collaboration, governance and a home for analysts and agents ([MotherDuck podcast](https://motherduck.com/explain-analyze/0010-aws-bought-ducklabs/)).
 
 [chDB](https://github.com/chdb-io/chdb): the closest equivalent on the ClickHouse side, an in-process OLAP SQL engine powered by ClickHouse that needs no server. It [joined ClickHouse](https://clickhouse.com/blog/chdb-joins-clickhouse-family) in March 2024.
 
@@ -63,3 +62,23 @@ Users do not really care about any of this. They want three things:
 3. **Simplicity, through SQL.**
 
 DuckDB, S3 and SQL deliver all three, and AWS has just bought the company that makes the first piece.
+
+Embedding DuckDB in Aurora (see [Updates](#updates)) is the next reasonable step. Postgres is where an application's data already lives, DuckDB reads the lake directly from S3, and SQL is the one interface everyone knows. Putting DuckDB inside Postgres gives users all three without a pipeline in between.
+
+What about MotherDuck? It is now a partner that AWS could compete with. Its CEO saw this coming: ["Some day, Amazon will likely release their own service based on DuckDB... We welcome the competition."](https://motherduck.com/blog/duckdb-amazon/) Will a company that uses both Aurora and MotherDuck drop MotherDuck and pay only AWS? Mostly no, though some will.
+
+Aurora covers the simplest case: joining your Postgres data with Parquet or Iceberg files in S3. Teams that use MotherDuck for exactly that, especially ones already fully on AWS, may consolidate. Aurora is not a shared analytics workspace, though. The scans run on the same cluster as production, and AWS itself suggests materializing the data when you need low latency. Analysts who want collaboration, their own compute, or a setup that isn't tied to AWS have little reason to leave. MotherDuck is betting on [the product around the engine](https://motherduck.com/explain-analyze/0010-aws-bought-ducklabs/), not on owning DuckDB.
+
+The bigger threat to MotherDuck is not Aurora but the stand-alone DuckDB service that AWS may launch next. I have no data on how many customers use both, so this is my judgment, not a measurement.
+
+## Updates
+
+*Late additions, published after the original article as the market evolves. They are not part of the official announcements listed at the top.*
+
+### Sep 30, 2026: Aurora PostgreSQL runs lake queries on DuckDB
+
+AWS announced that [Aurora PostgreSQL can query Apache Iceberg and Parquet data directly](https://aws.amazon.com/about-aws/whats-new/2026/09/aurora-postgresql-query-apache-iceberg-and-parquet/). Aurora runs these queries on "DuckDB's high-performance query engine, embedded in PostgreSQL," against data in Amazon S3, S3 Tables or the AWS Glue Data Catalog, exposed as foreign tables.
+
+A single query can combine live operational data, including uncommitted writes, with data in the lake, so there is no ETL copy into Aurora. For workloads that need low latency, the lake data can be materialized into native Aurora tables.
+
+The feature is generally available from Aurora PostgreSQL 17.11 and 18.6, in all commercial and GovCloud (US) regions. There is no additional feature charge, but Aurora compute and S3 request costs still apply. Setup needs the `aurora_analytics` extension and an IAM role. More details are in AWS's [launch post](https://aws.amazon.com/blogs/aws/amazon-aurora-postgresql-now-supports-direct-querying-of-apache-iceberg-and-parquet-data-in-your-data-lake/) and [NeoTeo's coverage](https://www.neoteo.com/en/aws-brings-duckdb-powered-lake-queries-to-aurora-postgresql).

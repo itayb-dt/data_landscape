@@ -1,16 +1,13 @@
 ---
-title: "AWS acquires DuckLabs, the company behind DuckDB"
-show_title: true
+title: "AWS acquires DuckLabs to bring DuckDB's in-process analytics closer to S3"
 ---
-## Opening Context
-
 On August 26, 2026, Amazon [announced](https://www.aboutamazon.com/news/company-news/aws-ducklabs) that AWS has signed a definitive agreement to acquire [DuckLabs](https://ducklabs.com/), the Amsterdam-based company behind the [DuckDB](https://duckdb.org/) analytical database. DuckLabs published its own [announcement](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws) the same day, saying the move is expected to take effect in early September. Deal terms were not disclosed.
 
 One point matters more than the price. Amazon states that it is "not acquiring the DuckDB open source project." DuckDB stays free and open source under the MIT license, governed by the independent, non-profit DuckDB Foundation.
 
-- Estimated Deal Amount: Unknown. The price was not disclosed ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)), and I found no credible published estimate. For scale: the team is about 30 people ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)), and Dealroom's [profile](https://app.dealroom.co/companies/ducklabs_1) describes the company as bootstrapped, with no venture funding, living on support contracts and feature partnerships.
+Deal terms were not disclosed ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)), and no credible estimate has been published. For scale: the team is about 30 people ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)), and Dealroom's [profile](https://app.dealroom.co/companies/ducklabs_1) describes the company as bootstrapped, with no venture funding, living on support contracts and feature partnerships.
 
-## The Problem: Analytics Without the Warehouse Tax
+## The Problem: Analytics shouldn't require a warehouse
 
 Most analytical questions are not big data problems. They are medium data problems: a few hundred gigabytes to a few terabytes of events, orders or logs that someone wants to slice quickly. The standard answer has been a cloud data warehouse or a cluster: load the data, size the compute, wait for it to start, and pay for it while it sits idle.
 
@@ -20,7 +17,7 @@ The cost is not only money. Every copy of the data into a warehouse is another p
 
 The industry has been moving towards a simpler pattern: keep the data once, in open file formats on object storage, and bring a fast query engine to it, wherever the user happens to be.
 
-## About DuckLabs
+## The Solution: A database that runs inside the application
 
 DuckLabs is the company behind DuckDB, an open source analytical SQL database that runs inside the application as a library: no server, no cluster. It is columnar and vectorized, so scans and aggregations over large tables are fast. It reads Parquet, CSV and JSON files directly, and runs on a laptop, in a serverless function, or in the browser.
 
@@ -35,7 +32,7 @@ The differentiators are practical:
 - **Files as tables.** It queries data where it already lives, without a load step.
 - **Open source with a foundation.** The project's governance is separate from the company.
 
-### Public Funding Rounds
+### Funding history
 
 Public Funding Rounds: Not publicly available from credible sources.
 
@@ -49,7 +46,7 @@ The deal also solves a sustainability question. A small company maintaining a pr
 
 For users, nothing changes for now. The roadmap, licensing and governance model stay the same. The thing to watch is influence: who sits on the advisory board, who contributes, and whether the open extension model ends up opening the ecosystem or tilting it towards AWS services.
 
-## Relevant Tools
+## Relevant Products and Companies
 
 [MotherDuck](https://motherduck.com/): a managed cloud service built on DuckDB, and the company most tightly coupled to DuckLabs. It has [partnered](https://www.cwi.nl/en/news/cwi-spin-off-duckdb-labs-partners-with-motherduck-who-raises-47-5-million-1/) with DuckDB Labs since 2022.
 

@@ -1,0 +1,105 @@
+# Prompt: Write a Blog Post About an Acquisition
+
+Use this prompt to write an acquisition article. All acquisition articles share one structure, so a reader always knows where to find the problem, the solution and the strategic reasoning.
+
+Reference articles: [Dremio / SAP](../../blog_posts/acq/003_ACQ_dremio_by_sap.md) and [DuckLabs / AWS](../../blog_posts/acq/013_ACQ_ducklabs_by_aws.md).
+
+---
+
+You are writing an analytical blog post about a company acquisition in the data/AI space.
+
+## Objective
+Write a clear, insightful post that explains:
+1. The industry problem the acquired company solves
+2. How the acquired company solves it
+3. Why the acquisition matters strategically for the buyer
+4. What this could mean for customers and the broader ecosystem
+
+## Required Tone and Style
+- Professional and opinionated, but not hype-driven
+- Easy to read for technical and business audiences
+- Concrete and specific; avoid generic AI buzzwords
+- Short paragraphs and clear section headings
+- Inline markdown links to official company sources when referencing the acquirer, the target, product pages, or the official announcement
+- Prefer first-party links (acquirer and target domains) over third-party coverage
+
+## Required Structure
+
+The site renders a header banner above the article with the company logos, status, date, deal value, category and official links. The article must not repeat those facts as a list.
+
+### Title (front matter `title`)
+Format: `<Acquirer> acquires <Target> to <short, specific reason>`
+
+- Example: `SAP acquires Dremio to give AI agents one governed view of SAP and non-SAP data`
+- The reason says what the buyer gets, not what the target is.
+- Use the same text as `headline` in `_data/events.yml`.
+
+### Lead paragraph (no heading)
+Two or three sentences straight after the front matter:
+- What was announced and when, with an inline link to the official announcement.
+- The terms: say the price was not disclosed if that is the case, plus the expected close.
+- The one thing that matters most about the deal.
+
+If a credible estimate of the deal value exists, state it here with inline links to each source. Never invent an estimate. If there is none, say the price was not disclosed. Context that is sourced (team size, funding model) may be added.
+
+### 1. `## The Problem: <short, specific problem>`
+- Example: `The Problem: Enterprise AI can't reason over fragmented data`
+- Explain the industry-wide challenge in depth: why it is hard, and why validation, trust and context matter.
+- Include at least one realistic example showing ambiguity in interpretation.
+- Frame it as an industry problem, not a weakness of one company.
+- Do not mention the acquirer unless needed for a neutral factual citation.
+
+### 2. `## The Solution: <short description of the approach>`
+- Example: `The Solution: An open lakehouse that queries data where it lives`
+- Describe what the target does in practical terms and its technical differentiators.
+- Show the business value and who benefits.
+- Keep it objective and startup-centric. Do not analyze the target through the acquirer's perspective here; that belongs in Understanding the Acquisition.
+- End with `### Funding history`, one line per round in this format:
+  - `Round - Date - Amount - Link`
+  - Example: `Seed - Nov 2021 - $3M - https://...`
+- If no credible public funding data is found, write: `Public Funding Rounds: Not publicly available from credible sources.`
+
+### 3. `## Understanding the Acquisition`
+This title is fixed. Do not add company names.
+- Analyze the strategic fit for the buyer.
+- Explain how the technology likely integrates into the buyer's product stack.
+- Cover the expected impact on end users, developers and enterprise teams.
+- Include one short quote from a relevant executive if available.
+- Link the official announcement and at least one official page from each company when available.
+- Cover what happens to open source projects, customers and existing products, if relevant.
+
+### 4. `## Relevant Products and Companies`
+This title is fixed.
+- List 2-4 related products or companies in the same problem space, as a bulleted list.
+- Each gets one short line on why it is relevant, with a link to its official site.
+- Include tools that are tightly coupled to the target or the buyer, or close alternatives. Do not list extensions or features of other products.
+
+### 5. `## My Take` (optional)
+The author's own opinion in first person. Write it only when the author provides it. Do not invent opinions.
+
+## Content Requirements
+- Use specific facts provided (names, timeline, product names) accurately.
+- If a fact is unknown, say it is not publicly disclosed.
+- Keep claims grounded. Do not invent financial terms, performance metrics or download counts.
+- Cite numbers with inline links to the source.
+- Prioritize strategic insight over press-release language.
+
+## Length Target
+700-1200 words, not counting My Take.
+
+## Input Variables
+- Acquiring company: {{acquirer}}
+- Acquired company: {{target}}
+- Official acquiring company links: {{acquirer_links}}
+- Official acquired company links: {{target_links}}
+- Deal value and sources (if any credible estimate exists): {{deal_value_sources}}
+- Domain / problem area: {{problem_area}}
+- Closing timeline: {{timeline}}
+- Integration products / platforms: {{integration_points}}
+- Optional quote(s): {{quotes}}
+- Relevant products and companies: {{related_products}}
+- Author's take (optional): {{my_take}}
+
+## After Writing
+1. Save the article as `blog_posts/acq/NNN_ACQ_<target>_by_<acquirer>.md` with front matter containing only `title`.
+2. Add or update the event in `_data/events.yml`: set `post` to the article's `.html` path, and add the card fields (see the other analysed events). Keep `headline` identical to the title.

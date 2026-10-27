@@ -13,7 +13,6 @@ relative_links:
   collections: false
 
 exclude:
-  - prompts
   - product
   - backlog
   - README.md

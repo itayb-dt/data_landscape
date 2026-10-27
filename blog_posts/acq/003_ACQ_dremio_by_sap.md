@@ -1,14 +1,10 @@
 ---
-title: "Dremio acquired by SAP"
-show_title: true
+title: "SAP acquires Dremio to give AI agents one governed view of SAP and non-SAP data"
 ---
-## Opening Context
-
 On May 4, 2026, [SAP](https://www.sap.com/) announced that it has agreed to acquire [Dremio](https://www.dremio.com/) in a move aimed at unifying SAP and non-SAP data for analytics and agentic AI. The official announcement, [SAP to Acquire Dremio to Unify SAP and Non-SAP Data to Power Agentic AI](https://news.sap.com/2026/05/sap-to-acquire-dremio-unify-sap-and-non-sap-data-power-agentic-ai/), makes the strategic intent unusually clear: this is not just a product tuck-in, it is infrastructure for SAP's broader data and AI stack. The exact terms of the transaction were not disclosed, and SAP said the deal is expected to close in Q3 2026, subject to regulatory approvals.
 
-- Estimated Deal Amount: Unknown (terms were not disclosed in the official SAP announcement).
 
-## The Problem: Unified Data for Agentic AI
+## The Problem: Enterprise AI can't reason over fragmented data
 
 Most enterprise AI projects do not fail because the models are weak. They fail because the data is fragmented across operational systems, analytics platforms, data lakes, SaaS tools, and custom pipelines. Across the market, teams repeatedly run into the same pattern: data remains locked in incompatible formats, disconnected across systems, and stripped of the business context needed to make outputs trustworthy.
 
@@ -18,7 +14,7 @@ A simple example is enough to show the challenge. Imagine an operations leader a
 
 This is the core acquisition thesis: agentic AI needs a data layer that can work across heterogeneous enterprise systems without forcing everything through endless ETL and format conversion.
 
-## About Dremio
+## The Solution: An open lakehouse that queries data where it lives
 
 [Dremio](https://www.dremio.com/) describes itself as an [Agentic Lakehouse](https://www.dremio.com/) built for agents and managed by agents. That positioning can sound like standard AI-era marketing until you look at the underlying product choices. The company has spent years building around open formats and high-performance query access rather than closed storage and migration-heavy architectures.
 
@@ -32,13 +28,11 @@ Third, Dremio positions its [AI Semantic Layer](https://www.dremio.com/ai-semant
 
 Finally, Dremio emphasizes operational automation and elasticity in its lakehouse architecture, including autonomous optimization patterns and managed service operation. In practical terms, that positioning targets two persistent pain points in data platforms: unpredictable performance and high operational burden.
 
-### Public Funding Rounds
+### Funding history
 
-Series C - Mar 26, 2020 - $70M - [https://www.dremio.com/blog/announcing-our-series-c-fundraise/](https://www.dremio.com/blog/announcing-our-series-c-fundraise/)
-
-Series D - Jan 8, 2021 - $135M - [https://www.dremio.com/blog/dremio-135m-series-d/](https://www.dremio.com/blog/dremio-135m-series-d/)
-
-Series E - Jan 25, 2022 - $160M - [https://www.dremio.com/blog/dremios-2b-valuation/](https://www.dremio.com/blog/dremios-2b-valuation/)
+- Series C - Mar 26, 2020 - $70M - [https://www.dremio.com/blog/announcing-our-series-c-fundraise/](https://www.dremio.com/blog/announcing-our-series-c-fundraise/)
+- Series D - Jan 8, 2021 - $135M - [https://www.dremio.com/blog/dremio-135m-series-d/](https://www.dremio.com/blog/dremio-135m-series-d/)
+- Series E - Jan 25, 2022 - $160M - [https://www.dremio.com/blog/dremios-2b-valuation/](https://www.dremio.com/blog/dremios-2b-valuation/)
 
 ## Understanding the Acquisition
 
@@ -54,7 +48,7 @@ Dremio's own announcement reinforces the same idea from the other direction. The
 
 The open-source angle also matters. SAP explicitly says it will continue investing in projects central to Dremio's platform, including Apache Iceberg, Apache Polaris, and Apache Arrow. That commitment will be important to watch. If SAP preserves Dremio's credibility in open ecosystems while tightening integration into its own stack, this could strengthen SAP's position well beyond its installed base.
 
-## Relevant Tools
+## Relevant Products and Companies
 
 [SAP acquisition announcement](https://news.sap.com/2026/05/sap-to-acquire-dremio-unify-sap-and-non-sap-data-power-agentic-ai/) - SAP's official statement of the deal, product rationale, and expected close timing.
 

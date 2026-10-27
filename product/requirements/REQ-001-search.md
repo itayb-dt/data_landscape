@@ -29,4 +29,4 @@ A reader can type a query and get matching posts and events, from any page.
 ## Open questions
 
 - Client-side index at build time (for example Pagefind or Lunr) or a small custom index? Pages' built-in Jekyll build cannot run extra tools, so a build-time index means a GitHub Actions workflow or a committed index file.
-- Should `product/`, `prompts/` and `backlog/` ever be searchable? Default: no.
+- Should `product/` (including its prompts) and `backlog/` ever be searchable? Default: no.

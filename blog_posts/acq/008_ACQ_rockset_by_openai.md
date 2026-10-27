@@ -1,17 +1,9 @@
 ---
-title: "OpenAI acquires Rockset and pulls the plug on its customers"
+title: "OpenAI acquires Rockset to bring real-time retrieval in-house, and shuts the product down for customers"
 ---
-# OpenAI Acquires Rockset — And Pulls the Plug on Its Customers
-
-## Opening Context
-
 In June 2024, OpenAI announced the acquisition of [Rockset](https://openai.com/index/openai-acquires-rockset/), a real-time analytics database startup that had quietly become the go-to solution for teams needing live SQL queries over freshly ingested data. The deal terms were not disclosed. Customers found out the same day as the rest of the world — and were told their service would be shut down within months.
 
-- Estimated Deal Amount: Unknown — not publicly disclosed
-
----
-
-## The Problem: Real-Time Analytics Is Harder Than It Looks
+## The Problem: Real-time analytics needs ingestion and queries in one system
 
 Most databases are either fast at ingesting data or fast at querying it. Getting both at the same time — sub-second queries on data that arrived seconds ago — requires a fundamentally different architecture, and it is genuinely difficult to build.
 
@@ -19,9 +11,7 @@ The standard enterprise answer was to stitch together a pipeline: Kafka for inge
 
 For use cases where freshness matters — fraud detection, inventory visibility, live leaderboards, recommendation systems, AI retrieval pipelines — that delay is unacceptable, and the operational cost of maintaining five systems to avoid it is also unacceptable.
 
----
-
-## About Rockset
+## The Solution: One index that serves rows, columns and text
 
 Rockset was founded in 2016 by Venkat Venkataramani, who previously led distributed storage systems at Meta. The company built a managed cloud database that indexed data directly from sources like S3, DynamoDB, Kafka, and MongoDB as it arrived — no ETL pipeline, no transformation step, no sync jobs.
 
@@ -29,11 +19,10 @@ The core technical differentiator was the Converged Index: a data structure that
 
 The result was real-time indexing with a query latency measured in milliseconds, even on data ingested seconds earlier. Teams at Walmart, Comcast, and Drift used it for exactly the use cases that could not afford pipeline lag.
 
-### Public Funding Rounds
+### Funding history
+
 - Series A - 2018 - $21.5M - [TechCrunch](https://techcrunch.com/2018/06/05/rockset-raises-21-5m-series-a/)
 - Series B - 2021 - $105M - [Rockset Blog](https://rockset.com/blog/rockset-raises-105m-to-power-real-time-data-applications/)
-
----
 
 ## Understanding the Acquisition
 
@@ -47,9 +36,7 @@ This is an acqui-hire at infrastructure scale. OpenAI internalized a technology 
 
 For Rockset's customers, the timing was blunt. There was no extended runway, no acquisition by a company that would continue the product. The cloud service was wound down within months.
 
----
-
-## Relevant Tools
+## Relevant Products and Companies
 
 The gap Rockset left became immediately visible when customers tried to migrate. There was no single drop-in replacement. The ecosystem converged around combinations:
 

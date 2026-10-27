@@ -1,11 +1,54 @@
 ---
 layout: default
 ---
-<article class="post">
-  <div class="eyebrow">{{ page.category }}</div>
-  {% if page.show_title %}<h1>{{ page.title }}</h1>{% endif %}
+{% assign ev = site.data.events | where: "post", page.url | first %}
+{% case page.category %}
+  {% when "Acquisitions" %}{% assign cat = "acq" %}
+  {% when "Funding" %}{% assign cat = "fund" %}
+  {% when "Databases" %}{% assign cat = "db" %}
+  {% when "Tech Reviews" %}{% assign cat = "rev" %}
+  {% when "Concepts" %}{% assign cat = "cncpt" %}
+  {% else %}{% assign cat = "gen" %}
+{% endcase %}
+{% assign words = content | number_of_words %}
+{% assign mins = words | divided_by: 200 | plus: 1 %}
+<article class="post cat-{{ cat }}">
+  <header class="post-hero">
+    <div class="eyebrow">{{ page.category }}</div>
+    <h1>{{ page.title }}</h1>
+
+    {% if ev %}
+      {% if ev.type == "acq" %}
+      <div class="post-deal">
+        <div class="co"><div class="logo" style="background:{{ ev.acquirer_color }}">{{ ev.acquirer_abbr }}</div><div><div class="r">Acquirer</div><div class="n">{{ ev.acquirer }}</div></div></div>
+        <div class="arrow">→</div>
+        <div class="co"><div class="logo" style="background:{{ ev.target_color }}">{{ ev.target_abbr }}</div><div><div class="r">Startup</div><div class="n">{{ ev.target }}</div></div></div>
+      </div>
+      {% else %}
+      <div class="post-deal">
+        <div class="co"><div class="logo" style="background:{{ ev.color }}">{{ ev.abbr }}</div><div><div class="r">Raised</div><div class="n">{{ ev.company }}</div></div></div>
+        <div class="deal-num"><small>Amount</small><b>{{ ev.amount }}</b></div>
+        <div class="deal-num"><small>Round</small><b>{{ ev.stage }}</b></div>
+      </div>
+      {% endif %}
+      <div class="post-meta">
+        <span class="tag type">{% if ev.type == "acq" %}Acquisition{% else %}Funding round{% endif %}</span>
+        {% if ev.status %}<span class="tag {% if ev.status == 'Closed' %}ok{% elsif ev.status == 'Pending' %}pend{% endif %}">{{ ev.status }}</span>{% endif %}
+        {% for f in ev.facts %}<span class="tag"><em>{{ f.label }}</em> {{ f.value }}</span>{% endfor %}
+        <span class="tag">{{ mins }} min read</span>
+      </div>
+      {% if ev.links %}
+      <div class="post-links">
+        {% for l in ev.links %}<a href="{{ l.url }}" target="_blank" rel="noopener"><span class="ic" style="background:{{ l.color }}">{{ l.abbr }}</span>{{ l.label }} ↗</a>{% endfor %}
+      </div>
+      {% endif %}
+    {% else %}
+      <div class="post-meta"><span class="tag">{{ mins }} min read</span></div>
+    {% endif %}
+  </header>
+
   <div class="post-body">
     {{ content }}
   </div>
-  <p class="post-back"><a href="{{ '/posts/' | relative_url }}">← All posts</a></p>
+  <p class="post-back"><a href="{{ '/' | relative_url }}">← Market Moves</a> &nbsp;·&nbsp; <a href="{{ '/posts/' | relative_url }}">All posts</a></p>
 </article>

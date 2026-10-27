@@ -62,7 +62,7 @@ title: Market Moves
         <div class="co"><div class="logo" style="background:{{ m.acquirer_color }}">{{ m.acquirer_abbr }}</div><div><div class="r">Acquirer</div><div class="n">{{ m.acquirer }}</div></div></div>
         <div class="arrow">→</div>
         <div class="co"><div class="logo" style="background:{{ m.target_color }}">{{ m.target_abbr }}</div><div><div class="r">Startup</div><div class="n">{{ m.target }}</div></div></div>
-        <div class="meta"><span class="tag type">Acquisition</span><span class="tag {% if m.status == 'Closed' %}ok{% elsif m.status == 'Pending' %}pend{% endif %}">{{ m.status }}</span><span class="tag">{{ m.value }}</span></div>
+        <div class="meta"><span class="tag type">Acquisition</span><span class="tag">{{ m.value }}</span></div>
       </div>
       <div class="card-body">
         <div class="main">

@@ -25,7 +25,9 @@ Write a clear, insightful post that explains:
 
 ## Required Structure
 
-The site renders a header banner above the article with the company logos, status, date, deal value, category and official links. The article must not repeat those facts as a list.
+The site renders a header above the article with the announcement date, deal value, category and official links. The article must not repeat those facts as a list.
+
+Ignore the status of the deal. Assume it will close or has closed. Do not write about pending, expected or completed closing, regulatory approval, and do not set `status` in `_data/events.yml`.
 
 ### Title (front matter `title`)
 Format: `<Acquirer> acquires <Target> to <short, specific reason>`
@@ -37,10 +39,10 @@ Format: `<Acquirer> acquires <Target> to <short, specific reason>`
 ### Lead paragraph (no heading)
 Two or three sentences straight after the front matter:
 - What was announced and when, with an inline link to the official announcement.
-- The terms: say the price was not disclosed if that is the case, plus the expected close.
+- The terms: say the price was not disclosed if that is the case. Do not mention closing.
 - The one thing that matters most about the deal.
 
-If a credible estimate of the deal value exists, state it here with inline links to each source. Never invent an estimate. If there is none, say the price was not disclosed. Context that is sourced (team size, funding model) may be added.
+If a credible estimate of the deal value exists, state it here and put the source in parentheses with an inline link, for example `about $1 billion ([TechCrunch](https://...))`. Never invent an estimate. If there is none, say the price was not disclosed. Context that is sourced (team size, funding model) may be added.
 
 ### 1. `## The Problem: <short, specific problem>`
 - Example: `The Problem: Enterprise AI can't reason over fragmented data`
@@ -74,6 +76,7 @@ This title is fixed.
 - List 2-4 related products or companies in the same problem space, as a bulleted list.
 - Each gets one short line on why it is relevant, with a link to its official site.
 - Include tools that are tightly coupled to the target or the buyer, or close alternatives. Do not list extensions or features of other products.
+- When the space is crowded with commodity providers (for example Postgres, which every cloud offers), say so in one sentence instead of listing them, and list only the examples that matter for the point of the article.
 
 ### 5. `## My Take` (optional)
 The author's own opinion in first person. Write it only when the author provides it. Do not invent opinions.
@@ -102,7 +105,6 @@ Articles are live. When the market moves (for example, the buyer ships the integ
 - Official acquired company links: {{target_links}}
 - Deal value and sources (if any credible estimate exists): {{deal_value_sources}}
 - Domain / problem area: {{problem_area}}
-- Closing timeline: {{timeline}}
 - Integration products / platforms: {{integration_points}}
 - Optional quote(s): {{quotes}}
 - Relevant products and companies: {{related_products}}

@@ -1,7 +1,7 @@
 # Main events file. Every funding round and acquisition worth recording goes here.
 #
 # Required:  type (acq|fund), date, when
-#            acq:  acquirer, target, value  (status is only needed for events with a card)
+#            acq:  acquirer, target, value  (status is no longer shown; ignore it)
 #            fund: company, stage  (amount and valuation are optional)
 # Optional:  source  (URL of the announcement, shown for events without analysis)
 #            post    (URL of our analysis; marks the event as analysed and adds a card
@@ -236,9 +236,29 @@
   # Value is from press reports, not the announcement.
   when: "May 14"
   acquirer: Databricks
+  acquirer_abbr: DB
+  acquirer_color: "#ff6b5b"
   target: Neon
+  target_abbr: NE
+  target_color: "#6ee7b7"
   value: "~$1B (reported)"
-  source: https://www.databricks.com/company/newsroom/press-releases/databricks-agrees-acquire-neon-help-developers-deliver-ai-systems
+  headline: Databricks acquires Neon to put an agent-ready Postgres next to the lakehouse
+  tldr: Databricks buys a serverless Postgres company whose databases are mostly created by AI agents, and turns it into Lakebase. Snowflake bought Crunchy Data two weeks later.
+  why:
+    - "<b>OLTP completes the platform.</b> Databricks had the lakehouse but no transactional database."
+    - "<b>Built for agents.</b> Neon starts in under 500 ms, scales to zero and branches data instantly."
+    - "<b>Postgres as the standard.</b> Snowflake made the same move with Crunchy Data."
+  take_label: My take
+  take: "Any Postgres vendor would have given Databricks OLTP. The agent story is what made Neon worth $1B."
+  facts:
+    - {label: Announced, value: "May 14, 2025"}
+    - {label: Value, value: "~$1B (TechCrunch)"}
+    - {label: Category, value: Serverless Postgres}
+  links:
+    - {label: Databricks announcement, src: databricks.com, abbr: DB, color: "#ff6b5b", url: "https://www.databricks.com/company/newsroom/press-releases/databricks-agrees-acquire-neon-help-developers-deliver-ai-systems"}
+    - {label: Databricks blog post, src: databricks.com, abbr: DB, color: "#ff6b5b", url: "https://www.databricks.com/blog/databricks-neon"}
+    - {label: Neon announcement, src: neon.com, abbr: NE, color: "#6ee7b7", url: "https://neon.com/blog/neon-and-databricks"}
+  post: /blog_posts/acq/015_ACQ_neon_by_databricks.html
 
 - type: acq
   date: 2025-04-10

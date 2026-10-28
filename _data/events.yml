@@ -219,9 +219,30 @@
   # Databricks' post says Electric is "joining" Databricks.
   when: "Aug 11"
   acquirer: Databricks
+  acquirer_abbr: DB
+  acquirer_color: "#ff6b5b"
   target: Electric (ElectricSQL)
+  target_abbr: EL
+  target_color: "#a78bfa"
   value: "Undisclosed"
-  source: https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes
+  headline: Databricks acquires Electric to give AI agents a local Postgres that syncs with Lakebase
+  tldr: The team behind PGlite (embedded WASM Postgres) and the Electric sync engine joins Neon at Databricks to add reactivity to Lakebase. Neon has since shipped live queries.
+  why:
+    - "<b>The other end of the wire.</b> Lakebase is the central database; PGlite is the Postgres inside the agent."
+    - "<b>Sync as a primitive.</b> Agents and apps need current data without hand-built sync."
+    - "<b>Same Postgres roots.</b> PGlite builds on WASM Postgres work by Neon co-founder Stas Kelvich."
+  take_label: Worth watching
+  take: "Live queries on Lakebase Postgres: any SQL query becomes a live subscription."
+  facts:
+    - {label: Announced, value: "Aug 11, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Embedded Postgres and sync}
+    - {label: Open source, value: "Stays open source; Electric Cloud shuts down"}
+  links:
+    - {label: Databricks announcement, src: databricks.com, abbr: DB, color: "#ff6b5b", url: "https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes"}
+    - {label: Electric announcement, src: electric.ax, abbr: EL, color: "#a78bfa", url: "https://electric.ax/blog/2026/08/11/electric-joining-databricks"}
+    - {label: Neon announcement, src: neon.com, abbr: NE, color: "#6ee7b7", url: "https://neon.com/blog/electric-joins-neon"}
+  post: /blog_posts/acq/016_ACQ_electric_by_databricks.html
 
 - type: acq
   date: 2025-06-02

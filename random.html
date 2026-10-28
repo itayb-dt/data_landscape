@@ -8,7 +8,7 @@ permalink: /random/
   <h1>Random thoughts</h1>
   <p class="sub">Opinions and observations that don't fit a funding round, an acquisition or a product review.</p>
 </section>
-{% assign posts = site.pages | where: "category", "Random Thoughts" | sort: "path" | reverse %}
+{% assign posts = site.pages | where: "category", "Random Thoughts" | sort: "path" | reverse | sort: "published" | reverse %}
 <section class="group">
-  {% for p in posts %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% endfor %}
+  {% for p in posts %}<a href="{{ p.url | relative_url }}">{{ p.title }}{% if p.published %}<span class="d">{{ p.published | date: "%b %d, %Y" }}</span>{% endif %}</a>{% endfor %}
 </section>

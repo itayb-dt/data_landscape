@@ -58,6 +58,8 @@ for i, e in enumerate(events):
     if key in seen:
         err(where, "duplicate event")
     seen.add(key)
+    if t == "fund" and isinstance(d, datetime.date) and d < datetime.date.today().replace(year=datetime.date.today().year - 3):
+        warn(where, "funding round is older than 3 years; the events file only keeps the last 3 years")
     if not e.get("post") and not e.get("source"):
         warn(where, "has neither 'source' nor 'post'; compact view will have no link")
     for url in [e.get("source")] + [l.get("url") for l in e.get("links", [])]:

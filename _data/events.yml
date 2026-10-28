@@ -3,6 +3,8 @@
 # Required:  type (acq|fund), date, when
 #            acq:  acquirer, target, value  (status is no longer shown; ignore it)
 #            fund: company, stage  (amount and valuation are optional)
+# Window:    funding rounds older than 3 years are not listed here. Full funding history belongs
+#            inside an article (see the Funding history section), not in this file.
 # Optional:  source  (URL of the announcement, shown for events without analysis)
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
@@ -107,46 +109,6 @@
   post: /blog_posts/acq/008_ACQ_rockset_by_openai.html
 
 # Events without analysis: one line each, no card.
-- type: fund
-  date: 2022-01-25
-  when: "Jan 25"
-  company: Dremio
-  stage: Series E
-  amount: "$160M"
-  source: https://www.dremio.com/blog/dremios-2b-valuation/
-
-- type: fund
-  date: 2021-01-08
-  when: "Jan 8"
-  company: Dremio
-  stage: Series D
-  amount: "$135M"
-  source: https://www.dremio.com/blog/dremio-135m-series-d/
-
-- type: fund
-  date: 2021-06-01      # approximate (year only). Please verify.
-  when: "2021"
-  company: Rockset
-  stage: Series B
-  amount: "$105M"
-  source: https://rockset.com/blog/rockset-raises-105m-to-power-real-time-data-applications/
-
-- type: fund
-  date: 2020-03-26
-  when: "Mar 26"
-  company: Dremio
-  stage: Series C
-  amount: "$70M"
-  source: https://www.dremio.com/blog/announcing-our-series-c-fundraise/
-
-- type: fund
-  date: 2018-06-05
-  when: "Jun 5"
-  company: Rockset
-  stage: Series A
-  amount: "$21.5M"
-  source: https://techcrunch.com/2018/06/05/rockset-raises-21-5m-series-a/
-
 # Acquisitions without analysis (source = official announcement).
 
 - type: acq

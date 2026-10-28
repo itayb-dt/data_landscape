@@ -263,9 +263,30 @@
   date: 2024-07-30
   when: "Jul 30"
   acquirer: ClickHouse
+  acquirer_abbr: CH
+  acquirer_color: "#faff69"
   target: PeerDB
+  target_abbr: PD
+  target_color: "#6ea8fe"
   value: "Undisclosed"
-  source: https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration
+  headline: ClickHouse acquires PeerDB to make Postgres a first-class source for real-time analytics
+  tldr: ClickHouse buys a small Postgres change-data-capture startup, so data can flow from Postgres into ClickHouse Cloud without a third-party pipeline.
+  why:
+    - "<b>Everyone wants Postgres.</b> Application data starts in Postgres, analytics need to reach it."
+    - "<b>Specialist problem.</b> CDC has many edge cases; buying a team that solved them beats building."
+    - "<b>A way in.</b> It removes the biggest obstacle for Postgres users trying ClickHouse."
+  take_label: My take
+  take: "Each engine has strengths and weaknesses, so the integration between them is where the value is."
+  facts:
+    - {label: Announced, value: "Jul 30, 2024"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Postgres change data capture}
+    - {label: Open source, value: "Source-available (ELv2)"}
+  links:
+    - {label: ClickHouse announcement, src: clickhouse.com, abbr: CH, color: "#faff69", url: "https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration"}
+    - {label: ClickHouse technical post, src: clickhouse.com, abbr: CH, color: "#faff69", url: "https://clickhouse.com/blog/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database"}
+    - {label: PeerDB on GitHub, src: github.com, abbr: PD, color: "#6ea8fe", url: "https://github.com/PeerDB-io/peerdb"}
+  post: /blog_posts/acq/018_ACQ_peerdb_by_clickhouse.html
 
 - type: acq
   date: 2026-05-06

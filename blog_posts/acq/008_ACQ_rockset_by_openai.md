@@ -44,3 +44,11 @@ The gap Rockset left became immediately visible when customers tried to migrate.
 - **[StarRocks](https://www.starrocks.io/)** — MPP analytical database with real-time ingestion; growing quickly as a Rockset alternative.
 - **[Apache Pinot](https://pinot.apache.org/)** — open-source OLAP engine built for real-time analytics at LinkedIn and Uber; closer to Rockset's ingestion model than most alternatives.
 - **[SereneDB](https://serenedb.com/)** — newer entrant positioning directly in the unified search-analytics space Rockset occupied. See [our SereneDB review](../db/006_DB_serenedb_search_analytics.md).
+
+## My Take
+
+Rockset is a reminder that the database under an AI product is strategic. OpenAI did not want a database business. It wanted fast, fresh retrieval that it fully controls, so it took the team and closed the product. I expect that logic to repeat: AI companies will buy or build the retrieval layer, because an agent is only as good as the context it can fetch right now.
+
+There is also a lesson for customers. Building on a young, specialized database carries the risk that the product disappears on the buyer's schedule. Rockset's customers had months. Before choosing a niche engine, ask how you would leave: open formats, a way to export, and a second option you could move to.
+
+The idea behind Rockset, one system that serves rows, columns, text and vectors, did not go away with the product. It is now being approached from other directions, often with Postgres as the starting point and extensions for search and vectors. Data is complicated, and agents make it more so, so the vendors that make retrieval simple will matter more, not less.

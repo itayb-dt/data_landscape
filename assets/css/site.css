@@ -153,6 +153,10 @@ body.view-compact .timeline{display:none}
 .row{display:grid;grid-template-columns:100px 110px 1fr 110px 110px;gap:12px;align-items:center;padding:11px 18px;border-bottom:1px solid var(--line);font-size:14px}
 .row:last-child{border-bottom:0}
 .row .when{color:var(--muted);font-size:13px}
+.row .what{display:flex;align-items:center;gap:12px;min-width:0}
+.lg{flex:none;width:28px;height:28px;border-radius:7px;object-fit:cover;background:#fff}
+.lg.ph{display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:14px;color:var(--bg);background:var(--acq)}
+.lg.ph.fund{background:var(--fund)}
 .row .val{color:var(--muted);font-size:13px}
 .row .link{text-align:right}
 .pill{font-style:normal;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);text-align:center}

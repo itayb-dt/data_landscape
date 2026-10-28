@@ -1,0 +1,18 @@
+# Square logos of acquirers, shown in the compact view of Market Moves.
+# Key = the exact `acquirer` value in events.yml, value = file in assets/logos/.
+# Acquirers missing here get a letter square instead.
+# Icons are the companies' own site icons, saved locally (no runtime dependency).
+AWS: aws.png
+Boomi: boomi.png
+ClickHouse: clickhouse.png
+Cloudflare: cloudflare.png
+Dash0: dash0.jpg
+Databricks: databricks.png
+dbt Labs: dbt-labs.png
+FICO: fico.png
+OpenAI: openai.png
+Replit: replit.png
+SAP: sap.png
+Salesforce: salesforce.png
+Snowflake: snowflake.png
+Supabase: supabase.png

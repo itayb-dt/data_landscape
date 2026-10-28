@@ -85,6 +85,15 @@ for i, e in enumerate(events):
         if "status" in e:
             warn(where, "status is ignored by the site; remove it")
 
+# ---------- logos ----------
+logos = yaml.safe_load((ROOT / "_data/logos.yml").read_text(encoding="utf-8")) or {}
+for name, fname in logos.items():
+    if not (ROOT / "assets/logos" / fname).exists():
+        err("logos.yml", f"logo file not found for {name}: assets/logos/{fname}")
+for e in events:
+    if e.get("type") == "acq" and e.get("acquirer") not in logos:
+        warn("logos.yml", f"no logo for acquirer {e['acquirer']}; a letter square is shown instead")
+
 # ---------- posts ----------
 ACQ_HEADINGS = [
     r"^## The Problem: .+",

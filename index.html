@@ -117,7 +117,7 @@ title: Market Moves
   <div class="row" data-type="{{ m.type }}">
     <span class="when">{{ m.when }} {{ m.date | date: "%Y" }}</span>
     <i class="pill {{ m.type }}">{% if m.type == 'acq' %}Acquisition{% else %}Funding{% endif %}</i>
-    <span class="what">{% if m.type == 'acq' %}<b>{{ m.acquirer }}</b> acquired <b>{{ m.target }}</b>{% else %}<b>{{ m.company }}</b> {% if m.amount %}raised <b>{{ m.amount }}</b> {{ m.stage }}{% else %}announced <b>{{ m.stage }}</b>{% endif %}{% if m.valuation %} at <b>{{ m.valuation }}</b> valuation{% endif %}{% endif %}</span>
+    <span class="what">{% if m.type == 'acq' %}{% assign logo = site.data.logos[m.acquirer] %}{% if logo %}<img class="lg" src="{{ '/assets/logos/' | append: logo | relative_url }}" alt="{{ m.acquirer }} logo" width="28" height="28" loading="lazy">{% else %}<i class="lg ph">{{ m.acquirer | slice: 0, 1 | upcase }}</i>{% endif %}<span><b>{{ m.acquirer }}</b> acquired <b>{{ m.target }}</b></span>{% else %}<i class="lg ph fund">{{ m.company | slice: 0, 1 | upcase }}</i><span><b>{{ m.company }}</b> {% if m.amount %}raised <b>{{ m.amount }}</b> {{ m.stage }}{% else %}announced <b>{{ m.stage }}</b>{% endif %}{% if m.valuation %} at <b>{{ m.valuation }}</b> valuation{% endif %}</span>{% endif %}</span>
     <span class="val">{% if m.type == 'acq' %}{{ m.value }}{% endif %}</span>
     <span class="link">{% if m.post %}<a class="badge" href="{{ m.post | relative_url }}">Analysis →</a>{% elsif m.source %}<a class="src" href="{{ m.source }}" target="_blank" rel="noopener">source ↗</a>{% endif %}</span>
   </div>

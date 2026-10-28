@@ -32,7 +32,7 @@ Example: [014 — The Unstoppable Rise of PostgreSQL](blog_posts/random/014_RND_
 
 Covers a company acquisition in the data/AI space. Explains the industry problem the acquired company solves, the strategic rationale for the buyer, and what it means for customers and the broader ecosystem.
 
-Structure: title "X acquires Y to <reason>" → lead paragraph → the problem → the solution (with funding history) → understanding the acquisition → relevant products and companies → my take (optional).
+Structure: title "X acquires Y to <reason>" → lead paragraph → the problem → the solution (with funding history) → understanding the acquisition → relevant products and companies → my take (required) → updates (optional).
 
 Example: [002 — Waii acquired by Salesforce](blog_posts/acq/002_ACQ_waii_by_salesforce.md), [003 — Dremio acquired by SAP](blog_posts/acq/003_ACQ_dremio_by_sap.md)
 
@@ -88,3 +88,9 @@ Structure: opening context → what it is → problems it solves → best for �
 2. Fill in the input variables at the bottom of the prompt.
 3. Name the output file using the convention: `NNN_TYPE_short_description.md` (e.g., `006_ACQ_company_x_by_company_y.md`, `007_DB_duckdb_local_analytics.md`).
 4. Place the finished post in the matching subfolder under [blog_posts/](blog_posts/).
+
+---
+
+## QA
+
+Checks live in [qa/](qa/): `python3 qa/check_site.py` before pushing, `python3 qa/check_live.py` after the Pages build finishes. See [qa/README.md](qa/README.md).

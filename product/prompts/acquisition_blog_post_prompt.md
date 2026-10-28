@@ -78,15 +78,20 @@ This title is fixed.
 - Include tools that are tightly coupled to the target or the buyer, or close alternatives. Do not list extensions or features of other products.
 - When the space is crowded with commodity providers (for example Postgres, which every cloud offers), say so in one sentence instead of listing them, and list only the examples that matter for the point of the article.
 
-### 5. `## My Take` (optional)
-The author's own opinion in first person. Write it only when the author provides it. Do not invent opinions.
+### 5. `## My Take` (required)
+Every acquisition article has one. It is the author's own view in first person, and it is what makes the article more than a summary of announcements.
+- Use the author's opinion when they give one. Keep their points and wording close.
+- When they have not given one, draft it from the themes they repeat across the blog (data is complicated and agents make it more so, data is stored everywhere, Postgres as the starting point, what users actually want) and the direction in the announcements. Hand it over as a draft for the author to rewrite. Never present a draft as final.
+- State a direction, not a summary: where the buyer is heading, what it will likely build next, and why it fits. Write it as an expectation ("I expect...", "the next reasonable step is..."), grounded in sourced facts from the article.
+- If the article has an `## Updates` entry that shows what the buyer actually shipped, My Take must describe that direction in advance, as the author's analysis, and the update entry then closes the loop with a sentence such as "This is the direction described in My Take." My Take must not mention the update's facts as already known. Link to `#updates` only from the update entry, not from My Take.
+- Do not invent facts, numbers or quotes in My Take. Opinions are the author's to rewrite; facts need sources.
 
 ### 6. `## Updates` (optional)
 Articles are live. When the market moves (for example, the buyer ships the integration), add a dated entry here instead of rewriting the article.
 - Start the section with an italic line saying these are late additions, published after the original article, and not part of the official announcements.
 - Each entry is `### <Date>: <short title>`, newest last, with sourced facts and inline links.
 - Do not add update sources to the `links` list in `_data/events.yml`. That list is for the original announcements only.
-- Mention the update from Understanding the Acquisition or My Take with a link to `#updates` when it changes the picture.
+- Mention the update from Understanding the Acquisition with a link to `#updates` when it changes the picture. My Take does not link to it (see My Take).
 
 ## Content Requirements
 - Use specific facts provided (names, timeline, product names) accurately.
@@ -96,7 +101,7 @@ Articles are live. When the market moves (for example, the buyer ships the integ
 - Prioritize strategic insight over press-release language.
 
 ## Length Target
-700-1200 words, not counting My Take.
+700-1200 words, not counting My Take and Updates.
 
 ## Input Variables
 - Acquiring company: {{acquirer}}
@@ -108,7 +113,7 @@ Articles are live. When the market moves (for example, the buyer ships the integ
 - Integration products / platforms: {{integration_points}}
 - Optional quote(s): {{quotes}}
 - Relevant products and companies: {{related_products}}
-- Author's take (optional): {{my_take}}
+- Author's take (optional, a draft is written when missing): {{my_take}}
 
 ## After Writing
 1. Save the article as `blog_posts/acq/NNN_ACQ_<target>_by_<acquirer>.md` with front matter containing `title` and `published` (the date the article was written, `YYYY-MM-DD`). The page header shows both the announcement date (from the event) and the written date, so readers can tell them apart.

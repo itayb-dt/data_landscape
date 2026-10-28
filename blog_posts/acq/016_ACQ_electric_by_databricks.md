@@ -57,13 +57,21 @@ Electric spent years on the sync side of this. Neon has the storage and branchin
 - [TanStack DB](https://tanstack.com/db): a client-side database layer maintained by Electric, used for local state that syncs with a backend.
 - [Durable Streams](https://durablestreams.com/): an open source streaming protocol from Electric, for sending data to clients reliably.
 
+## My Take
+
+Data is complicated, and agents make it more complicated. An agent starts a conversation, goes for lunch and is back an hour later, and in the meantime its context and the data it works on must still be there and still be right. That is a different problem from where the data is stored, and nobody has solved it for the many places data now lives.
+
+I read this acquisition as Databricks' answer to the agent side of that problem. Postgres is the starting point again: PGlite puts a real Postgres next to each agent, Lakebase holds the shared source of truth, and sync keeps them aligned. The part I find most interesting is not the local database. It is what Neon and Electric say they will build together, a real-time primitive inside the database. I expect that to be live queries: you subscribe to any SQL query and the result stays current as the data changes, without polling and without a sync layer you build yourself. It is the next reasonable step after branching, because an agent that can copy a database for context also needs to see it change.
+
+It will be hard to get right, which is why this team was worth buying. Anyone can demo live data. Doing it for arbitrary SQL, with consistency, permissions and a bill that does not grow while the database sleeps is the real work. If they manage it on top of scale to zero, Neon becomes more than a cheap Postgres, and that is the story that justified the price of the Neon deal in the first place.
+
 ## Updates
 
 *These entries were added after the original article. They are not part of the announcements.*
 
 ### Oct 15, 2026: Neon Realtime brings live queries to Lakebase Postgres
 
-The feature the acquisition pointed to has shipped as a public beta. [Neon Realtime](https://neon.com/blog/neon-now-has-realtime), written by Electric co-founder James Arthur, now at Databricks, puts it simply: "Any SQL query can now be a live query."
+The feature the acquisition pointed to has shipped as a public beta, which is the direction described in My Take. [Neon Realtime](https://neon.com/blog/neon-now-has-realtime), written by Electric co-founder James Arthur, now at Databricks, puts it simply: "Any SQL query can now be a live query."
 
 - **What it does.** Any read-only, deterministic SQL query can be subscribed to, including joins, aggregates, window functions and subqueries. The result updates as the underlying data changes. Clients use the CLI, an SDK, or a React hook (`useLiveQuery`), and writes can be applied optimistically through [TanStack DB](https://neon.com/docs/realtime/guides/mutations).
 - **How it works.** Enabling Realtime [installs an incremental live query engine inside Lakebase Postgres](https://neon.com/docs/realtime/how-it-works). It consumes logical replication, matches each write to the live queries it affects, and streams only the changes. A subscription starts with the full result, then changes arrive in batches, one per committed transaction, so a client never sees a partial write. Each batch carries transaction IDs, which lets `awaitTxId()` confirm that a write has synced.

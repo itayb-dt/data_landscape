@@ -21,7 +21,7 @@ Option 2:
 - A lead paragraph with no heading, instead of "Opening Context". The banner carries the facts.
 - `The Problem: <short problem>` and `The Solution: <short approach>`, written per article.
 - `Understanding the Acquisition` and `Relevant Products and Companies`: fixed titles with no company names.
-- `My Take`: optional, only when the author supplies it.
+- `My Take`: required. The author's view if given, otherwise a draft for the author to rewrite. When an update shows the direction was right, My Take states that direction in advance and the update closes the loop.
 
 ## Consequences
 

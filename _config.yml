@@ -15,6 +15,7 @@ relative_links:
 exclude:
   - product
   - backlog
+  - qa
   - README.md
   - LICENSE
   - Gemfile

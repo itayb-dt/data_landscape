@@ -385,6 +385,26 @@
   date: 2025-10-01
   when: "Oct 1"
   acquirer: Databricks
+  acquirer_abbr: DB
+  acquirer_color: "#ff6b5b"
   target: Mooncake Labs
+  target_abbr: MC
+  target_color: "#93c5fd"
   value: "Undisclosed"
-  source: https://www.databricks.com/blog/mooncake-labs-joins-databricks-accelerate-vision-lakebase
+  headline: Databricks acquires Mooncake Labs to mirror Lakebase Postgres into the lakehouse in real time
+  tldr: A three-founder startup that mirrors Postgres changes into open Iceberg tables joins Databricks to strengthen Lakebase. Databricks later shipped native Lakehouse Sync.
+  why:
+    - "<b>The bridge to the lake.</b> Neon gave Databricks the Postgres; Mooncake gives it real-time sync to the lakehouse."
+    - "<b>No ETL.</b> Agents and analytics read the same fresh data."
+    - "<b>Build vs buy.</b> Few startups work on this, so Databricks bought the team."
+  take_label: My take
+  take: "Mooncake is more a feature of Postgres than a company. Inside Lakebase it becomes a built-in sync."
+  facts:
+    - {label: Announced, value: "Oct 1, 2025"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Postgres to lakehouse sync}
+    - {label: Open source, value: "pg_mooncake is MIT-licensed"}
+  links:
+    - {label: Databricks announcement, src: databricks.com, abbr: DB, color: "#ff6b5b", url: "https://www.databricks.com/blog/mooncake-labs-joins-databricks-accelerate-vision-lakebase"}
+    - {label: pg_mooncake on GitHub, src: github.com, abbr: MC, color: "#93c5fd", url: "https://github.com/Mooncake-Labs/pg_mooncake"}
+  post: /blog_posts/acq/017_ACQ_mooncake_by_databricks.html

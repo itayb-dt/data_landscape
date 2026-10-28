@@ -1,0 +1,67 @@
+---
+layout: default
+title: Ontology
+permalink: /ontology/
+---
+<section class="hero">
+  <div class="eyebrow">Ontology</div>
+  <h1>The vocabulary of the data landscape</h1>
+  <p class="sub"><span class="mock-tag">Mockup only</span> This page is not ready yet. Nothing here is real data or links to anything: the terms are hard-coded and just drift in and out of the smoke. The idea is that one day each term explains itself and points to the articles and companies behind it.</p>
+</section>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="smoke" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.02" numOctaves="4" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="230" xChannelSelector="R" yChannelSelector="G"/>
+    <feGaussianBlur stdDeviation="5"/>
+  </filter>
+</svg>
+
+<section class="onto" aria-label="Ontology mockup">
+  <div class="onto-bar">
+    <span class="dots"><i></i><i></i><i></i></span>
+    <span class="onto-url">ontology</span>
+  </div>
+  <div class="onto-stage">
+    <div class="onto-smoke" aria-hidden="true">
+      <b style="--x:2%;--y:28%;--w:60%;--h:22%;--c:rgba(150,175,255,.55);--t:34s;--dx:70px"></b>
+      <b style="--x:30%;--y:6%;--w:55%;--h:18%;--c:rgba(210,170,245,.40);--t:41s;--dx:-80px"></b>
+      <b style="--x:50%;--y:46%;--w:50%;--h:24%;--c:rgba(120,230,190,.32);--t:38s;--dx:60px"></b>
+      <b style="--x:-6%;--y:60%;--w:52%;--h:20%;--c:rgba(255,255,255,.30);--t:47s;--dx:-50px"></b>
+      <b style="--x:20%;--y:42%;--w:60%;--h:16%;--c:rgba(255,255,255,.26);--t:29s;--dx:90px"></b>
+      <b style="--x:55%;--y:72%;--w:44%;--h:16%;--c:rgba(150,175,255,.35);--t:36s;--dx:-60px"></b>
+      <b style="--x:35%;--y:20%;--w:40%;--h:14%;--c:rgba(255,255,255,.22);--t:31s;--dx:50px"></b>
+    </div>
+
+    <h2 class="onto-title">ONTOLOGY</h2>
+    <span class="onto-badge">MOCKUP · NOT READY YET</span>
+
+    <span class="term hero-term" style="--x:7%;--y:34%;--s:clamp(34px,6.4vw,66px)">DATA LAKE</span>
+    <span class="term hero-term" style="--x:11%;--y:56%;--s:clamp(28px,5vw,52px)">SPARK</span>
+
+    <span class="term" style="--x:44%;--y:17%;--s:clamp(16px,2.4vw,26px);--d:-2s;--l:6s">OLAP</span>
+    <span class="term" style="--x:53%;--y:43%;--s:clamp(15px,2.2vw,24px);--d:-3s;--l:8s">OPEN TABLE FORMAT</span>
+    <span class="term" style="--x:77%;--y:26%;--s:clamp(20px,3.2vw,36px);--d:-1.5s;--l:7s">SQL</span>
+    <span class="term" style="--x:66%;--y:64%;--s:clamp(18px,2.8vw,32px);--d:-5s;--l:8s">DAG</span>
+    <span class="term" style="--x:27%;--y:77%;--s:clamp(15px,2.2vw,24px);--d:-2s;--l:7s">METADATA</span>
+    <span class="term" style="--x:70%;--y:83%;--s:clamp(15px,2.2vw,24px);--d:-6.5s;--l:8s">STREAMING</span>
+    <span class="term" style="--x:86%;--y:49%;--s:clamp(14px,2vw,22px);--d:-4s;--l:9s">HADOOP</span>
+    <span class="term" style="--x:30%;--y:20%;--s:clamp(13px,1.8vw,19px);--d:-7s;--l:6s">PARQUET</span>
+    <span class="term" style="--x:58%;--y:10%;--s:clamp(13px,1.8vw,19px);--d:-8s;--l:8s">LINEAGE</span>
+    <span class="term" style="--x:84%;--y:72%;--s:clamp(13px,1.8vw,19px);--d:-2.5s;--l:7s">ETL</span>
+    <span class="term" style="--x:48%;--y:66%;--s:clamp(13px,1.8vw,19px);--d:-9s;--l:8s">CATALOG</span>
+  </div>
+</section>
+
+<script>
+// Mockup only: each term reappears somewhere new every time it has faded out.
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".onto .term:not(.hero-term)").forEach(function (t) {
+    t.addEventListener("animationiteration", function () {
+      t.style.setProperty("--x", (30 + Math.random() * 58) + "%");
+      t.style.setProperty("--y", (12 + Math.random() * 74) + "%");
+    });
+  });
+})();
+</script>

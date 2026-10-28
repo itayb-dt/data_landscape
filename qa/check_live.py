@@ -78,7 +78,7 @@ else:
 
 # ---- 2. pages to fetch ----
 published = {}
-pages = {"/": "Market Moves", "/posts/": "All posts", "/random/": "Random thoughts"}
+pages = {"/": "Market Moves", "/posts/": "All posts", "/random/": "Random thoughts", "/ontology/": "ONTOLOGY"}
 for f in sorted((ROOT / "blog_posts").rglob("*.md")):
     text = f.read_text(encoding="utf-8")
     fm = yaml.safe_load(text[4:text.find("\n---\n", 4)]) or {}

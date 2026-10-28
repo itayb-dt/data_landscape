@@ -16,6 +16,7 @@ Statuses: `Proposed` → `Accepted` → `Done` (or `Rejected` / `Deferred`).
 |----|-------|--------|
 | [REQ-001](requirements/REQ-001-search.md) | Search | Proposed |
 | [REQ-002](requirements/REQ-002-compact-view.md) | Compact view of market events | Done |
+| [REQ-003](requirements/REQ-003-ontology.md) | Ontology tab | Proposed (mockup) |
 
 ## Decisions
 

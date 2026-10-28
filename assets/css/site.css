@@ -169,3 +169,31 @@ body.view-compact .timeline{display:none}
   .timeline{padding-left:28px}.timeline::before{left:6px}.date{position:static;text-align:left;width:auto;margin-bottom:8px}.date b{display:inline;font-size:16px;margin-right:6px}.node{left:-29px;top:4px}
   nav{display:none}.meta{display:none}.num b{font-size:20px}.num{padding:12px 14px}
 }
+
+/* Ontology mockup */
+.onto{margin:28px 0 60px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#000}
+.onto-bar{display:flex;align-items:center;gap:14px;height:38px;padding:0 14px;background:#0b0d11;border-bottom:1px solid var(--line)}
+.onto-bar .dots{display:flex;gap:6px}
+.onto-bar .dots i{width:10px;height:10px;border-radius:50%;background:#2a2f3a}
+.onto-url{flex:1;max-width:340px;font-size:12px;color:var(--muted);background:#14171d;border-radius:6px;padding:3px 12px}
+.onto-stage{position:relative;height:clamp(460px,62vw,640px);overflow:hidden;background:radial-gradient(ellipse at 20% 50%,#080a12 0%,#000 70%)}
+.onto-smoke{position:absolute;inset:-10%;filter:url(#smoke)}
+.onto-smoke b{position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);border-radius:50%;background:radial-gradient(closest-side,var(--c),transparent);animation:drift var(--t) ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(var(--dx),-30px) scale(1.18)}}
+.onto-title{position:absolute;left:22px;top:16px;margin:0;font-size:13px;letter-spacing:4px;font-weight:600;color:var(--text);opacity:.9;z-index:2}
+.term{position:absolute;left:var(--x);top:var(--y);font-size:var(--s);font-weight:300;letter-spacing:.14em;white-space:nowrap;color:rgba(190,215,255,.85);text-shadow:0 0 6px rgba(124,156,255,.8),0 0 18px rgba(124,156,255,.45);opacity:0;transform:translate(-4px,6px);animation:materialize var(--l,10s) ease-in-out var(--d,0s) infinite;pointer-events:none}
+@keyframes materialize{
+  0%{opacity:0;filter:blur(10px);transform:translate(-6px,8px)}
+  22%{opacity:.9;filter:blur(0);transform:translate(0,0)}
+  55%{opacity:.7;filter:blur(1px);transform:translate(6px,-4px)}
+  85%{opacity:0;filter:blur(10px);transform:translate(14px,-12px)}
+  100%{opacity:0;filter:blur(10px);transform:translate(14px,-12px)}
+}
+.hero-term{color:#fff;font-weight:400;opacity:1;filter:none;animation:glow 6s ease-in-out infinite alternate;text-shadow:0 0 8px rgba(255,255,255,.9),0 0 26px rgba(124,156,255,.95),0 0 60px rgba(124,156,255,.6)}
+@keyframes glow{from{opacity:.85;text-shadow:0 0 6px rgba(255,255,255,.8),0 0 22px rgba(124,156,255,.8),0 0 50px rgba(124,156,255,.45)}to{opacity:1;text-shadow:0 0 10px #fff,0 0 32px rgba(124,156,255,1),0 0 72px rgba(124,156,255,.7)}}
+@media (prefers-reduced-motion:reduce){
+  .onto-smoke b,.term,.hero-term{animation:none}
+  .term{opacity:.7}
+}
+.onto-badge{position:absolute;right:16px;top:14px;z-index:2;font-size:11px;letter-spacing:1.5px;font-weight:600;color:var(--acq);border:1px solid rgba(255,184,107,.45);border-radius:999px;padding:4px 12px;background:rgba(0,0,0,.55)}
+.mock-tag{display:inline-block;font-size:11px;letter-spacing:1px;font-weight:700;text-transform:uppercase;color:#000;background:var(--acq);border-radius:4px;padding:1px 7px;margin-right:6px}

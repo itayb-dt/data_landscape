@@ -138,11 +138,11 @@ for f in post_files:
 MD_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)")
 RELURL = re.compile(r"\{\{\s*'([^']+)'\s*\|\s*relative_url\s*\}\}")
 permalinks = set()
-for f in [ROOT / "index.html", ROOT / "posts.html", ROOT / "random.html"]:
+for f in [ROOT / "index.html", ROOT / "posts.html", ROOT / "random.html", ROOT / "ontology.html"]:
     fm, _ = split_front_matter(f)
     permalinks.add((fm or {}).get("permalink", "/"))
 permalinks.add("/")
-html_like = list(post_files) + [ROOT / "index.html", ROOT / "posts.html", ROOT / "random.html"] + sorted((ROOT / "_layouts").glob("*.html"))
+html_like = list(post_files) + [ROOT / "index.html", ROOT / "posts.html", ROOT / "random.html", ROOT / "ontology.html"] + sorted((ROOT / "_layouts").glob("*.html"))
 for f in html_like:
     where = rel(f)
     text = f.read_text(encoding="utf-8")

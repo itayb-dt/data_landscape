@@ -4,6 +4,11 @@ published: 2026-09-02
 ---
 AWS is acquiring DuckLabs, the Amsterdam company behind DuckDB, but [not the DuckDB project itself](https://www.aboutamazon.com/news/company-news/aws-ducklabs), which stays open source under the MIT license and the independent DuckDB Foundation. DuckLabs is small: about 30 people ([InfoWorld](https://www.infoworld.com/article/4214800/aws-acquires-ducklabs-but-what-does-it-want-from-the-team-behind-duckdb.html)) and, according to [Dealroom](https://app.dealroom.co/companies/ducklabs_1), bootstrapped, living on support contracts rather than venture capital.
 
+<figure class="shot">
+  <img src="{{ '/assets/images/ducklabs/hero.png' | relative_url }}" alt="DuckLabs and AWS logos" loading="lazy">
+  <figcaption>DuckLabs joins AWS. Source: <a href="https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws">DuckLabs</a>.</figcaption>
+</figure>
+
 ## The Problem: Analytics needs a data warehouse, with all its complexity
 
 Most analytical questions are not big data problems. They are medium data problems: a few hundred gigabytes to a few terabytes of events, orders or logs that someone wants to slice quickly. The standard answer has been a cloud data warehouse or a cluster: load the data, size the compute, wait for it to start, and pay for it while it sits idle.
@@ -49,6 +54,11 @@ For users, nothing changes for now. The roadmap, licensing and governance model 
 
 [MotherDuck](https://motherduck.com/): DuckDB as a serverless cloud service, and the company most tightly coupled to DuckLabs. It was [started in partnership with the DuckLabs team](https://motherduck.com/blog/duckdb-amazon/), has submitted hundreds of patches to DuckDB, and has three engineers among the project's top 10 outside contributors. It raised a [$52.5M Series B at a $400M valuation](https://theregister.com/2023/09/21/motherduck_funding/) in 2023. Its pitch after the AWS deal is the product around the engine: developer ergonomics, collaboration, governance and a home for analysts and agents ([MotherDuck podcast](https://motherduck.com/explain-analyze/0010-aws-bought-ducklabs/)).
 
+<figure class="shot">
+  <img src="{{ '/assets/images/ducklabs/motherduck.jpg' | relative_url }}" alt="MotherDuck cover art: DuckDB outgrows its nest" loading="lazy">
+  <figcaption>MotherDuck's response to the deal: "DuckDB outgrows its nest". Source: <a href="https://motherduck.com/blog/duckdb-amazon/">MotherDuck</a>.</figcaption>
+</figure>
+
 [chDB](https://github.com/chdb-io/chdb): the closest equivalent on the ClickHouse side, an in-process OLAP SQL engine powered by ClickHouse that needs no server. It [joined ClickHouse](https://clickhouse.com/blog/chdb-joins-clickhouse-family) in March 2024.
 
 ## My Take
@@ -82,3 +92,8 @@ AWS announced that [Aurora PostgreSQL can query Apache Iceberg and Parquet data 
 A single query can combine live operational data, including uncommitted writes, with data in the lake, so there is no ETL copy into Aurora. For workloads that need low latency, the lake data can be materialized into native Aurora tables.
 
 The feature is generally available from Aurora PostgreSQL 17.11 and 18.6, in all commercial and GovCloud (US) regions. There is no additional feature charge, but Aurora compute and S3 request costs still apply. Setup needs the `aurora_analytics` extension and an IAM role. More details are in AWS's [launch post](https://aws.amazon.com/blogs/aws/amazon-aurora-postgresql-now-supports-direct-querying-of-apache-iceberg-and-parquet-data-in-your-data-lake/) and [NeoTeo's coverage](https://www.neoteo.com/en/aws-brings-duckdb-powered-lake-queries-to-aurora-postgresql).
+
+<figure class="shot narrow">
+  <img src="{{ '/assets/images/ducklabs/aurora-query.png' | relative_url }}" alt="Aurora PostgreSQL query combining live and historical data from the lake" loading="lazy">
+  <figcaption>A single Aurora query returning live rows and historical rows from the data lake. Source: <a href="https://aws.amazon.com/blogs/aws/amazon-aurora-postgresql-now-supports-direct-querying-of-apache-iceberg-and-parquet-data-in-your-data-lake/">AWS News Blog</a>.</figcaption>
+</figure>

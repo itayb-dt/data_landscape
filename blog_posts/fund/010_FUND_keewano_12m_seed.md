@@ -3,6 +3,11 @@ title: "Keewano raises $12M seed to build a platform for AI agent memory"
 ---
 # Keewano Raises $12M Seed to Build a Platform for AI Agent Memory
 
+<figure class="shot">
+  <img src="{{ '/assets/images/keewano/hero.jpg' | relative_url }}" alt="Keewano: the database for machine reasoning at scale" loading="lazy">
+  <figcaption>Keewano's own banner. Source: <a href="https://www.keewano.com">Keewano</a>.</figcaption>
+</figure>
+
 ## Technical Overview
 
 - Startup: Keewano (keewano.com)

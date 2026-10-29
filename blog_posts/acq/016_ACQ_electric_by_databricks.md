@@ -4,6 +4,11 @@ published: 2026-08-14
 ---
 Electric, the team behind the PGlite embedded Postgres and the Electric sync engine, [is joining Databricks](https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes) (the deal is reported as an [acquisition](https://aimagazine.com/articles/databricks-acquires-electric-to-power-blazing-fast-agents), and the price was not disclosed). The team joins [Neon](https://neon.com/blog/electric-joins-neon), which Databricks bought last year, with a clear goal: [add Electric's "data primitives and reactivity to Lakebase"](https://electric.ax/blog/2026/08/11/electric-joining-databricks), Databricks' serverless Postgres.
 
+<figure class="shot">
+  <img src="{{ '/assets/images/electric/hero.jpg' | relative_url }}" alt="Electric and Databricks logos" loading="lazy">
+  <figcaption>Electric joins Databricks. Source: <a href="https://electric.ax/blog/2026/08/11/electric-joining-databricks">Electric</a>.</figcaption>
+</figure>
+
 ## The Problem: Agents work in sandboxes, far from the data they need
 
 A classic application talks to one database server. Agents work differently. According to [Databricks](https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes), they decide what data they need at runtime, run in sandboxed environments, and often work in groups.
@@ -73,6 +78,11 @@ It will be hard to get right, which is why this team was worth buying. Anyone ca
 
 The feature the acquisition pointed to has shipped as a public beta, which is the direction described in My Take. [Neon Realtime](https://neon.com/blog/neon-now-has-realtime), written by Electric co-founder James Arthur, now at Databricks, puts it simply: "Any SQL query can now be a live query."
 
+<figure class="shot">
+  <img src="{{ '/assets/images/electric/neon-realtime.jpg' | relative_url }}" alt="Neon now has realtime: cover art with a live row counter" loading="lazy">
+  <figcaption>Neon's announcement of Realtime. Source: <a href="https://neon.com/blog/neon-now-has-realtime">Neon</a>.</figcaption>
+</figure>
+
 - **What it does.** Any read-only, deterministic SQL query can be subscribed to, including joins, aggregates, window functions and subqueries. The result updates as the underlying data changes. Clients use the CLI, an SDK, or a React hook (`useLiveQuery`), and writes can be applied optimistically through [TanStack DB](https://neon.com/docs/realtime/guides/mutations).
 - **How it works.** Enabling Realtime [installs an incremental live query engine inside Lakebase Postgres](https://neon.com/docs/realtime/how-it-works). It consumes logical replication, matches each write to the live queries it affects, and streams only the changes. A subscription starts with the full result, then changes arrive in batches, one per committed transaction, so a client never sees a partial write. Each batch carries transaction IDs, which lets `awaitTxId()` confirm that a write has synced.
 - **Scale to zero and branching.** Clients connect to Neon's ingress layer, not to Postgres, so [open subscriptions don't keep the database awake](https://neon.com/blog/neon-now-has-realtime). Realtime is enabled per branch and child branches inherit it.
@@ -84,3 +94,8 @@ The live-query pattern behind Trigger.dev and Otto, a database change reaching t
 It is free during the beta, though compute and egress are billed. It runs in four AWS regions, the protocol is still changing, and no benchmarks are published. It works on Neon, not yet on Lakebase inside Databricks.
 
 The earlier [interview with James Arthur](https://neon.com/blog/electrifying-neon-building-the-realtime-backend) (Sep 24, 2026) explains why this took a dedicated team: "The thing about realtime is it demos well but tends to fall over in production," and there is "a fundamental tension between expressiveness and performance." That matches the list of hard parts above. Neon's [backend GA post](https://neon.com/blog/neon-backend-is-ga) listed realtime as the next primitive.
+
+<figure class="shot">
+  <img src="{{ '/assets/images/electric/electrifying-neon.jpg' | relative_url }}" alt="Electrifying Neon: building the realtime backend" loading="lazy">
+  <figcaption>The interview with Electric co-founder James Arthur (Sep 24, 2026). Source: <a href="https://neon.com/blog/electrifying-neon-building-the-realtime-backend">Neon</a>.</figcaption>
+</figure>

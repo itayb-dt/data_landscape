@@ -135,6 +135,8 @@ for f in post_files:
             err(where, "needs a lead paragraph before the first heading")
         if "## Updates" in body and "late additions" not in body.lower() and "added after" not in body.lower():
             err(where, "## Updates needs the italic 'added after the original article' line")
+        if "assets/images/" not in body:
+            warn(where, "no image in the article (add a hero image after the lead paragraph)")
         if not re.search(r"^## My Take$", body, re.M):
             warn(where, "acquisition posts need a '## My Take' section")
         elif "## Updates" in body and body.index("## My Take") > body.index("## Updates"):

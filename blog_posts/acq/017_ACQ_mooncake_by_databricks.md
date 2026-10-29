@@ -4,6 +4,11 @@ published: 2025-10-04
 ---
 Mooncake Labs, a small startup that mirrors Postgres data into open lakehouse tables, [is joining Databricks](https://www.databricks.com/blog/mooncake-labs-joins-databricks-accelerate-vision-lakebase) to accelerate Lakebase, Databricks' Postgres database. The price was [not disclosed](https://www.techtarget.com/searchdatamanagement/news/366631950/Mooncake-acquisition-boosts-Databricks-database-capabilities), and the team is the point: it is a very small company with three founders.
 
+<figure class="shot">
+  <img src="{{ '/assets/images/mooncake/hero.jpg' | relative_url }}" alt="Databricks and Mooncake logos" loading="lazy">
+  <figcaption>Mooncake Labs joins Databricks. Source: <a href="https://www.databricks.com/blog/mooncake-labs-joins-databricks-accelerate-vision-lakebase">Databricks</a>.</figcaption>
+</figure>
+
 ## The Problem: Operational data and analytical data live in different worlds
 
 An application writes to Postgres. Analysts and AI agents read from a data lake. Between them sits a pipeline, usually built from change data capture and a stream or batch job, that copies the rows over. These pipelines are costly to build, break when a schema changes, and always add delay, so the lake is never quite current.
@@ -17,6 +22,11 @@ Mooncake built the bridge from the Postgres side. Databricks describes the resul
 The best-known part is the open source [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake) extension (MIT license). It keeps a columnstore mirror of Postgres tables in Apache Iceberg. A companion project, moonlink, handles the ingestion, and queries are accelerated by DuckDB. Because the data lands in an open table format, other engines can read it too. The project claims a top-10 place on ClickBench, which is the project's own claim.
 
 The benefit goes to teams that want one copy of operational data feeding analytics and agents, instead of a pipeline per use case.
+
+<figure class="shot">
+  <img src="{{ '/assets/images/mooncake/pg-mooncake.jpg' | relative_url }}" alt="pg_mooncake: columnstore tables in Postgres" loading="lazy">
+  <figcaption>The pg_mooncake extension. Source: <a href="https://github.com/Mooncake-Labs/pg_mooncake">pg_mooncake on GitHub</a>.</figcaption>
+</figure>
 
 ### Funding history
 

@@ -3,6 +3,11 @@ title: "OpenAI acquires Rockset to bring real-time retrieval in-house, and shuts
 ---
 In June 2024, OpenAI announced the acquisition of [Rockset](https://openai.com/index/openai-acquires-rockset/), a real-time analytics database startup that had quietly become the go-to solution for teams needing live SQL queries over freshly ingested data. The deal terms were not disclosed. Customers found out the same day as the rest of the world — and were told their service would be shut down within months.
 
+<figure class="shot">
+  <img src="{{ '/assets/images/rockset/hero.png' | relative_url }}" alt="OpenAI and Rockset logos" loading="lazy">
+  <figcaption>OpenAI and Rockset. Source: <a href="https://the-decoder.com/openai-acquires-rockset-to-optimize-ai-systems-for-chatting-with-user-data/">The Decoder</a>.</figcaption>
+</figure>
+
 ## The Problem: Real-time analytics needs ingestion and queries in one system
 
 Most databases are either fast at ingesting data or fast at querying it. Getting both at the same time — sub-second queries on data that arrived seconds ago — requires a fundamentally different architecture, and it is genuinely difficult to build.

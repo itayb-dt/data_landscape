@@ -3,6 +3,11 @@ title: "Salesforce acquires Waii to let anyone query enterprise data in plain la
 ---
 Salesforce has acquired Waii, a natural-language-to-SQL startup. The exact details of the deal were not disclosed. Once it closes, expected in Q3 FY26, Waii's capabilities will be integrated into Salesforce Data Cloud.
 
+<figure class="shot">
+  <img src="{{ '/assets/images/waii/hero.png' | relative_url }}" alt="Salesforce announcement graphic for the Waii acquisition" loading="lazy">
+  <figcaption>Salesforce's announcement of the Waii deal. Source: <a href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-waii/">Salesforce</a>.</figcaption>
+</figure>
+
 ## The Problem: Text-to-SQL can't see business context
 
 Text to SQL technology represents one of the most complex challenges in enterprise AI. Unlike traditional software features where testing is straightforward, authentication either works or fails when given wrong credentials, but SQL query validation is inherently ambiguous. When a system returns "$45M in sales for the top 5 categories in the South region," how do you verify if that's correct?

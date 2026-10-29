@@ -4,9 +4,19 @@ published: 2024-08-02
 ---
 ClickHouse [announced](https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration) on July 30, 2024 that it is acquiring PeerDB, a startup founded in 2023 by Kaushik Iska and Sai Srirampur that specializes in change data capture (CDC) for Postgres. The price was not disclosed. PeerDB is small and focused: its one job is moving data out of Postgres, fast and safely.
 
+<figure class="shot">
+  <img src="{{ '/assets/images/peerdb/hero.png' | relative_url }}" alt="ClickHouse and PeerDB logos" loading="lazy">
+  <figcaption>ClickHouse acquires PeerDB. Source: <a href="https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration">ClickHouse</a>.</figcaption>
+</figure>
+
 ## The Problem: Moving data from Postgres to an analytical database is slow and risky
 
 Most applications keep their data in Postgres, and most analytics run somewhere else, in an engine built for scanning large tables. Connecting the two means copying data continuously. Change data capture reads the changes Postgres writes to its log and replays them in the destination.
+
+<figure class="shot narrow">
+  <img src="{{ '/assets/images/peerdb/postgres-vs-clickhouse.png' | relative_url }}" alt="Diagram: transactions go to row-based Postgres, real-time analytics run on columnar ClickHouse, with replication between them" loading="lazy">
+  <figcaption>Row-based Postgres for transactions, columnar ClickHouse for analytics, and the replication in between. Source: <a href="https://clickhouse.com/blog/postgres-cdc-connector-clickpipes-ga">ClickHouse</a>.</figcaption>
+</figure>
 
 That sounds simple and is not. The first copy of a large table can take hours. Postgres keeps its log until the reader catches up, so a stalled reader can fill the disk of a production database. Schemas change, data types do not map cleanly, and the source is usually a critical operational system that must not be disturbed. As ClickHouse puts it, a fast and reliable CDC experience at its scale ["is not an easy problem to solve"](https://clickhouse.com/blog/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database).
 
@@ -57,3 +67,8 @@ The first step arrived as expected. ClickHouse says PeerDB is now [fully integra
 ### Jan 22, 2026: ClickHouse launches its own managed Postgres
 
 The second step went further, which is the direction described in My Take. ClickHouse [announced a managed Postgres service](https://clickhouse.com/blog/postgres-managed-by-clickhouse), built with its partner Ubicloud and running on local NVMe storage, in private preview on AWS and free during the preview. It describes a unified data stack: Postgres for transactions, ClickHouse for analytics, and PeerDB-powered replication between them, which syncs data in real time with an initial load followed by incremental change capture. Each service also includes the pg_clickhouse extension, so users can query ClickHouse from Postgres.
+
+<figure class="shot narrow">
+  <img src="{{ '/assets/images/peerdb/managed-postgres.png' | relative_url }}" alt="Architecture of ClickHouse managed Postgres: transactions in Postgres, CDC replication and pg_clickhouse queries to ClickHouse" loading="lazy">
+  <figcaption>Managed Postgres next to ClickHouse: CDC replication one way, pg_clickhouse queries the other. Source: <a href="https://clickhouse.com/blog/postgres-managed-by-clickhouse">ClickHouse</a>.</figcaption>
+</figure>

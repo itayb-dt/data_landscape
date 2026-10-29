@@ -93,6 +93,20 @@ Articles are live. When the market moves (for example, the buyer ships the integ
 - Do not add update sources to the `links` list in `_data/events.yml`. That list is for the original announcements only.
 - Mention the update from Understanding the Acquisition with a link to `#updates` when it changes the picture. My Take does not link to it (see My Take).
 
+## Images
+Every article has a hero image and, where they exist, one or two images that explain something.
+- **Hero**: the announcement graphic from the buyer's or target's own post (usually its `og:image`). Place it right after the lead paragraph, before `## The Problem`.
+- **Explanatory**: an architecture diagram, a chart or a product screenshot from the original sources, placed next to the paragraph it supports. Do not use headshots, stock photos or decorative backgrounds.
+- Download them (do not hotlink), save under `assets/images/<target>/` with a descriptive file name, and cap the longest side at about 1400px.
+- Use this markup so the page gets a caption with the source link (add `narrow` to the class for tall diagrams):
+
+```html
+<figure class="shot">
+  <img src="{{ '/assets/images/<target>/<file>.png' | relative_url }}" alt="Describe what it shows" loading="lazy">
+  <figcaption>What it shows. Source: <a href="https://original.page/">Site</a>.</figcaption>
+</figure>
+```
+
 ## Content Requirements
 - Use specific facts provided (names, timeline, product names) accurately.
 - If a fact is unknown, say it is not publicly disclosed.

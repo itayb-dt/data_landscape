@@ -4,6 +4,11 @@ published: 2026-10-27
 ---
 Databricks [agreed to acquire Neon](https://www.databricks.com/company/newsroom/press-releases/databricks-agrees-acquire-neon-help-developers-deliver-ai-systems) on May 14, 2025. The companies did not disclose the price; it was reported at about $1 billion ([TechCrunch](https://au.finance.yahoo.com/news/databricks-buy-open-source-database-120751104.html)). Two weeks later its main rival Snowflake [bought Crunchy Data](https://www.businesswire.com/news/home/20250602455530/en/Snowflake-Acquires-Crunchy-Data-to-Bring-Enterprise-Ready-Postgres-Offering-to-the-AI-Data-Cloud), also a Postgres company, reportedly for about $250 million ([TechTarget](https://www.techtarget.com/searchdatamanagement/news/366625068/Snowflake-acquisition-of-Crunchy-Data-adds-Postgres-database), citing reports; not confirmed by Snowflake). Both data platforms wanted a transactional database, and both chose Postgres.
 
+<figure class="shot">
+  <img src="{{ '/assets/images/neon/hero.png' | relative_url }}" alt="Databricks and Neon logos" loading="lazy">
+  <figcaption>Databricks and Neon. Source: <a href="https://www.databricks.com/blog/databricks-neon">Databricks</a>.</figcaption>
+</figure>
+
 ## The Problem: Operational databases are slow to create, expensive to idle and hard to copy
 
 A transactional database is the system an application writes to. Classic Postgres on a server is a long-lived thing: you size it, provision it, pay for it around the clock and treat it with care, because it holds the only copy of production data.
@@ -21,6 +26,11 @@ AI agents make both worse. An agent that writes code needs a database to try it 
 - **A plain Postgres interface.** Existing drivers, tools and extensions work, and there is one connection string.
 
 The benefit goes to developers who want a database per pull request, and to platforms that build apps on behalf of users. Neon says that [over 80% of the databases on its platform](https://neon.com/blog/neon-and-databricks) were being created by AI agents rather than humans, a figure Databricks repeats from Neon's internal telemetry.
+
+<figure class="shot narrow">
+  <img src="{{ '/assets/images/neon/agents-create-databases.png' | relative_url }}" alt="Chart: AI agents create 4x more databases than humans on Neon, from 30% in October 2024 to over 80% in May 2025" loading="lazy">
+  <figcaption>Neon's own chart: the share of databases created by agents grew from about 30% to over 80%. Source: <a href="https://www.databricks.com/blog/databricks-neon">Databricks</a>.</figcaption>
+</figure>
 
 ### Funding history
 

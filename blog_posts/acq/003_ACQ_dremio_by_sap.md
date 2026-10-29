@@ -4,6 +4,11 @@ title: "SAP acquires Dremio to give AI agents one governed view of SAP and non-S
 On May 4, 2026, [SAP](https://www.sap.com/) announced that it has agreed to acquire [Dremio](https://www.dremio.com/) in a move aimed at unifying SAP and non-SAP data for analytics and agentic AI. The official announcement, [SAP to Acquire Dremio to Unify SAP and Non-SAP Data to Power Agentic AI](https://news.sap.com/2026/05/sap-to-acquire-dremio-unify-sap-and-non-sap-data-power-agentic-ai/), makes the strategic intent unusually clear: this is not just a product tuck-in, it is infrastructure for SAP's broader data and AI stack. The exact terms of the transaction were not disclosed, and SAP said the deal is expected to close in Q3 2026, subject to regulatory approvals.
 
 
+<figure class="shot">
+  <img src="{{ '/assets/images/dremio/hero.webp' | relative_url }}" alt="SAP and Dremio logos" loading="lazy">
+  <figcaption>The announcement graphic for the deal. Source: <a href="https://www.dremio.com/blog/sap-intends-to-acquire-dremio/">Dremio</a>.</figcaption>
+</figure>
+
 ## The Problem: Enterprise AI can't reason over fragmented data
 
 Most enterprise AI projects do not fail because the models are weak. They fail because the data is fragmented across operational systems, analytics platforms, data lakes, SaaS tools, and custom pipelines. Across the market, teams repeatedly run into the same pattern: data remains locked in incompatible formats, disconnected across systems, and stripped of the business context needed to make outputs trustworthy.

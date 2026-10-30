@@ -125,9 +125,29 @@
   # Announcement is the banner on Responsive's homepage; replace with a permalink if one appears.
   when: "Oct 9"
   acquirer: Databricks
+  acquirer_abbr: DB
+  acquirer_color: "#ff6b5b"
   target: Responsive
+  target_abbr: RS
+  target_color: "#e5e7eb"
   value: "Undisclosed"
-  source: https://www.responsive.dev/
+  headline: Databricks acquires Responsive to bring object-storage-native database engineering to Lakebase
+  tldr: The founders of SlateDB, an open source database engine built on object storage, join Databricks to accelerate Lakebase and Neon. SlateDB stays independent.
+  why:
+    - "<b>Same architecture.</b> Lakebase separates storage and compute and keeps data on object storage."
+    - "<b>The hard part underneath.</b> An engine that makes object storage fast enough for online workloads."
+    - "<b>One copy of data.</b> Supports LTAP: transactional and analytical engines on the same open data."
+  take_label: Worth watching
+  take: "SlateDB stays independently governed (Commonhaus), so the open source engine does not become a Databricks product."
+  facts:
+    - {label: Announced, value: "Oct 9, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Object-storage-native databases}
+    - {label: Open source, value: "SlateDB stays independent (Commonhaus)"}
+  links:
+    - {label: Responsive announcement, src: responsive.dev, abbr: RS, color: "#e5e7eb", url: "https://www.responsive.dev/"}
+    - {label: SlateDB, src: slatedb.io, abbr: SD, color: "#9ca3af", url: "https://slatedb.io/"}
+  post: /blog_posts/acq/019_ACQ_responsive_by_databricks.html
 
 - type: acq
   date: 2026-10-02

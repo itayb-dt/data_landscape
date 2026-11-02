@@ -16,6 +16,7 @@ layout: default
 {% case page.category %}
   {% when "Acquisitions" %}{% assign kind = "Acquisition" %}
   {% when "Funding" %}{% assign kind = "Funding round" %}
+  {% when "Shutdowns" %}{% assign kind = "Shutdown" %}
   {% else %}{% assign kind = page.category %}
 {% endcase %}
 <article class="post cat-{{ cat }}">
@@ -30,6 +31,9 @@ layout: default
       {% if ev.type == "acq" %}
         <li><b>Amount:</b> {{ ev.value }}</li>
         {% if catf %}<li><b>Category:</b> {{ catf.value }}</li>{% endif %}
+      {% elsif ev.type == "shut" %}
+        <li><b>Status:</b> {{ ev.stage }}</li>
+        <li><b>Area:</b> {{ ev.area }}</li>
       {% else %}
         <li><b>Amount raised:</b> {{ ev.amount }}</li>
         <li><b>Round:</b> {{ ev.stage }}</li>

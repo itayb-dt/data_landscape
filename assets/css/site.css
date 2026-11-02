@@ -1,6 +1,6 @@
 :root{
   --bg:#0f1115; --panel:#171a21; --panel2:#1d212a; --line:#2a2f3a;
-  --text:#e8eaf0; --muted:#9aa3b2; --accent:#7c9cff; --acq:#ffb86b; --fund:#5fd3a6; --oss:#c792ea;
+  --text:#e8eaf0; --muted:#9aa3b2; --accent:#7c9cff; --acq:#ffb86b; --fund:#5fd3a6; --oss:#c792ea; --shut:#ff7b7b;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
@@ -99,7 +99,7 @@ h1{margin:6px 0 8px;font-size:32px}
 
 /* Posts */
 .cat-acq{--cat:var(--acq);--cat-bg:rgba(255,184,107,.13)}
-.cat-shut{--cat:#ff7b7b;--cat-bg:rgba(255,123,123,.13)}
+.cat-shut{--cat:var(--shut);--cat-bg:rgba(255,123,123,.13)}
 .cat-fund{--cat:var(--fund);--cat-bg:rgba(95,211,166,.13)}
 .cat-db{--cat:var(--oss);--cat-bg:rgba(199,146,234,.13)}
 .cat-rev{--cat:#7cc4ff;--cat-bg:rgba(124,196,255,.13)}
@@ -158,6 +158,13 @@ body.view-compact .timeline{display:none}
 .lg{flex:none;width:28px;height:28px;border-radius:7px;object-fit:cover;background:#fff}
 .lg.ph{display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:14px;color:var(--bg);background:var(--acq)}
 .lg.ph.fund{background:var(--fund)}
+.lg.ph.shut{background:var(--shut)}
+.item.shut .node{background:var(--shut);box-shadow:0 0 0 2px var(--shut)}
+.card.shut{border-color:rgba(255,123,123,.35)}
+.shut .fund-top .tag.type{color:var(--shut);border-color:rgba(255,123,123,.4)}
+.shut .signal{border-left-color:var(--shut);background:#2a1819}
+.shut .signal b{color:var(--shut)}
+.pill.shut{color:var(--shut);border-color:rgba(255,123,123,.4)}
 .row .val{color:var(--muted);font-size:13px}
 .row .link{text-align:right}
 .pill{font-style:normal;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);text-align:center}

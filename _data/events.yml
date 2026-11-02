@@ -1,6 +1,7 @@
 # Main events file. Every funding round and acquisition worth recording goes here.
 #
-# Required:  type (acq|fund), date, when
+# Required:  type (acq|fund|shut), date, when
+#            shut: company, stage, headline, tldr, nums, signal, area, post  (startup shutdowns and insolvencies)
 #            acq:  acquirer, target, value  (status is no longer shown; ignore it)
 #            fund: company, stage  (amount and valuation are optional)
 # Window:    funding rounds older than 3 years are not listed here. Full funding history belongs
@@ -9,6 +10,23 @@
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
+- type: shut
+  date: 2026-05-18
+  when: "May 18"
+  company: SQream
+  abbr: SQ
+  color: "#ff7b7b"
+  stage: Insolvency
+  headline: SQream, the GPU database that raised over $120M, enters insolvency and heads for a court-run sale
+  tldr: The company, now called Scailium, filed in the Tel Aviv District Court. A trustee is inviting bids for the company or its operations.
+  nums:
+    - {label: Debts, value: "~$4.7M"}
+    - {label: Losses, value: "$100M+"}
+    - {label: Employees, value: "~50"}
+  signal: A GPU database was a clever way to get speed, but a new database vendor needs a clear business justification.
+  area: GPU-accelerated analytics
+  post: /blog_posts/shutdown/020_SHUTDOWN_sqream_insolvency.html
+
 - type: fund
   date: 2026-09-20      # approximate: post commit date, not the announcement date. Please verify.
   when: "Sep"

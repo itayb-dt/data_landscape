@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Market Moves
+wide: true
 ---
 {% assign moves = site.data.events | sort: "date" | reverse %}
 {% assign acq_count = moves | where: "type", "acq" | size %}
@@ -64,63 +65,41 @@ title: Market Moves
         <div class="co">{% assign lg = site.data.logos[m.acquirer] %}{% if lg %}<img class="logo" src="{{ '/assets/logos/' | append: lg | relative_url }}" alt="{{ m.acquirer }} logo" width="44" height="44" loading="lazy">{% else %}<div class="logo" style="background:{{ m.acquirer_color }}">{{ m.acquirer_abbr }}</div>{% endif %}<div><div class="r">Acquirer</div><div class="n">{{ m.acquirer }}</div></div></div>
         <div class="arrow">→</div>
         <div class="co">{% assign lg = site.data.logos[m.target] %}{% if lg %}<img class="logo" src="{{ '/assets/logos/' | append: lg | relative_url }}" alt="{{ m.target }} logo" width="44" height="44" loading="lazy">{% else %}<div class="logo" style="background:{{ m.target_color }}">{{ m.target_abbr }}</div>{% endif %}<div><div class="r">Startup</div><div class="n">{{ m.target }}</div></div></div>
-        <div class="meta"><span class="tag type">Acquisition</span><span class="tag">{{ m.value }}</span></div>
+        <dl class="hfacts">{% for f in m.facts %}{% unless f.label == "Open source" %}<div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endunless %}{% endfor %}</dl>
       </div>
-      <div class="card-body">
-        <div class="main">
-          <h2>{{ m.headline }}</h2>
-          <p class="tldr">{{ m.tldr }}</p>
-          <div class="why">
-            <h3>Why it happened</h3>
-            <ol>{% for w in m.why %}<li>{{ w }}</li>{% endfor %}</ol>
-          </div>
-          <div class="take"><b>{{ m.take_label | default: "Worth watching" }}</b><p>{{ m.take }}</p></div>
-        </div>
-        <aside class="side">
-          <h3>Key facts</h3>
-          <dl class="facts">{% for f in m.facts %}<dt>{{ f.label }}</dt><dd>{{ f.value }}</dd>{% endfor %}</dl>
-          {% if m.links %}
-          <h3>Official announcements</h3>
-          <div class="links">
-            {% for l in m.links %}<a href="{{ l.url }}" target="_blank" rel="noopener"><span class="ic" style="background:{{ l.color }}">{{ l.abbr }}</span>{{ l.label }}<span class="src">{{ l.src }} ↗</span></a>{% endfor %}
-          </div>
-          {% endif %}
-        </aside>
+      <div class="card-main">
+        <h2>{{ m.headline }}</h2>
+        <p class="tldr">{{ m.tldr }}</p>
+        <ol class="why3">{% for w in m.why %}<li>{{ w }}</li>{% endfor %}</ol>
       </div>
-      <div class="card-foot"><span>{{ m.target }} · {{ m.date | date: "%Y" }}</span><a href="{{ m.post | relative_url }}">Read full analysis →</a></div>
+      <div class="card-foot">
+        <div class="flinks">{% for l in m.links %}<a href="{{ l.url }}" target="_blank" rel="noopener"><span class="ic" style="background:{{ l.color }}">{{ l.abbr }}</span>{{ l.label }} ↗</a>{% endfor %}</div>
+        <a href="{{ m.post | relative_url }}">Read full analysis →</a>
+      </div>
     </div>
 
     {% elsif m.type == "shut" %}
     <div class="card shut">
-      <div class="fund-top">
+      <div class="card-top">
         <div class="co"><div class="logo" style="background:{{ m.color }}">{{ m.abbr }}</div><div><div class="r">Shut down</div><div class="n">{{ m.company }}</div></div></div>
-        <div class="meta"><span class="tag type">Shutdown</span><span class="tag">{{ m.stage }}</span></div>
+        <dl class="hfacts">{% for n in m.nums %}<div><dt>{{ n.label }}</dt><dd>{{ n.value }}</dd></div>{% endfor %}<div><dt>Status</dt><dd>{{ m.stage }}</dd></div></dl>
       </div>
-      <div class="nums">{% for n in m.nums %}
-        <div class="num"><small>{{ n.label }}</small><b>{{ n.value }}</b></div>{% endfor %}
-      </div>
-      <div class="fund-body">
+      <div class="card-main">
         <h2>{{ m.headline }}</h2>
         <p class="tldr">{{ m.tldr }}</p>
-        <div class="signal"><b>{{ m.take_label | default: "Signal" }}</b>{{ m.signal }}</div>
+        <div class="signal"><b>Signal</b>{{ m.signal }}</div>
       </div>
       <div class="card-foot"><span>{{ m.area }}</span><a href="{{ m.post | relative_url }}">Read full analysis →</a></div>
     </div>
 
     {% else %}
     <div class="card fund">
-      <div class="fund-top">
+      <div class="card-top">
         <div class="co">{% assign lg = site.data.logos[m.company] %}{% if lg %}<img class="logo" src="{{ '/assets/logos/' | append: lg | relative_url }}" alt="{{ m.company }} logo" width="44" height="44" loading="lazy">{% else %}<div class="logo" style="background:{{ m.color }}">{{ m.abbr }}</div>{% endif %}<div><div class="r">Raised</div><div class="n">{{ m.company }}</div></div></div>
-        <div class="meta"><span class="tag type">Funding round</span><span class="tag">{{ m.stage }}</span></div>
+        <dl class="hfacts"><div><dt>Amount</dt><dd>{{ m.amount }}</dd></div><div><dt>Round</dt><dd>{{ m.stage }}</dd></div><div><dt>Lead</dt><dd>{{ m.lead }}</dd></div></dl>
       </div>
-      <div class="nums">
-        <div class="num"><small>Amount</small><b>{{ m.amount }}</b></div>
-        <div class="num"><small>Round</small><b>{{ m.stage }}</b></div>
-        <div class="num"><small>Lead</small><b style="font-size:18px">{{ m.lead }}</b></div>
-      </div>
-      <div class="fund-body">
+      <div class="card-main">
         <h2>{{ m.headline }}</h2>
-        <h3>Investors</h3>
         <div class="investors">{% for i in m.investors %}<span{% if i.lead %} class="lead"{% endif %}>{{ i.name }}</span>{% endfor %}</div>
         <div class="signal"><b>Signal</b>{{ m.signal }}</div>
       </div>

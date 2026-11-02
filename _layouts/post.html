@@ -8,6 +8,7 @@ layout: default
   {% when "Databases" %}{% assign cat = "db" %}
   {% when "Tech Reviews" %}{% assign cat = "rev" %}
   {% when "Concepts" %}{% assign cat = "cncpt" %}
+  {% when "Shutdowns" %}{% assign cat = "shut" %}
   {% else %}{% assign cat = "gen" %}
 {% endcase %}
 {% assign words = content | number_of_words %}

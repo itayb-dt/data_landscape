@@ -99,6 +99,7 @@ h1{margin:6px 0 8px;font-size:32px}
 
 /* Posts */
 .cat-acq{--cat:var(--acq);--cat-bg:rgba(255,184,107,.13)}
+.cat-shut{--cat:#ff7b7b;--cat-bg:rgba(255,123,123,.13)}
 .cat-fund{--cat:var(--fund);--cat-bg:rgba(95,211,166,.13)}
 .cat-db{--cat:var(--oss);--cat-bg:rgba(199,146,234,.13)}
 .cat-rev{--cat:#7cc4ff;--cat-bg:rgba(124,196,255,.13)}

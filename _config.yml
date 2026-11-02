@@ -47,6 +47,10 @@ defaults:
     values:
       category: Tech Reviews
   - scope:
+      path: blog_posts/shutdown
+    values:
+      category: Shutdowns
+  - scope:
       path: blog_posts/general
     values:
       category: General

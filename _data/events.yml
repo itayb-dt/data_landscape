@@ -4,7 +4,7 @@
 #            shut: company, stage, headline, tldr, nums, signal, area, post  (startup shutdowns and insolvencies)
 #            acq:  acquirer, target, value  (status is no longer shown; ignore it)
 #            fund: company, stage  (amount and valuation are optional)
-# Window:    funding rounds older than 3 years are not listed here. Full funding history belongs
+# Window:    funding rounds older than 3 years are not listed here (exception: rounds that have an article). Full funding history belongs
 #            inside an article (see the Funding history section), not in this file.
 # Optional:  source  (URL of the announcement, shown for events without analysis)
 #            post    (URL of our analysis; marks the event as analysed and adds a card
@@ -461,3 +461,25 @@
     - {label: Databricks announcement, src: databricks.com, abbr: DB, color: "#ff6b5b", url: "https://www.databricks.com/blog/mooncake-labs-joins-databricks-accelerate-vision-lakebase"}
     - {label: pg_mooncake on GitHub, src: github.com, abbr: MC, color: "#93c5fd", url: "https://github.com/Mooncake-Labs/pg_mooncake"}
   post: /blog_posts/acq/017_ACQ_mooncake_by_databricks.html
+
+- type: fund
+  date: 2023-09-12
+  # Older than the 3-year window, kept because the article exists.
+  when: "Sep 12"
+  company: SQream
+  abbr: SQ
+  color: "#ff7b7b"
+  headline: SQream raises $45M Series C to push its GPU analytics engine into enterprise AI and ML
+  stage: Series C
+  amount: "$45M"
+  lead: World Trade Ventures
+  area: GPU-accelerated analytics
+  investors:
+    - {name: World Trade Ventures, lead: true}
+    - {name: Schusterman Investments}
+    - {name: George Kaiser Foundation}
+    - {name: Icon Continuity Fund}
+    - {name: Blumberg Capital}
+    - {name: Freddy & Helen Holdings}
+  signal: Funds go to North America expansion, partnerships and AI and ML enterprise capabilities. In May 2026 the company entered insolvency.
+  post: /blog_posts/fund/021_FUND_sqream_45m_series_c.html

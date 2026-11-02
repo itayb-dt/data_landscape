@@ -40,6 +40,7 @@ h1{margin:6px 0 8px;font-size:32px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .card-top{padding:20px 22px 16px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
 .co{display:flex;align-items:center;gap:10px}
+.img.logo,img.logo{object-fit:cover;background:#fff}
 .logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:700;font-size:16px;color:#0f1115}
 .co .n{font-weight:600}
 .co .r{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}

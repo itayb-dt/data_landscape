@@ -68,13 +68,9 @@ wide: true
         <dl class="hfacts">{% for f in m.facts %}{% unless f.label == "Open source" %}<div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endunless %}{% endfor %}</dl>
       </div>
       <div class="card-main">
-        <h2>{{ m.headline }}</h2>
+        <div class="hl"><h2>{{ m.headline }}</h2><a class="more" href="{{ m.post | relative_url }}">Read full analysis →</a></div>
         <p class="tldr">{{ m.tldr }}</p>
         <ol class="why3">{% for w in m.why %}<li>{{ w }}</li>{% endfor %}</ol>
-      </div>
-      <div class="card-foot">
-        <div class="flinks">{% for l in m.links %}<a href="{{ l.url }}" target="_blank" rel="noopener"><span class="ic" style="background:{{ l.color }}">{{ l.abbr }}</span>{{ l.label }} ↗</a>{% endfor %}</div>
-        <a href="{{ m.post | relative_url }}">Read full analysis →</a>
       </div>
     </div>
 
@@ -85,11 +81,10 @@ wide: true
         <dl class="hfacts">{% for n in m.nums %}<div><dt>{{ n.label }}</dt><dd>{{ n.value }}</dd></div>{% endfor %}<div><dt>Status</dt><dd>{{ m.stage }}</dd></div></dl>
       </div>
       <div class="card-main">
-        <h2>{{ m.headline }}</h2>
+        <div class="hl"><h2>{{ m.headline }}</h2><a class="more" href="{{ m.post | relative_url }}">Read full analysis →</a></div>
         <p class="tldr">{{ m.tldr }}</p>
         <div class="signal"><b>Signal</b>{{ m.signal }}</div>
       </div>
-      <div class="card-foot"><span>{{ m.area }}</span><a href="{{ m.post | relative_url }}">Read full analysis →</a></div>
     </div>
 
     {% else %}
@@ -99,11 +94,10 @@ wide: true
         <dl class="hfacts"><div><dt>Amount</dt><dd>{{ m.amount }}</dd></div><div><dt>Round</dt><dd>{{ m.stage }}</dd></div><div><dt>Lead</dt><dd>{{ m.lead }}</dd></div></dl>
       </div>
       <div class="card-main">
-        <h2>{{ m.headline }}</h2>
+        <div class="hl"><h2>{{ m.headline }}</h2><a class="more" href="{{ m.post | relative_url }}">Read full analysis →</a></div>
         <div class="investors">{% for i in m.investors %}<span{% if i.lead %} class="lead"{% endif %}>{{ i.name }}</span>{% endfor %}</div>
         <div class="signal"><b>Signal</b>{{ m.signal }}</div>
       </div>
-      <div class="card-foot"><span>{{ m.area }}</span><a href="{{ m.post | relative_url }}">Read full analysis →</a></div>
     </div>
     {% endif %}
   </article>

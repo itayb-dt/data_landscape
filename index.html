@@ -70,7 +70,7 @@ wide: true
       <div class="card-main">
         <div class="hl"><h2>{{ m.headline }}</h2><a class="more" href="{{ m.post | relative_url }}">Read full analysis →</a></div>
         <p class="tldr">{{ m.tldr }}</p>
-        <ol class="why3">{% for w in m.why %}<li>{{ w }}</li>{% endfor %}</ol>
+        <div class="signal"><b>Signal</b>{{ m.signal }}</div>
       </div>
     </div>
 

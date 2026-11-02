@@ -59,11 +59,8 @@
   status: Pending
   value: Undisclosed
   headline: SAP acquires Dremio to give AI agents one governed view of SAP and non-SAP data
-  tldr: An open lakehouse, federation and a semantic layer join SAP Business Data Cloud. Expected to close in Q3 2026, subject to regulatory approval.
-  why:
-    - "<b>Agents need unified data.</b> Enterprise AI stalls on fragmented data, not on model quality."
-    - "<b>Customers run on more than SAP.</b> Business Data Cloud has to reach warehouses, lakehouses and SaaS data."
-    - "<b>A universal open catalog.</b> Built on Apache Polaris and the Iceberg REST Catalog API, it becomes the discovery and semantic layer."
+  tldr: "An open lakehouse, federation engine and semantic layer join SAP Business Data Cloud."
+  signal: "Enterprise AI stalls on fragmented data, and customers run on more than SAP. To make agents useful, SAP has to reach everyone's data, not only its own."
   take: SAP says it will keep investing in Iceberg, Polaris and Arrow. Whether it preserves Dremio's credibility in open ecosystems is the thing to watch.
   facts:
     - {label: Announced, value: "May 4, 2026"}
@@ -87,11 +84,8 @@
   status: Announced
   value: Undisclosed
   headline: Salesforce acquires Waii to let anyone query enterprise data in plain language
-  tldr: Waii's knowledge-graph approach to text-to-SQL will become the base of Tableau's next-generation semantic engine.
-  why:
-    - "<b>Text-to-SQL is a context problem.</b> Business meaning and governance matter more than syntax."
-    - "<b>Millions of non-technical users.</b> The Salesforce ecosystem depends on technical teams to answer data questions."
-    - "<b>Data Cloud, Tableau Next and Agentforce.</b> Waii plugs into all three after close."
+  tldr: "Waii's knowledge-graph approach to text-to-SQL becomes the base of Tableau's next-generation semantic engine."
+  signal: "Text-to-SQL is a context problem, not a syntax problem. Salesforce wants millions of non-technical users to ask data questions without waiting for a data team."
   take: The live metadata knowledge graph is the asset, more than the translation itself.
   facts:
     - {label: Value, value: Undisclosed}
@@ -111,11 +105,8 @@
   status: Closed
   value: Undisclosed
   headline: OpenAI acquires Rockset to bring real-time retrieval in-house, and shuts the product down for customers
-  tldr: Rockset's retrieval infrastructure moves in-house. Customers were told the cloud service would be wound down within months.
-  why:
-    - "<b>Retrieval is core to OpenAI's products.</b> ChatGPT and the API depend on fast, real-time context."
-    - "<b>Infrastructure, not a database business.</b> An acqui-hire at infrastructure scale."
-    - "<b>No runway for customers.</b> There was no drop-in replacement for Rockset's converged index."
+  tldr: "Rockset's retrieval infrastructure moves in-house at OpenAI. Customers were told the cloud service would be wound down within months."
+  signal: "OpenAI wanted the retrieval layer, not a database business. Real-time context is core to its products, so it took the team and closed the product."
   take: Customers migrated to combinations such as ClickHouse, StarRocks or Apache Pinot. Dependence on a startup's managed service carries acquisition risk.
   facts:
     - {label: Announced, value: "June 2024"}
@@ -150,11 +141,8 @@
   target_color: "#e5e7eb"
   value: "Undisclosed"
   headline: Databricks acquires Responsive to bring object-storage-native database engineering to Lakebase
-  tldr: The founders of SlateDB, an open source database engine built on object storage, join Databricks to accelerate Lakebase and Neon. SlateDB stays independent.
-  why:
-    - "<b>Same architecture.</b> Lakebase separates storage and compute and keeps data on object storage."
-    - "<b>The hard part underneath.</b> An engine that makes object storage fast enough for online workloads."
-    - "<b>One copy of data.</b> Supports LTAP: transactional and analytical engines on the same open data."
+  tldr: "The founders of SlateDB, an open source database engine built on object storage, join Databricks. SlateDB stays independent."
+  signal: "Lakebase keeps data on object storage, and making that fast enough for online workloads is hard. Databricks bought the people who already solved it."
   take_label: Worth watching
   take: "SlateDB stays independently governed (Commonhaus), so the open source engine does not become a Databricks product."
   facts:
@@ -178,11 +166,8 @@
   target_color: "#4ff8d2"
   value: "Undisclosed"
   headline: Supabase acquires Turso to give every AI agent its own database
-  tldr: Supabase buys the company behind a Rust rewrite of SQLite to provision a database per agent on demand. Turso keeps running and stays open source.
-  why:
-    - "<b>Databases per agent.</b> Agents need many small, isolated databases created in seconds."
-    - "<b>A graduation path.</b> Start light on Turso, move to Postgres on Supabase as the workload grows."
-    - "<b>The team.</b> Founder Glauber Costa becomes Head of Agentic Services."
+  tldr: "Supabase buys the company behind a Rust rewrite of SQLite. Turso keeps running and stays open source."
+  signal: "Agents need many small databases, created in seconds. Turso gives Supabase a lightweight start, with Postgres as the next step when a workload grows."
   take_label: My take
   take: "Another step in making Supabase a great platform for developers."
   facts:
@@ -207,11 +192,8 @@
   status: Pending
   value: "Undisclosed"
   headline: AWS acquires DuckLabs to bring DuckDB's in-process analytics closer to S3
-  tldr: AWS acquires DuckLabs, not the DuckDB project. DuckDB stays MIT-licensed under the independent DuckDB Foundation.
-  why:
-    - "<b>They already worked together.</b> DuckDB support landed in Amazon S3 Tables and SageMaker Lakehouse."
-    - "<b>More analytics against S3.</b> The more queries run on data in S3, the more AWS wins."
-    - "<b>A sustainable home for the project.</b> AWS will fund the open source work instead of support contracts."
+  tldr: "AWS buys DuckLabs, not the DuckDB project. DuckDB stays MIT-licensed under the independent DuckDB Foundation."
+  signal: "AWS wants better analytics on data in object storage. DuckDB gives it fast SQL that can run next to its databases."
   take_label: My take
   take: "DuckDB, S3 and SQL give users what they want: fast reads on a lot of data, cheap storage, and simplicity. Postgres is again the starting point, even for analytics."
   facts:
@@ -238,11 +220,8 @@
   target_color: "#a78bfa"
   value: "Undisclosed"
   headline: Databricks acquires Electric to give AI agents a local Postgres that syncs with Lakebase
-  tldr: The team behind PGlite (embedded WASM Postgres) and the Electric sync engine joins Neon at Databricks to add reactivity to Lakebase. Neon has since shipped live queries.
-  why:
-    - "<b>The other end of the wire.</b> Lakebase is the central database; PGlite is the Postgres inside the agent."
-    - "<b>Sync as a primitive.</b> Agents and apps need current data without hand-built sync."
-    - "<b>Same Postgres roots.</b> PGlite builds on WASM Postgres work by Neon co-founder Stas Kelvich."
+  tldr: "The team behind PGlite (embedded WASM Postgres) and the Electric sync engine joins Neon at Databricks. Neon has since shipped live queries."
+  signal: "Agents and apps need current data without hand-built sync. Lakebase is the central database, and PGlite puts Postgres inside the agent."
   take_label: Worth watching
   take: "Live queries on Lakebase Postgres: any SQL query becomes a live subscription."
   facts:
@@ -268,11 +247,8 @@
   target_color: "#6ee7b7"
   value: "~$250M (reported)"
   headline: Snowflake acquires Crunchy Data to bring enterprise Postgres into the AI Data Cloud
-  tldr: Snowflake buys a Postgres company to build Snowflake Postgres, less than three weeks after Databricks agreed to buy Neon.
-  why:
-    - "<b>A transactional database.</b> Snowflake was built for analytics and had no Postgres of its own."
-    - "<b>Enterprise readiness.</b> Crunchy brings managed Postgres, Kubernetes tooling and FedRAMP-compliant environments."
-    - "<b>Answer to Databricks.</b> Both platforms chose Postgres to add a relational engine."
+  tldr: "Snowflake buys a Postgres company to build Snowflake Postgres, less than three weeks after Databricks agreed to buy Neon."
+  signal: "Snowflake was built for analytics and had no Postgres of its own. It wanted a relational engine, and Crunchy brings a proven enterprise product and team."
   take_label: My take
   take: "Same goals as Databricks and Neon: a relational engine, good sync with analytics, and people who know how to build databases. At about 25% of Neon's reported price."
   facts:
@@ -296,11 +272,8 @@
   target_color: "#6ee7b7"
   value: "~$1B (reported)"
   headline: Databricks acquires Neon to put an agent-ready Postgres next to the lakehouse
-  tldr: Databricks buys a serverless Postgres company whose databases are mostly created by AI agents, and turns it into Lakebase. Snowflake bought Crunchy Data two weeks later.
-  why:
-    - "<b>OLTP completes the platform.</b> Databricks had the lakehouse but no transactional database."
-    - "<b>Built for agents.</b> Neon starts in under 500 ms, scales to zero and branches data instantly."
-    - "<b>Postgres as the standard.</b> Snowflake made the same move with Crunchy Data."
+  tldr: "Databricks buys a serverless Postgres company whose databases are mostly created by AI agents, and turns it into Lakebase. The price was reported at about $1B."
+  signal: "An analytics platform needs a transactional database where the data is born. Databricks chose Postgres instead of building one, and Neon's agent-ready design justified the price."
   take_label: My take
   take: "Any Postgres vendor would have given Databricks OLTP. The agent story is what made Neon worth $1B."
   facts:
@@ -340,11 +313,8 @@
   target_color: "#6ea8fe"
   value: "Undisclosed"
   headline: ClickHouse acquires PeerDB to make Postgres a first-class source for real-time analytics
-  tldr: ClickHouse buys a small Postgres change-data-capture startup, so data can flow from Postgres into ClickHouse Cloud without a third-party pipeline.
-  why:
-    - "<b>Everyone wants Postgres.</b> Application data starts in Postgres, analytics need to reach it."
-    - "<b>Specialist problem.</b> CDC has many edge cases; buying a team that solved them beats building."
-    - "<b>A way in.</b> It removes the biggest obstacle for Postgres users trying ClickHouse."
+  tldr: "ClickHouse buys a small Postgres change-data-capture startup. Data can now flow from Postgres into ClickHouse Cloud without a third-party pipeline."
+  signal: "Application data starts in Postgres, and analytics need to reach it. CDC has many edge cases, so buying a team that solved them beats building."
   take_label: My take
   take: "Each engine has strengths and weaknesses, so the integration between them is where the value is."
   facts:
@@ -445,11 +415,8 @@
   target_color: "#93c5fd"
   value: "Undisclosed"
   headline: Databricks acquires Mooncake Labs to mirror Lakebase Postgres into the lakehouse in real time
-  tldr: A three-founder startup that mirrors Postgres changes into open Iceberg tables joins Databricks to strengthen Lakebase. Databricks later shipped native Lakehouse Sync.
-  why:
-    - "<b>The bridge to the lake.</b> Neon gave Databricks the Postgres; Mooncake gives it real-time sync to the lakehouse."
-    - "<b>No ETL.</b> Agents and analytics read the same fresh data."
-    - "<b>Build vs buy.</b> Few startups work on this, so Databricks bought the team."
+  tldr: "A three-founder startup that mirrors Postgres changes into open Iceberg tables joins Databricks. Databricks later shipped native Lakehouse Sync."
+  signal: "Neon gave Databricks the Postgres. Mooncake gives it fresh transactional data in the lakehouse without ETL."
   take_label: My take
   take: "Mooncake is more a feature of Postgres than a company. Inside Lakebase it becomes a built-in sync."
   facts:

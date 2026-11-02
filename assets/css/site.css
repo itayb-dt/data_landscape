@@ -248,3 +248,6 @@ body.view-compact .timeline{display:none}
 .card.shut .hl h2{color:var(--shut)}
 .more{flex:none;white-space:nowrap;font-size:13px}
 .card-main .tldr{color:#c3c9d6;margin-bottom:12px}
+
+.item.acq .signal{border-left-color:var(--acq);background:#2a2216}
+.item.acq .signal b{color:var(--acq)}

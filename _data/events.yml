@@ -405,9 +405,23 @@
   # Value is from press reports (Calcalist: $40-45M; Dealroom: ~$43M in cash and stock), not from Boomi's announcement.
   when: "Oct 19"
   acquirer: Boomi
+  acquirer_abbr: BO
+  acquirer_color: "#3b82f6"
   target: Elementary Data
+  target_abbr: EL
+  target_color: "#9ee493"
   value: "~$40-45M (reported)"
-  source: https://boomi.com/resources/resources-library/boomi-acquires-elementary/
+  headline: Boomi acquires Elementary Data to make the data behind its AI agents trustworthy
+  tldr: "Boomi buys a Tel Aviv data observability startup that began as an open source dbt project. The open source project and the product continue."
+  signal: "Boomi moves data between systems. Agents act on that data without review, so Boomi wants to check it first."
+  facts:
+    - {label: Announced, value: "Oct 19, 2026"}
+    - {label: Value, value: "~$40-45M (Calcalist, unconfirmed)"}
+    - {label: Category, value: Data observability}
+  links:
+    - {label: Boomi announcement, src: boomi.com, abbr: BO, color: "#3b82f6", url: "https://boomi.com/resources/resources-library/boomi-acquires-elementary/"}
+    - {label: Elementary announcement, src: elementary-data.com, abbr: EL, color: "#9ee493", url: "https://www.elementary-data.com/post/elementary-joins-boomi"}
+  post: /blog_posts/acq/025_ACQ_elementary_data_by_boomi.html
 
 - type: fund
   date: 2025-05-27

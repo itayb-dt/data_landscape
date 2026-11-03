@@ -17,7 +17,7 @@ With AI agents the cost grows, because an agent acts on the data immediately and
 
 ## The Solution: Observability built into the dbt workflow
 
-[Elementary](https://www.elementary-data.com/) started in 2022 as an open source project, a CLI for monitoring [dbt](https://www.getdbt.com/) data pipelines. It tests data and detects anomalies in freshness, volume and quality. In 2024 it launched Elementary Cloud, a commercial product that adds enterprise features, catalog, lineage and incident handling. The open source part is Apache 2.0 licensed and has about [2.4k GitHub stars](https://github.com/elementary-data/elementary).
+[Elementary](https://www.elementary-data.com/) started in 2022 as an open source project, a CLI for monitoring [dbt](https://www.getdbt.com/) data pipelines. It tests data and detects anomalies in freshness, volume and quality. In 2024 it launched Elementary Cloud, a commercial product that adds enterprise features. The open source part is Apache 2.0 licensed and has about [2.4k GitHub stars](https://github.com/elementary-data/elementary).
 
 The company says over 1.1 million downloads a month. Its own post claims [more than 2,000 data teams](https://www.elementary-data.com/post/elementary-joins-boomi), while Calcalist reports 1,500, so I would treat both as approximate. Calcalist names Fiverr and Patagonia as customers.
 

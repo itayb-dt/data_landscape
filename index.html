@@ -95,7 +95,6 @@ wide: true
       </div>
       <div class="card-main">
         <div class="hl"><h2>{{ m.headline }}</h2><a class="more" href="{{ m.post | relative_url }}">Read full analysis →</a></div>
-        <div class="investors">{% for i in m.investors %}<span{% if i.lead %} class="lead"{% endif %}>{{ i.name }}</span>{% endfor %}</div>
         <div class="signal"><b>Signal</b>{{ m.signal }}</div>
       </div>
     </div>

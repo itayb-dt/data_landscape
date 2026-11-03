@@ -125,9 +125,22 @@
   # Chroma's post says it is "joining" Replit (definitive agreement); Chroma Cloud is being wound down.
   when: "Oct 23"
   acquirer: Replit
+  acquirer_abbr: RP
+  acquirer_color: "#f26207"
   target: Chroma
+  target_abbr: CH
+  target_color: "#ffde2c"
   value: "Undisclosed"
-  source: https://www.trychroma.com/blog/chroma-joins-replit
+  headline: Replit acquires Chroma to give its agents memory, and winds down Chroma Cloud
+  tldr: "Replit buys the open source vector database. Chroma stays Apache 2.0, but the hosted Chroma Cloud closes by December 22, 2026."
+  signal: "Agents need memory, and Replit wants to own the layer that stores it."
+  facts:
+    - {label: Announced, value: "Oct 23, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Vector database}
+  links:
+    - {label: Chroma announcement, src: trychroma.com, abbr: CH, color: "#ffde2c", url: "https://www.trychroma.com/blog/chroma-joins-replit"}
+  post: /blog_posts/acq/024_ACQ_chroma_by_replit.html
 
 - type: acq
   date: 2026-10-09

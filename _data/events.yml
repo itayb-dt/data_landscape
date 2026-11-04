@@ -45,6 +45,23 @@
   post: /blog_posts/shutdown/020_SHUTDOWN_sqream_insolvency.html
 
 - type: fund
+  date: 2025-07-14
+  when: "Jul 14"
+  company: ParadeDB
+  abbr: PD
+  color: "#5fd3a6"
+  headline: ParadeDB raises $12M Series A to turn Postgres into the search engine
+  stage: Series A
+  amount: "$12M"
+  lead: Craft Ventures
+  area: Search and analytics inside Postgres
+  investors:
+    - {name: Craft Ventures, lead: true}
+    - {name: Y Combinator}
+  signal: Teams run Elasticsearch next to Postgres and fight to keep them in sync. ParadeDB bets the search belongs inside the database.
+  post: /blog_posts/fund/027_FUND_paradedb_12m_series_a.html
+
+- type: fund
   date: 2026-09-20      # approximate: post commit date, not the announcement date. Please verify.
   when: "Sep"
   company: Keewano

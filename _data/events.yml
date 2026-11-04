@@ -11,6 +11,23 @@
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
 - type: shut
+  date: 2026-11-03
+  when: "Nov 3"
+  company: Explorium
+  abbr: EX
+  color: "#ff7b7b"
+  stage: Ceasing operations
+  headline: Explorium, the external data platform that raised over $127M, shuts down after almost nine years
+  tldr: The Israeli company sold outside data to improve analytics and machine learning, and later offered the same data to AI agents. AgentSource closes on December 2, 2026.
+  nums:
+    - {label: Raised, value: "$127M+"}
+    - {label: Founded, value: "2017"}
+    - {label: Last round, value: "2021"}
+  signal: Explorium sold outside data to improve models, then offered the same data to agents. As machine learning became a commodity, data alone was not enough.
+  area: External data for analytics and AI
+  post: /blog_posts/shutdown/026_SHUTDOWN_explorium_external_data.html
+
+- type: shut
   date: 2026-05-18
   when: "May 18"
   company: SQream

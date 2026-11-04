@@ -72,6 +72,18 @@ Example: [005 — LangSmith SmithDB Agent Observability](blog_posts/techrev/005_
 
 ---
 
+### SHUTDOWN — Startup Shutdown
+**Prompt:** [shutdown_blog_post_prompt.md](product/prompts/shutdown_blog_post_prompt.md)
+**Folder:** [blog_posts/shutdown/](blog_posts/shutdown/)
+
+A short article about a data or AI startup that shut down or entered insolvency. Explains what the company was trying to do and why it failed, in the founders' words, the reporters' words and the author's analysis. It does not cover customers, employees or creditors.
+
+Structure: title → lead paragraph → the problem → the solution (with funding history) → why it failed → relevant products and companies (optional) → my take (required) → updates (optional).
+
+Example: [026 — Explorium shuts down](blog_posts/shutdown/026_SHUTDOWN_explorium_external_data.md), [020 — SQream enters insolvency](blog_posts/shutdown/020_SHUTDOWN_sqream_insolvency.md)
+
+---
+
 ### DB — Database Review
 **Prompt:** [db_review_blog_post_prompt.md](product/prompts/db_review_blog_post_prompt.md)
 **Folder:** [blog_posts/db/](blog_posts/db/)

@@ -2,7 +2,7 @@
 title: "Explorium, the external data platform that raised over $127M, shuts down after almost nine years"
 published: 2026-11-04
 ---
-On November 3, 2026, Explorium's founders [announced](https://www.explorium.ai/blog/news-and-updates/farewell-from-explorium-with-gratitude/) that the company is "ceasing operations". The Israeli startup raised more than $127M, [CTech reports](https://www.calcalistech.com/ctechnews/article/skvs9uupme). Its last product, AgentSource, [will be discontinued on December 2, 2026](https://www.explorium.ai/blog/news-and-updates/important-notice-agentsource-will-be-discontinued-on-december-2-2026/).
+On November 3, 2026, Explorium's founders [announced](https://www.explorium.ai/blog/news-and-updates/farewell-from-explorium-with-gratitude/) that the company is "ceasing operations". The Israeli startup raised more than $127M, [CTech reports](https://www.calcalistech.com/ctechnews/article/skvs9uupme).
 
 ## The Problem: The data you need to improve a model is outside your company
 
@@ -12,7 +12,7 @@ A data scientist's day shows the cost. Finding a candidate source, getting acces
 
 ## The Solution: One platform to find, match and test outside data
 
-Explorium, founded in 2017 by Omer Har, Or Tamir and Maor Shlomo, sold ["the External Data Platform to improve Analytics and Machine Learning"](https://www.insightpartners.com/ideas/explorium-closes-75m-series-c-amid-soaring-demand-for-external-data/). It connected organizations to thousands of external data sources and signals, matched them to the customer's records, and automatically picked the ones that improved the model. Early uses were lead scoring, default risk, fraud and demand forecasting. Customers in 2021 included PepsiCo, Melio, BlueVine and GlassesUSA.
+Explorium, founded in 2017 by Omer Har, Or Tamir and Maor Shlomo, sold ["the External Data Platform to improve Analytics and Machine Learning"](https://www.insightpartners.com/ideas/explorium-closes-75m-series-c-amid-soaring-demand-for-external-data/). It connected organizations to thousands of external data sources and signals, matched them to the customer's records, and automatically picked the ones that improved the model. Early uses were lead scoring, default risk, fraud and demand forecasting.
 
 ### Where AI comes in
 
@@ -27,15 +27,13 @@ I do not see it as one. The core is the same: company and people data, plus sign
 - Series B - Jul 2020 - $31M - [SiliconANGLE](https://siliconangle.com/2020/07/28/data-discovery-startup-explorium-raises-31m-series-b-funding/)
 - Series C - May 2021 - $75M, led by Insight Partners - [Insight Partners](https://www.insightpartners.com/ideas/explorium-closes-75m-series-c-amid-soaring-demand-for-external-data/)
 
-I found no round after 2021. The company had about 130 employees in 2021, and I found no later figure.
+I found no round after 2021.
 
 ## Understanding the Shutdown
 
 The founders give their own reasons. They say the company entered "a period of change and rebuilding" when "machine learning became commoditized and the market shifted". They also cite "a market undergoing real turmoil" and say the company "kept growing this past year", but "it all just wasn't enough". CTech paraphrases it as being unable to turn that momentum into a sustainable business.
 
 Reading the facts, the original product depended on data scientists wanting help finding outside data for their models. That need shrinks when models are cheaper and easier to build. The repositioning for agents kept the data and changed the customer, and the market for that is crowded with data vendors.
-
-For customers: AgentSource stays up until December 2, 2026. Unused credits are refunded within 30 days, data can be exported until December 2, and all account data is deleted by December 31. I found nothing on the employees, or on what happens to the technology and the data assets.
 
 ## Relevant Products and Companies
 

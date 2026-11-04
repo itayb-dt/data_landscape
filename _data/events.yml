@@ -18,7 +18,7 @@
   color: "#ff7b7b"
   stage: Ceasing operations
   headline: Explorium, the external data platform that raised over $127M, shuts down after almost nine years
-  tldr: The Israeli company sold outside data to improve analytics and machine learning, and later offered the same data to AI agents. AgentSource closes on December 2, 2026.
+  tldr: The platform connected companies to thousands of outside data sources for analytics and machine learning. In its last two years it offered the same data to AI agents.
   nums:
     - {label: Raised, value: "$127M+"}
     - {label: Founded, value: "2017"}

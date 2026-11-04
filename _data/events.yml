@@ -102,6 +102,27 @@
   post: /blog_posts/fund/010_FUND_keewano_12m_seed.html
 
 - type: acq
+  date: 2024-04-15
+  when: "Apr 15"
+  acquirer: Supabase
+  acquirer_abbr: SB
+  acquirer_color: "#3ecf8e"
+  target: Oriole
+  target_abbr: OR
+  target_color: "#f59e0b"
+  value: "Undisclosed"
+  headline: Supabase acquires Oriole to build a faster storage engine for Postgres
+  tldr: Supabase hires the team behind OrioleDB, a storage engine that replaces Postgres's default heap. It is still in public beta.
+  signal: Storage is the oldest part of Postgres. Supabase wants the team that is rebuilding it.
+  facts:
+    - {label: Announced, value: "Apr 15, 2024"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Postgres storage engine}
+  links:
+    - {label: Supabase announcement, src: supabase.com, abbr: SB, color: "#3ecf8e", url: "https://supabase.com/blog/supabase-acquires-oriole"}
+  post: /blog_posts/acq/029_ACQ_oriole_by_supabase.html
+
+- type: acq
   date: 2026-05-04
   when: "May 4"
   acquirer: SAP

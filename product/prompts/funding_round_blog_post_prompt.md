@@ -74,6 +74,9 @@ Use exactly these sections in this order:
 - Do not fabricate valuations, customer counts, ARR, or investor participation.
 - Prioritize strategic insight over announcement-style wording.
 
+## Publication date
+Set `published` to a date a few days after the real announcement (usually 2 to 4 days), as if the article was written then, not the day it is actually written. Write the body as of that date: do not mention later events, releases or numbers in the body. Put anything newer in an `## Updates` entry with its own date (see the Updates section where available).
+
 ## Length Target
 - 700-1200 words
 

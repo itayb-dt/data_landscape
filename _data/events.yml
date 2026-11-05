@@ -123,6 +123,27 @@
   post: /blog_posts/acq/029_ACQ_oriole_by_supabase.html
 
 - type: acq
+  date: 2026-02-10
+  when: "Feb 10"
+  acquirer: Supabase
+  acquirer_abbr: SB
+  acquirer_color: "#3ecf8e"
+  target: Hydra
+  target_abbr: HY
+  target_color: "#38bdf8"
+  value: "Undisclosed"
+  headline: Supabase brings in the Hydra team to build an open warehouse on Postgres
+  tldr: The team behind pg_duckdb joins Supabase. Reads as an acqui-hire; terms were not disclosed.
+  signal: Analytics on Postgres is a feature, not a product. Supabase wants the people who built it.
+  facts:
+    - {label: Announced, value: "Feb 10, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Postgres analytics}
+  links:
+    - {label: Supabase announcement, src: supabase.com, abbr: SB, color: "#3ecf8e", url: "https://supabase.com/blog/hydra-joins-supabase"}
+  post: /blog_posts/acq/030_ACQ_hydra_by_supabase.html
+
+- type: acq
   date: 2026-05-04
   when: "May 4"
   acquirer: SAP

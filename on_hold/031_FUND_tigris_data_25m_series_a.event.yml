@@ -1,0 +1,18 @@
+# Market Moves card for the on-hold Tigris article. Paste into _data/events.yml when it is published,
+# and move the article back to blog_posts/fund/.
+- type: fund
+  date: 2025-10-08
+  when: "Oct 8"
+  company: Tigris Data
+  abbr: TD
+  color: "#f97316"
+  headline: Tigris Data raises $25M Series A to build object storage for AI
+  stage: Series A
+  amount: "$25M"
+  lead: Spark Capital
+  area: Distributed object storage for AI
+  investors:
+    - {name: Spark Capital, lead: true}
+    - {name: Andreessen Horowitz}
+  signal: AI teams spread GPUs across clouds and pay to move data between them. Tigris bets storage should follow the compute, on its own hardware.
+  post: /blog_posts/fund/031_FUND_tigris_data_25m_series_a.html

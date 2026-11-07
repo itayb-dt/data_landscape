@@ -11,6 +11,10 @@
 <header>
   <div class="wrap bar{% if page.wide %} wide{% endif %}">
     <a class="brand" href="{{ '/' | relative_url }}">Data<span>/</span>Landscape</a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search articles" autocomplete="off" aria-label="Search articles" data-index="{{ '/search.json' | relative_url }}">
+      <div id="results" class="results" hidden></div>
+    </div>
     <nav>
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="on"{% endif %}>Market Moves</a>
       <a href="{{ '/ontology/' | relative_url }}"{% if page.url == '/ontology/' %} class="on"{% endif %}>Ontology</a>

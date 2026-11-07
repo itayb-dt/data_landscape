@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{%- assign posts = site.pages | where_exp: "p", "p.path contains 'blog_posts/'" | sort: "path" -%}
+{%- for p in posts -%}
+{%- assign ev = site.data.events | where: "post", p.url | first -%}
+{%- capture names -%}{% if ev %}{{ ev.acquirer }} {{ ev.target }} {{ ev.company }} {{ ev.company_a }} {{ ev.company_b }}{% endif %}{%- endcapture -%}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"c":{{ p.category | jsonify }},"n":{{ names | normalize_whitespace | jsonify }},"x":{{ p.content | strip_html | strip_newlines | normalize_whitespace | jsonify }}}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]

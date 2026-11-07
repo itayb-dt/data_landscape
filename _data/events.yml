@@ -1,6 +1,8 @@
 # Main events file. Every funding round and acquisition worth recording goes here.
 #
-# Required:  type (acq|fund|shut), date, when
+# Required:  type (acq|fund|shut|merge), date, when
+#            merge: company_a, abbr_a, color_a, company_b, abbr_b, color_b, headline, tldr, signal, facts, links, post
+#                   (two companies combine; neither is the buyer. facts are free label/value pairs shown in the card header)
 #            shut: company, stage, headline, tldr, nums, signal, area, post  (startup shutdowns and insolvencies)
 #            acq:  acquirer, target, value  (status is no longer shown; ignore it)
 #            fund: company, stage  (amount and valuation are optional)
@@ -10,6 +12,28 @@
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
+- type: merge
+  date: 2025-10-13
+  when: "Oct 13"
+  company_a: dbt Labs
+  abbr_a: DB
+  color_a: "#ff694a"
+  company_b: Fivetran
+  abbr_b: FT
+  color_b: "#4a7dff"
+  headline: Fivetran and dbt Labs merge to build open data infrastructure
+  tldr: "Ingestion and transformation, two staples of the modern data stack, combine in an all-stock deal. George Fraser is CEO and Tristan Handy is President."
+  signal: The two tools already ran side by side in most data stacks. Merging settles who owns the pipeline from source to model, without either side being the one that gets bought.
+  facts:
+    - {label: Announced, value: "Oct 13, 2025"}
+    - {label: Structure, value: All-stock merger}
+    - {label: Combined ARR, value: "~$600M"}
+    - {label: Closed, value: "Jun 1, 2026"}
+  links:
+    - {label: dbt Labs announcement, src: getdbt.com, abbr: DB, color: "#ff694a", url: "https://www.getdbt.com/blog/dbt-labs-and-fivetran-merge-announcement"}
+    - {label: Fivetran press release, src: fivetran.com, abbr: FT, color: "#4a7dff", url: "https://www.fivetran.com/press/fivetran-and-dbt-labs-unite-to-set-the-standard-for-open-data-infrastructure-2025"}
+  post: /blog_posts/merger/033_MERGER_fivetran_dbt_labs.html
+
 - type: shut
   date: 2026-11-03
   when: "Nov 3"

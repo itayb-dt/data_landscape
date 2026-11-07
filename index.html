@@ -7,6 +7,7 @@ wide: true
 {% assign acq_count = moves | where: "type", "acq" | size %}
 {% assign fund_count = moves | where: "type", "fund" | size %}
 {% assign shut_count = moves | where: "type", "shut" | size %}
+{% assign merge_count = moves | where: "type", "merge" | size %}
 {% assign first = moves | last %}
 {% assign last = moves | first %}
 {% assign min_s = first.date | date: "%s" | plus: 0 %}
@@ -25,6 +26,7 @@ wide: true
     <span class="tab" data-f="acq"><i class="dot" style="background:var(--acq)"></i>Acquisitions<span class="count">{{ acq_count }}</span></span>
     <span class="tab" data-f="fund"><i class="dot" style="background:var(--fund)"></i>Funding rounds<span class="count">{{ fund_count }}</span></span>
     <span class="tab" data-f="shut"><i class="dot" style="background:var(--shut)"></i>Shutdowns<span class="count">{{ shut_count }}</span></span>
+    <span class="tab" data-f="merge"><i class="dot" style="background:var(--merge)"></i>Mergers<span class="count">{{ merge_count }}</span></span>
   </div>
   <div class="tabs views" id="views">
     <span class="tab on" data-v="detailed">Detailed</span>
@@ -34,7 +36,7 @@ wide: true
 
 {% if moves.size > 1 %}
 <section class="strip">
-  <div class="strip-head"><span>{{ min_y }} to {{ max_y }} at a glance</span><span><b style="color:var(--acq)">●</b> Acquisition &nbsp; <b style="color:var(--fund)">●</b> Funding &nbsp; <b style="color:var(--shut)">●</b> Shutdown &nbsp; hover a dot</span></div>
+  <div class="strip-head"><span>{{ min_y }} to {{ max_y }} at a glance</span><span><b style="color:var(--acq)">●</b> Acquisition &nbsp; <b style="color:var(--fund)">●</b> Funding &nbsp; <b style="color:var(--shut)">●</b> Shutdown &nbsp; <b style="color:var(--merge)">●</b> Merger &nbsp; hover a dot</span></div>
   <div class="track">
     <div class="axis"></div>
     {% for y in (min_y..max_y) %}
@@ -47,7 +49,7 @@ wide: true
     {% for m in moves %}
       {% assign s = m.date | date: "%s" | plus: 0 %}
       {% assign name = m.company | default: m.target %}
-      <i class="ev" data-type="{{ m.type }}" style="left:{{ s | minus: min_s | times: 88.0 | divided_by: span | plus: 6 }}%;background:var(--{% if m.type == 'acq' %}acq{% elsif m.type == 'shut' %}shut{% else %}fund{% endif %})" data-t="{% if m.type == 'acq' %}{{ m.acquirer }} → {{ m.target }}{% elsif m.type == 'shut' %}{{ m.company }} · {{ m.stage }}{% else %}{{ m.company }} · {{ m.stage }}{% if m.amount %} · {{ m.amount }}{% endif %}{% endif %}"></i>
+      <i class="ev" data-type="{{ m.type }}" style="left:{{ s | minus: min_s | times: 88.0 | divided_by: span | plus: 6 }}%;background:var(--{% if m.type == 'acq' %}acq{% elsif m.type == 'shut' %}shut{% elsif m.type == 'merge' %}merge{% else %}fund{% endif %})" data-t="{% if m.type == 'acq' %}{{ m.acquirer }} → {{ m.target }}{% elsif m.type == 'merge' %}{{ m.company_a }} + {{ m.company_b }}{% elsif m.type == 'shut' %}{{ m.company }} · {{ m.stage }}{% else %}{{ m.company }} · {{ m.stage }}{% if m.amount %} · {{ m.amount }}{% endif %}{% endif %}"></i>
     {% endfor %}
   </div>
 </section>
@@ -66,6 +68,21 @@ wide: true
         <div class="arrow">→</div>
         <div class="co">{% assign lg = site.data.logos[m.target] %}{% if lg %}<img class="logo" src="{{ '/assets/logos/' | append: lg | relative_url }}" alt="{{ m.target }} logo" width="44" height="44" loading="lazy">{% else %}<div class="logo" style="background:{{ m.target_color }}">{{ m.target_abbr }}</div>{% endif %}<div><div class="r">Startup</div><div class="n">{{ m.target }}</div></div></div>
         <dl class="hfacts">{% for f in m.facts %}{% unless f.label == "Open source" %}<div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endunless %}{% endfor %}</dl>
+      </div>
+      <div class="card-main">
+        <div class="hl"><h2>{{ m.headline }}</h2><a class="more" href="{{ m.post | relative_url }}">Read full analysis →</a></div>
+        <p class="tldr">{{ m.tldr }}</p>
+        <div class="signal"><b>Signal</b>{{ m.signal }}</div>
+      </div>
+    </div>
+
+    {% elsif m.type == "merge" %}
+    <div class="card merge">
+      <div class="card-top">
+        <div class="co">{% assign lg = site.data.logos[m.company_a] %}{% if lg %}<img class="logo" src="{{ '/assets/logos/' | append: lg | relative_url }}" alt="{{ m.company_a }} logo" width="44" height="44" loading="lazy">{% else %}<div class="logo" style="background:{{ m.color_a }}">{{ m.abbr_a }}</div>{% endif %}<div><div class="r">Merging</div><div class="n">{{ m.company_a }}</div></div></div>
+        <div class="arrow">+</div>
+        <div class="co">{% assign lg = site.data.logos[m.company_b] %}{% if lg %}<img class="logo" src="{{ '/assets/logos/' | append: lg | relative_url }}" alt="{{ m.company_b }} logo" width="44" height="44" loading="lazy">{% else %}<div class="logo" style="background:{{ m.color_b }}">{{ m.abbr_b }}</div>{% endif %}<div><div class="r">Merging</div><div class="n">{{ m.company_b }}</div></div></div>
+        <dl class="hfacts">{% for f in m.facts %}<div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endfor %}</dl>
       </div>
       <div class="card-main">
         <div class="hl"><h2>{{ m.headline }}</h2><a class="more" href="{{ m.post | relative_url }}">Read full analysis →</a></div>
@@ -107,8 +124,8 @@ wide: true
   {% for m in moves %}
   <div class="row" data-type="{{ m.type }}">
     <span class="when">{{ m.when }} {{ m.date | date: "%Y" }}</span>
-    <i class="pill {{ m.type }}">{% if m.type == 'acq' %}Acquisition{% elsif m.type == 'shut' %}Shutdown{% else %}Funding{% endif %}</i>
-    <span class="what">{% if m.type == 'acq' %}{% assign logo = site.data.logos[m.acquirer] %}{% if logo %}<img class="lg" src="{{ '/assets/logos/' | append: logo | relative_url }}" alt="{{ m.acquirer }} logo" width="28" height="28" loading="lazy">{% else %}<i class="lg ph">{{ m.acquirer | slice: 0, 1 | upcase }}</i>{% endif %}<span><b>{{ m.acquirer }}</b> acquired <b>{{ m.target }}</b></span>{% elsif m.type == 'shut' %}<i class="lg ph shut">{{ m.abbr }}</i><span><b>{{ m.company }}</b> {{ m.stage | downcase }}</span>{% else %}{% assign logo = site.data.logos[m.company] %}{% if logo %}<img class="lg" src="{{ '/assets/logos/' | append: logo | relative_url }}" alt="{{ m.company }} logo" width="28" height="28" loading="lazy">{% else %}<i class="lg ph fund">{{ m.company | slice: 0, 1 | upcase }}</i>{% endif %}<span><b>{{ m.company }}</b> {% if m.amount %}raised <b>{{ m.amount }}</b> {{ m.stage }}{% else %}announced <b>{{ m.stage }}</b>{% endif %}{% if m.valuation %} at <b>{{ m.valuation }}</b> valuation{% endif %}</span>{% endif %}</span>
+    <i class="pill {{ m.type }}">{% if m.type == 'acq' %}Acquisition{% elsif m.type == 'shut' %}Shutdown{% elsif m.type == 'merge' %}Merger{% else %}Funding{% endif %}</i>
+    <span class="what">{% if m.type == 'acq' %}{% assign logo = site.data.logos[m.acquirer] %}{% if logo %}<img class="lg" src="{{ '/assets/logos/' | append: logo | relative_url }}" alt="{{ m.acquirer }} logo" width="28" height="28" loading="lazy">{% else %}<i class="lg ph">{{ m.acquirer | slice: 0, 1 | upcase }}</i>{% endif %}<span><b>{{ m.acquirer }}</b> acquired <b>{{ m.target }}</b></span>{% elsif m.type == 'merge' %}<i class="lg ph merge">{{ m.abbr_a }}</i><span><b>{{ m.company_a }}</b> merges with <b>{{ m.company_b }}</b></span>{% elsif m.type == 'shut' %}<i class="lg ph shut">{{ m.abbr }}</i><span><b>{{ m.company }}</b> {{ m.stage | downcase }}</span>{% else %}{% assign logo = site.data.logos[m.company] %}{% if logo %}<img class="lg" src="{{ '/assets/logos/' | append: logo | relative_url }}" alt="{{ m.company }} logo" width="28" height="28" loading="lazy">{% else %}<i class="lg ph fund">{{ m.company | slice: 0, 1 | upcase }}</i>{% endif %}<span><b>{{ m.company }}</b> {% if m.amount %}raised <b>{{ m.amount }}</b> {{ m.stage }}{% else %}announced <b>{{ m.stage }}</b>{% endif %}{% if m.valuation %} at <b>{{ m.valuation }}</b> valuation{% endif %}</span>{% endif %}</span>
     <span class="val">{% if m.type == 'acq' %}{{ m.value }}{% endif %}</span>
     <span class="link">{% if m.post %}<a class="badge" href="{{ m.post | relative_url }}">Analysis →</a>{% elsif m.source %}<a class="src" href="{{ m.source }}" target="_blank" rel="noopener">source ↗</a>{% endif %}</span>
   </div>

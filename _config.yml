@@ -52,6 +52,10 @@ defaults:
     values:
       category: Shutdowns
   - scope:
+      path: blog_posts/merger
+    values:
+      category: Mergers
+  - scope:
       path: blog_posts/general
     values:
       category: General

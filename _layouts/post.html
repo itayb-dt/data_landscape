@@ -9,6 +9,7 @@ layout: default
   {% when "Tech Reviews" %}{% assign cat = "rev" %}
   {% when "Concepts" %}{% assign cat = "cncpt" %}
   {% when "Shutdowns" %}{% assign cat = "shut" %}
+  {% when "Mergers" %}{% assign cat = "merge" %}
   {% else %}{% assign cat = "gen" %}
 {% endcase %}
 {% assign words = content | number_of_words %}
@@ -17,6 +18,7 @@ layout: default
   {% when "Acquisitions" %}{% assign kind = "Acquisition" %}
   {% when "Funding" %}{% assign kind = "Funding round" %}
   {% when "Shutdowns" %}{% assign kind = "Shutdown" %}
+  {% when "Mergers" %}{% assign kind = "Merger" %}
   {% else %}{% assign kind = page.category %}
 {% endcase %}
 <article class="post cat-{{ cat }}">
@@ -31,6 +33,8 @@ layout: default
       {% if ev.type == "acq" %}
         <li><b>Amount:</b> {{ ev.value }}</li>
         {% if catf %}<li><b>Category:</b> {{ catf.value }}</li>{% endif %}
+      {% elsif ev.type == "merge" %}
+        {% for f in ev.facts %}{% unless f.label == "Announced" %}<li><b>{{ f.label }}:</b> {{ f.value }}</li>{% endunless %}{% endfor %}
       {% elsif ev.type == "shut" %}
         <li><b>Status:</b> {{ ev.stage }}</li>
         <li><b>Area:</b> {{ ev.area }}</li>

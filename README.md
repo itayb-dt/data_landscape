@@ -84,6 +84,18 @@ Example: [026 — Explorium shuts down](blog_posts/shutdown/026_SHUTDOWN_explori
 
 ---
 
+### MERGER — Merger of Two Companies
+**Prompt:** [merger_blog_post_prompt.md](product/prompts/merger_blog_post_prompt.md)
+**Folder:** [blog_posts/merger/](blog_posts/merger/)
+
+A short article about two companies that combine as equals, so neither is the buyer. Covers what each company does (with a real customer example), the merger itself, why they chose to merge, and why neither simply bought the other (labeled as analysis), with the announcements of both sides.
+
+Structure: title → lead paragraph → what each company does → understanding the merger (facts, why they say they merged, why neither bought the other) → relevant products and companies (optional) → the announcements → my take (required) → updates (optional).
+
+Example: [033 — Fivetran and dbt Labs merge](blog_posts/merger/033_MERGER_fivetran_dbt_labs.md)
+
+---
+
 ### DB — Database Review
 **Prompt:** [db_review_blog_post_prompt.md](product/prompts/db_review_blog_post_prompt.md)
 **Folder:** [blog_posts/db/](blog_posts/db/)

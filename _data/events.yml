@@ -425,7 +425,20 @@
   acquirer: Cloudflare
   target: Arroyo
   value: "Undisclosed"
-  source: https://blog.cloudflare.com/cloudflare-acquires-arroyo-pipelines-streaming-ingestion-beta/
+  headline: Cloudflare acquires Arroyo to add SQL stream processing to its developer platform
+  tldr: "Cloudflare launched Pipelines as ingestion into R2 and bought the Rust stream processing engine that is meant to add SQL transformations on top."
+  signal: "Streaming ingestion was the missing entry point to Cloudflare's R2 and Iceberg stack. Arroyo supplies the processing step before data lands."
+  take_label: My take
+  take: "A platform play: events in, a few lines of SQL, a queryable table out, with no cluster to run."
+  facts:
+    - {label: Announced, value: "Apr 10, 2025"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Stream processing}
+    - {label: Open source, value: "Engine stays open source (Arroyo)"}
+  links:
+    - {label: Cloudflare announcement, src: blog.cloudflare.com, abbr: CF, color: "#f6821f", url: "https://blog.cloudflare.com/cloudflare-acquires-arroyo-pipelines-streaming-ingestion-beta/"}
+    - {label: Arroyo on GitHub, src: github.com, abbr: AR, color: "#7cc4ff", url: "https://github.com/ArroyoSystems/arroyo"}
+  post: /blog_posts/acq/034_ACQ_arroyo_by_cloudflare.html
 
 - type: acq
   date: 2025-01-14
@@ -450,7 +463,11 @@
   signal: "Application data starts in Postgres, and analytics need to reach it. CDC has many edge cases, so buying a team that solved them beats building."
   take_label: My take
   take: "Each engine has strengths and weaknesses, so the integration between them is where the value is."
+  acquirer_abbr: CF
+  acquirer_color: "#f6821f"
   facts:
+  target_abbr: AR
+  target_color: "#7cc4ff"
     - {label: Announced, value: "Jul 30, 2024"}
     - {label: Value, value: Undisclosed}
     - {label: Category, value: Postgres change data capture}

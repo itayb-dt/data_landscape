@@ -4,8 +4,7 @@ show_title: true
 ---
 Data/Landscape is a site about the data and AI market: who is buying whom, who is raising money, who is shutting down, and what it means. I read the announcements, check the facts, and add my own view.
 
-**These are my personal opinions. They do not represent Dynatrace in any way.**
-{: .disclaimer}
+<p class="disclaimer" style="color:#ff5a5a;font-weight:700;border-left:3px solid #ff5a5a;background:rgba(255,90,90,.1);padding:10px 14px;border-radius:0 8px 8px 0"><strong style="color:#ff5a5a">These are my personal opinions. They do not represent Dynatrace in any way.</strong></p>
 
 ## Why This Site Matters
 

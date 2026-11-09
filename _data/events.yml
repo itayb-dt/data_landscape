@@ -450,7 +450,11 @@
   date: 2025-04-10
   when: "Apr 10"
   acquirer: Cloudflare
+  acquirer_abbr: CF
+  acquirer_color: "#f6821f"
   target: Arroyo
+  target_abbr: AR
+  target_color: "#7cc4ff"
   value: "Undisclosed"
   headline: Cloudflare acquires Arroyo to add SQL stream processing to its developer platform
   tldr: "Cloudflare launched Pipelines as ingestion into R2 and bought the Rust stream processing engine that is meant to add SQL transformations on top."
@@ -471,7 +475,11 @@
   date: 2025-01-14
   when: "Jan 14"
   acquirer: dbt Labs
+  acquirer_abbr: DB
+  acquirer_color: "#ff694a"
   target: SDF Labs
+  target_abbr: SD
+  target_color: "#8b9cff"
   value: "Undisclosed"
   headline: dbt Labs acquires SDF Labs to bring SQL comprehension into dbt
   tldr: "dbt runs SQL as text. SDF is a Rust SQL compiler that understands it, and dbt plans to build it into dbt over the coming 12 months."
@@ -501,11 +509,7 @@
   signal: "Application data starts in Postgres, and analytics need to reach it. CDC has many edge cases, so buying a team that solved them beats building."
   take_label: My take
   take: "Each engine has strengths and weaknesses, so the integration between them is where the value is."
-  acquirer_abbr: CF
-  acquirer_color: "#f6821f"
   facts:
-  target_abbr: AR
-  target_color: "#7cc4ff"
     - {label: Announced, value: "Jul 30, 2024"}
     - {label: Value, value: Undisclosed}
     - {label: Category, value: Postgres change data capture}
@@ -513,11 +517,7 @@
   links:
     - {label: ClickHouse announcement, src: clickhouse.com, abbr: CH, color: "#faff69", url: "https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration"}
     - {label: ClickHouse technical post, src: clickhouse.com, abbr: CH, color: "#faff69", url: "https://clickhouse.com/blog/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database"}
-  acquirer_abbr: DB
-  acquirer_color: "#ff694a"
     - {label: PeerDB on GitHub, src: github.com, abbr: PD, color: "#6ea8fe", url: "https://github.com/PeerDB-io/peerdb"}
-  target_abbr: SD
-  target_color: "#8b9cff"
   post: /blog_posts/acq/018_ACQ_peerdb_by_clickhouse.html
 
 - type: acq
@@ -525,7 +525,11 @@
   # The deal covers GX Cloud (the SaaS product). Separately, Fivetran becomes steward of the open source GX Core.
   when: "May 6"
   acquirer: FICO
+  acquirer_abbr: FI
+  acquirer_color: "#ff6b5b"
   target: Great Expectations (GX Cloud)
+  target_abbr: GX
+  target_color: "#ff6ec7"
   value: "Undisclosed"
   headline: FICO acquires GX Cloud from Great Expectations to build data quality into its decisioning platform
   tldr: "Only the commercial GX Cloud is sold, and it stops being publicly available on June 1. The open source GX Core goes to Fivetran."
@@ -566,11 +570,7 @@
   source: https://www.databricks.com/company/newsroom/press-releases/databricks-surpasses-4-8b-revenue-run-rate-growing-55-year-over-year
 
 - type: fund
-  acquirer_abbr: FI
-  acquirer_color: "#ff6b5b"
   date: 2025-08-19
-  target_abbr: GX
-  target_color: "#ff6ec7"
   # Term sheet signed; amount and investors not disclosed in the release.
   when: "Aug 19"
   company: Databricks

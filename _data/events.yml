@@ -446,7 +446,18 @@
   acquirer: dbt Labs
   target: SDF Labs
   value: "Undisclosed"
-  source: https://www.getdbt.com/blog/dbt-labs-acquires-sdf-labs
+  headline: dbt Labs acquires SDF Labs to bring SQL comprehension into dbt
+  tldr: "dbt runs SQL as text. SDF is a Rust SQL compiler that understands it, and dbt plans to build it into dbt over the coming 12 months."
+  signal: "Errors found while typing, faster compiles and better lineage. Parts of SDF will not be in the Apache 2.0 code base."
+  facts:
+    - {label: Announced, value: "Jan 14, 2025"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: SQL compiler}
+    - {label: Open source, value: "Not all of SDF will be Apache 2.0"}
+  links:
+    - {label: dbt Labs announcement, src: getdbt.com, abbr: DB, color: "#ff694a", url: "https://www.getdbt.com/blog/dbt-labs-acquires-sdf-labs"}
+    - {label: dbt Labs press release, src: getdbt.com, abbr: DB, color: "#ff694a", url: "https://www.getdbt.com/blog/dbt-labs-announces-sdf-labs-acquisition"}
+  post: /blog_posts/acq/035_ACQ_sdf_labs_by_dbt_labs.html
 
 - type: acq
   date: 2024-07-30
@@ -475,7 +486,11 @@
   links:
     - {label: ClickHouse announcement, src: clickhouse.com, abbr: CH, color: "#faff69", url: "https://clickhouse.com/blog/clickhouse-acquires-peerdb-to-boost-real-time-analytics-with-postgres-cdc-integration"}
     - {label: ClickHouse technical post, src: clickhouse.com, abbr: CH, color: "#faff69", url: "https://clickhouse.com/blog/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database"}
+  acquirer_abbr: DB
+  acquirer_color: "#ff694a"
     - {label: PeerDB on GitHub, src: github.com, abbr: PD, color: "#6ea8fe", url: "https://github.com/PeerDB-io/peerdb"}
+  target_abbr: SD
+  target_color: "#8b9cff"
   post: /blog_posts/acq/018_ACQ_peerdb_by_clickhouse.html
 
 - type: acq

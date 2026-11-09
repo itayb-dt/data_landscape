@@ -12,6 +12,33 @@
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
+- type: acq
+  date: 2026-11-09
+  when: "Nov 9"
+  acquirer: ClickHouse
+  acquirer_abbr: CH
+  acquirer_color: "#faff69"
+  target: Xata
+  target_abbr: XA
+  target_color: "#b388ff"
+  value: "Undisclosed"
+  headline: ClickHouse acquires Xata to add instant branching and agent-ready Postgres to its managed service
+  tldr: "ClickHouse buys the Postgres branching platform and its open source pgstream on the day Managed Postgres goes GA. PeerDB covers replication, Xata improves the database itself."
+  signal: "Snowflake, Databricks and ClickHouse now each own a Postgres for transactions. What matters next is how well it syncs with the analytics engine."
+  take_label: My take
+  take: "Three analytics giants now have a good Postgres OLTP offering, so sync between the two stores is the battleground. ClickHouse leads on open source."
+  facts:
+    - {label: Announced, value: "Nov 9, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Postgres branching}
+    - {label: Raised, value: "~$35M (aggregators)"}
+    - {label: Open source, value: "pgstream and platform, Apache 2.0"}
+  links:
+    - {label: ClickHouse announcement, src: clickhouse.com, abbr: CH, color: "#faff69", url: "https://clickhouse.com/blog/managed-postgres-ga-xata-acquisition"}
+    - {label: Xata announcement, src: xata.io, abbr: XA, color: "#b388ff", url: "https://xata.io/blog/xata-is-joining-clickhouse"}
+    - {label: pgstream on GitHub, src: github.com, abbr: XA, color: "#b388ff", url: "https://github.com/xataio/pgstream"}
+  post: /blog_posts/acq/037_ACQ_xata_by_clickhouse.html
+
 - type: merge
   date: 2025-10-13
   when: "Oct 13"

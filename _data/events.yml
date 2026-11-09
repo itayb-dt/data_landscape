@@ -500,7 +500,21 @@
   acquirer: FICO
   target: Great Expectations (GX Cloud)
   value: "Undisclosed"
-  source: https://greatexpectations.io/blog/an-update-from-great-expectations/
+  headline: FICO acquires GX Cloud from Great Expectations to build data quality into its decisioning platform
+  tldr: "Only the commercial GX Cloud is sold, and it stops being publicly available on June 1. The open source GX Core goes to Fivetran."
+  signal: "Rule-based data quality was a feature, not a company. The startup raised about $64.5M and ends as a product inside a decisioning platform."
+  take_label: Draft take
+  take: "A good idea, but a feature. Plenty of open source use, little willingness to pay for the cloud on top."
+  facts:
+    - {label: Announced, value: "May 6, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Data quality}
+    - {label: Raised, value: "~$64.5M (TechCrunch)"}
+    - {label: Open source, value: "GX Core goes to Fivetran"}
+  links:
+    - {label: Great Expectations announcement, src: greatexpectations.io, abbr: GX, color: "#ff6ec7", url: "https://greatexpectations.io/blog/an-update-from-great-expectations/"}
+    - {label: Fivetran on GX Core, src: fivetran.com, abbr: FT, color: "#4a7dff", url: "https://www.fivetran.com/press/fivetran-to-become-steward-of-the-great-expectations-open-source-community-and-gx-core-project"}
+  post: /blog_posts/acq/036_ACQ_great_expectations_by_fico.html
 
 # Databricks funding rounds, last three years (source = Databricks press release).
 - type: fund
@@ -525,7 +539,11 @@
   source: https://www.databricks.com/company/newsroom/press-releases/databricks-surpasses-4-8b-revenue-run-rate-growing-55-year-over-year
 
 - type: fund
+  acquirer_abbr: FI
+  acquirer_color: "#ff6b5b"
   date: 2025-08-19
+  target_abbr: GX
+  target_color: "#ff6ec7"
   # Term sheet signed; amount and investors not disclosed in the release.
   when: "Aug 19"
   company: Databricks

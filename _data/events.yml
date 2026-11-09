@@ -13,6 +13,32 @@
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
 - type: acq
+  date: 2024-06-04
+  # Value is from press reports (CNBC), not the announcement. Databricks did not disclose it.
+  when: "Jun 4"
+  acquirer: Databricks
+  acquirer_abbr: DB
+  acquirer_color: "#ff6b5b"
+  target: Tabular
+  target_abbr: TB
+  target_color: "#4fc3f7"
+  value: ">$1B (reported)"
+  headline: Databricks acquires Tabular to settle the Delta Lake and Iceberg table format split
+  tldr: "Databricks buys the company founded by the creators of Apache Iceberg and plans to move Delta Lake and Iceberg toward one standard."
+  signal: "Customers pick a table format and get locked into a camp. Databricks now employs the creators of both formats."
+  take_label: My take
+  take: "$1B is a lot for a small company. The value is strategic: control over a standard its customers care about."
+  facts:
+    - {label: Announced, value: "Jun 4, 2024"}
+    - {label: Value, value: ">$1B (CNBC, unconfirmed)"}
+    - {label: Category, value: Open table format}
+    - {label: Raised, value: "~$37M (aggregators)"}
+  links:
+    - {label: Databricks announcement, src: databricks.com, abbr: DB, color: "#ff6b5b", url: "https://www.databricks.com/blog/databricks-tabular"}
+    - {label: CNBC on the price, src: cnbc.com, abbr: CN, color: "#6ea8fe", url: "https://www.cnbc.com/2024/06/04/databricks-is-buying-data-optimization-startup-tabular.html"}
+  post: /blog_posts/acq/038_ACQ_tabular_by_databricks.html
+
+- type: acq
   date: 2026-11-09
   when: "Nov 9"
   acquirer: ClickHouse

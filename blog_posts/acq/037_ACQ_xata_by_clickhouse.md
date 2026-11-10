@@ -9,7 +9,7 @@ ClickHouse [announced on November 9, 2026](https://clickhouse.com/blog/managed-p
   <figcaption>ClickHouse Managed Postgres goes GA and the Xata acquisition. Source: <a href="https://clickhouse.com/blog/managed-postgres-ga-xata-acquisition">ClickHouse</a>.</figcaption>
 </figure>
 
-## The Problem: Copying a production database is slow, so developers and agents don't
+## The Problem: Realistic test databases are too slow and expensive to create
 
 Developers need a realistic copy of the database to test a change: the real schema, real data volumes, real edge cases. Copying a database of several terabytes takes hours and costs the same storage again. So teams test on a small fake dataset, share one staging database, or skip it, and migrations break in production.
 

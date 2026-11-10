@@ -12,6 +12,28 @@
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
+- type: fund
+  date: 2026-01-16
+  # Valuation ($15B) is from press coverage (SiliconANGLE); the Business Wire release could not be read.
+  when: "Jan 16"
+  company: ClickHouse
+  abbr: CH
+  color: "#fadb14"
+  headline: ClickHouse raises $400M Series D at a reported $15B valuation and buys Langfuse and a Postgres service
+  stage: Series D
+  amount: "$400M"
+  valuation: "$15B (reported)"
+  lead: Dragoneer
+  area: Real-time analytics and AI infrastructure
+  investors:
+    - {name: Dragoneer, lead: true}
+    - {name: GIC}
+    - {name: Index Ventures}
+    - {name: Khosla Ventures}
+    - {name: Lightspeed}
+  signal: The round came with the Langfuse acquisition and a managed Postgres service. ClickHouse is building a stack around its analytics engine.
+  post: /blog_posts/fund/039_FUND_clickhouse_400m_series_d.html
+
 - type: acq
   date: 2024-06-04
   # Value is from press reports (CNBC), not the announcement. Databricks did not disclose it.

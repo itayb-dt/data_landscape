@@ -28,7 +28,7 @@ I'm Itay Braun and I live in Israel. I started my career as a solution architect
 - **Metis:** co-founder and CTO. It built AI-powered database observability, and [Dynatrace acquired it in 2025](https://devops.com/dynatrace-acquires-metis-revolutionizing-database-observability-with-ai/).
 - **Today:** principal product manager at Dynatrace, building our database observability app.
 
-I've been on both sides of an acquisition, and I believe you learn the most from your mistakes. Find me on [X](https://x.com/itaybraun).
+I've been on both sides of an acquisition, and I believe you learn the most from your mistakes. Find me on [LinkedIn](https://www.linkedin.com/in/itay-braun/) and [X](https://x.com/itaybraun).
 
 ## On Timing and Perspective
 

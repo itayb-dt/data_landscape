@@ -13,6 +13,27 @@
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
 - type: fund
+  date: 2026-11-11
+  # One combined seed and Series A amount; the split was not disclosed. No valuation from a primary source.
+  when: "Nov 11"
+  company: Edelbyte
+  abbr: EB
+  color: "#7c6cff"
+  headline: Edelbyte raises $70M in seed and Series A funding from the people who built Microsoft's Kusto
+  stage: Seed and Series A
+  amount: "$70M"
+  lead: Sequoia and Quiet Capital
+  area: Search and analytics for AI agents
+  investors:
+    - {name: Sequoia, lead: true}
+    - {name: Quiet Capital, lead: true}
+    - {name: Greenoaks}
+    - {name: Swish Ventures}
+    - {name: Startpoint Capital}
+  signal: AI agents ask many times more questions than people do. Edelbyte bets that data platforms built for human users cannot keep up at a sensible price.
+  post: /blog_posts/fund/040_FUND_edelbyte_70m_seed_series_a.html
+
+- type: fund
   date: 2026-01-16
   # Valuation ($15B) is from press coverage (SiliconANGLE); the Business Wire release could not be read.
   when: "Jan 16"

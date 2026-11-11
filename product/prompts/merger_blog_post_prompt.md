@@ -1,5 +1,7 @@
 # Prompt: Write a Blog Post About a Merger
 
+**Before writing, read [_writing_rules.md](_writing_rules.md). Its rules override everything below: no research-process language in the article, unverified facts are left out unless the author approves, and the text must not read as AI-written.**
+
 Use this prompt for a merger of two companies that combine as equals, so neither is the buyer. If one company buys the other, use the acquisition prompt instead.
 
 ---
@@ -17,7 +19,7 @@ Explain what each company does, what the merger is, and why the two chose to mer
 ## Required Structure
 Title (front matter `title`): "<Company A> and <Company B> merge to <purpose>". Name both companies. Do not use "acquire".
 
-Lead paragraph (no heading): the announcement date, with a link to one announcement, the form of the deal (for example all-stock), the headline number if one exists, and that it is a merger, not an acquisition. Say what was not disclosed.
+Lead paragraph (no heading): the announcement date, with a link to one announcement, the form of the deal (for example all-stock), the headline number if one exists, and that it is a merger, not an acquisition. Leave out anything the announcements do not cover.
 
 Hero image right after the lead, if a shared graphic exists.
 
@@ -26,7 +28,7 @@ One short paragraph per company, in its own words where possible. Name the main 
 
 ### 2. `## Understanding the Merger`
 One section, three parts in this order. Do not add a separate "Why" heading.
-- **The facts**: bullets, one line each: **Structure**, **Leadership** (who is CEO and who holds which role), **Scale** (combined revenue and customers, with whose figures they are), **Products and brands**, **Open source and licensing**, **Name of the combined company**. Write "not stated" for anything the announcements leave out. Do not repeat the facts shown in the page header.
+- **The facts**: bullets, one line each: **Structure**, **Leadership** (who is CEO and who holds which role), **Scale** (combined revenue and customers, with whose figures they are), **Products and brands**, **Open source and licensing**, **Name of the combined company**. Leave out anything the announcements do not cover. Do not repeat the facts shown in the page header.
 - **Why they say they merged**: a short paragraph with the reasons both sides give, with short quotes and attribution.
 - **Why neither company simply bought the other**: your analysis, introduced with a sentence that says the companies do not state this. Consider price and who pays (all-stock vs cash), relative size, identity and trust (open source communities, neutral positioning), differences in business model and culture, and shared investors or board members. Present these as hypotheses, as short bullets.
 

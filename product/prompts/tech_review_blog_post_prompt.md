@@ -1,5 +1,7 @@
 # Prompt: Write a TECH REVIEW Blog Post
 
+**Before writing, read [_writing_rules.md](_writing_rules.md). Its rules override everything below: no research-process language in the article, unverified facts are left out unless the author approves, and the text must not read as AI-written.**
+
 Use this prompt to generate a business-focused technical review blog post about a new technology, feature, or product capability.
 
 ---

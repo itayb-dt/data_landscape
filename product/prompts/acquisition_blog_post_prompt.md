@@ -1,5 +1,7 @@
 # Prompt: Write a Blog Post About an Acquisition
 
+**Before writing, read [_writing_rules.md](_writing_rules.md). Its rules override everything below: no research-process language in the article, unverified facts are left out unless the author approves, and the text must not read as AI-written.**
+
 Use this prompt to write an acquisition article. All acquisition articles share one structure, so a reader always knows where to find the problem, the solution and the strategic reasoning.
 
 Reference articles: [Dremio / SAP](../../blog_posts/acq/003_ACQ_dremio_by_sap.md) and [DuckLabs / AWS](../../blog_posts/acq/013_ACQ_ducklabs_by_aws.md).
@@ -39,10 +41,10 @@ Format: `<Acquirer> acquires <Target> to <short, specific reason>`
 ### Lead paragraph (no heading)
 Two or three sentences straight after the front matter:
 - What was announced and when, with an inline link to the official announcement.
-- The terms: say the price was not disclosed if that is the case. Do not mention closing.
+- The terms: say the price was not disclosed only if the company said so. Do not mention closing.
 - The one thing that matters most about the deal.
 
-If a credible estimate of the deal value exists, state it here and put the source in parentheses with an inline link, for example `about $1 billion ([TechCrunch](https://...))`. Never invent an estimate. If there is none, say the price was not disclosed. Context that is sourced (team size, funding model) may be added.
+If a credible estimate of the deal value exists, state it here and put the source in parentheses with an inline link, for example `about $1 billion ([TechCrunch](https://...))`. Never invent an estimate. If the company said it did not disclose the price, say so. Otherwise leave the price out. Context that is sourced (team size, funding model) may be added.
 
 ### 1. `## The Problem: <short, specific problem>`
 - Example: `The Problem: Enterprise AI can't reason over fragmented data`

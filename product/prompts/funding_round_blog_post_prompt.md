@@ -1,5 +1,7 @@
 # Prompt: Write a Blog Post About a Startup Funding Round
 
+**Before writing, read [_writing_rules.md](_writing_rules.md). Its rules override everything below: no research-process language in the article, unverified facts are left out unless the author approves, and the text must not read as AI-written.**
+
 Use this prompt to generate an analytical blog post about a startup funding round in the data/AI space.
 
 ---
@@ -57,20 +59,21 @@ Use exactly these sections in this order:
 5. **Previous Rounds and Capital Trajectory**
 - Summarize known prior rounds (seed, Series A, etc.) with dates and amounts if available.
 - Explain how this round changes scale, hiring, product roadmap, or go-to-market.
-- If prior data is missing, say so explicitly.
+- If prior data is missing, leave it out.
 
-6. **Optional: Founder Background (Short)**
-- Add only if credible public information exists.
-- Include a few lines on notable founder experience (for example: prior exits, deep domain research, major platform leadership).
-- Keep this section brief and factual.
+6. **Founder Background (Short) - seed and Series A only**
+- Include this section only when the round is a pre-seed, seed or Series A. At this stage the founders are a large part of what investors are buying.
+- Name the founders, their roles, and what they did before: prior companies and exits, deep domain research, major platform leadership. Use trusted sources only.
+- From Series B on, leave this section out and do not talk about the founders anywhere else in the article.
+- If a founder's previous project explains the product (for example, an engine they built at a big company), explain that project in How They Solve It, in plain words, including what it is called today. Say plainly that the new product is an assumption based on their past work when the company has not described it. Keep this section itself brief and factual.
 
-7. **Why This Round Matters**
-- Provide a forward-looking but grounded interpretation.
-- Explain what this may signal for customers, partners, and the category.
+7. **Summary** (seed and Series A) or **Why This Round Matters** (Series B and later)
+- Seed and Series A: end with a short Summary, 3 to 5 sentences. It must say something, not repeat the facts above it. Make one point about the problem or the market: why this problem is getting bigger, what the existing players do about it today, and how new companies like this one try to change it. Example: "At petabyte scale, cost is the big issue. Every extra query adds to the bill, and AI agents multiply the queries. New players are trying to end that trade-off." It is not a My Take: no verdict on whether the company will win. Do not restate the amount or the investors. Do not title it "Why This Round Matters": every round matters, and the early ones most of all.
+- Series B and later: keep Why This Round Matters. Give a forward-looking but grounded interpretation, and explain what this may signal for customers, partners and the category.
 
 ## Content Requirements
 - Validate factual details before using them.
-- Mark unknown facts clearly instead of guessing.
+- Leave out facts you cannot confirm. Never guess.
 - Do not fabricate valuations, customer counts, ARR, or investor participation.
 - Prioritize strategic insight over announcement-style wording.
 

@@ -1,5 +1,7 @@
 # Prompt: Write a Blog Post Explaining a Data/AI Concept
 
+**Before writing, read [_writing_rules.md](_writing_rules.md). Its rules override everything below: no research-process language in the article, unverified facts are left out unless the author approves, and the text must not read as AI-written.**
+
 Use this prompt to generate a structured, practical explainer about a technical concept.
 
 ---

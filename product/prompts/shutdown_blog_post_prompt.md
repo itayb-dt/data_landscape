@@ -1,5 +1,7 @@
 # Prompt: Write a Blog Post About a Startup Shutdown
 
+**Before writing, read [_writing_rules.md](_writing_rules.md). Its rules override everything below: no research-process language in the article, unverified facts are left out unless the author approves, and the text must not read as AI-written.**
+
 Use this prompt to write a shutdown article. The article answers two questions: what exactly was the company trying to do, and why did it fail. Keep it short.
 
 Reference articles: [SQream](../../blog_posts/shutdown/020_SHUTDOWN_sqream_insolvency.md) and [Explorium](../../blog_posts/shutdown/026_SHUTDOWN_explorium_external_data.md).
@@ -85,7 +87,7 @@ Add an entry so the shutdown shows on Market Moves:
 - `tldr` is a subtitle with facts only. `signal` is one or two short sentences saying the basic reason it failed, with no facts repeated from the subtitle.
 
 ## Content Requirements
-- Use specific facts accurately. If a fact is unknown, say it is not disclosed.
+- Use specific facts accurately. If a fact is unknown, leave it out.
 - When sources disagree (for example on losses or totals raised), quote both and say so.
 - Do not invent financial figures, causes or quotes.
 - Cite numbers with inline links.

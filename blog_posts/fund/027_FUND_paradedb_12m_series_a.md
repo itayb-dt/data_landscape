@@ -51,9 +51,9 @@ The round brings the total raised to $14M. The founders are Philippe Noël and M
 
 ---
 
-## Why This Round Matters
+## Summary
 
-It is a bet that search belongs inside the main database, not next to it. The money funds a company that has to prove a business can be built on an extension, with a cloud and an enterprise license.
+Most applications start in Postgres, and search is usually the first thing that sends a team to a second system. In practice that means Elasticsearch next to Postgres and a sync job that breaks when data updates fast. Companies like ParadeDB try to put the search inside Postgres, so the second system and the sync disappear.
 
 ---
 

@@ -53,9 +53,9 @@ The company says this takes the total Series A to $38M and total investment to d
 
 ---
 
-## Why This Round Matters
+## Summary
 
-It shows investors still back a new database vendor if the pitch is agent memory. It is also a round that raises a question about naming, covered below.
+An AI application mixes many kinds of data: business records, relationships, vectors and event logs. Teams cover that with several databases and glue between them, and every connection adds latency and cost. SurrealDB is one of the new databases that sell a single engine for all of it, and the default they have to beat is Postgres.
 
 ---
 

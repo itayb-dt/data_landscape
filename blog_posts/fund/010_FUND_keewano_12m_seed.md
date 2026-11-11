@@ -83,8 +83,6 @@ CTO Pavel Bibergal previously ran data infrastructure at Plarium, a large cross-
 
 ---
 
-## Why This Round Matters
+## Summary
 
-AI agents are moving from demos to production, and production agents need memory — durable, queryable, cost-efficient memory at scale. The current answer is stitched-together pipelines. Keewano is betting there is a platform category to be won here before the warehouses and vector stores expand to absorb the problem.
-
-A $12M seed with a16z speedrun on the cap table gives them the runway and the credibility to land early enterprise customers. Whether the category is real — or whether ClickHouse with good schema design turns out to be "good enough" — is the question the next 18 months will answer.
+An AI agent needs the sequence of events behind a customer, a transaction or a device, and a warehouse stores totals, not sequences. Today teams rebuild the timeline with queries they had to design in advance, then paste it into a prompt, which is slow and costs a lot of tokens. New players like Keewano store the event history of each entity in a form an agent can read directly. The open question is whether that becomes its own category, or whether warehouses and vector stores grow to cover it.

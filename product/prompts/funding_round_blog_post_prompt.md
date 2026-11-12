@@ -22,6 +22,9 @@ Write a concise, insightful post that explains:
 - Clear section headings and short paragraphs
 - No invented facts, metrics, or investor names
 
+## Title
+Keep it simple and informative: `<startup> raises <amount> to <what it does>`. Example: "Edelbyte raises $70M to build search and analytics for AI agents". Do not put the investors, the founders' past or the round name in the title if that could read as a different meaning (for example, "from the people who built X" sounds like they funded it). The round and the lead investor go in the Technical Overview.
+
 ## Required Structure
 Use exactly these sections in this order:
 

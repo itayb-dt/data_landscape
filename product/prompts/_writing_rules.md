@@ -63,3 +63,7 @@ Avoid these patterns:
 - Symmetrical, rhythmic sentences that sound good and say little.
 
 Prefer one specific fact to three general statements. If a sentence would fit any company, delete it.
+
+## 7. Titles are plain and cannot be misread
+
+A title says who did what, in one clear sentence. Test it by asking whether a reader could take it to mean something else. "Edelbyte raises $70M from the people who built Kusto" reads as if those people were the investors, so it is wrong. Put background and context in the article, not the title. Funding articles follow `<startup> raises <amount> to <what it does>`.

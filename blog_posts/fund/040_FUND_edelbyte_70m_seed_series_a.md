@@ -1,8 +1,8 @@
 ---
-title: "Edelbyte raises $70M in seed and Series A funding from the people who built Microsoft's Kusto"
+title: "Edelbyte raises $70M to build search and analytics for AI agents"
 published: 2026-11-11
 ---
-# Edelbyte Raises $70M Seed and Series A to Build Analytics for AI Agents
+# Edelbyte Raises $70M to Build Search and Analytics for AI Agents
 
 ## Technical Overview
 

@@ -17,6 +17,7 @@ exclude:
   - backlog
   - on_hold
   - qa
+  - twitter
   - README.md
   - LICENSE
   - Gemfile

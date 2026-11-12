@@ -4,6 +4,11 @@ published: 2026-11-11
 ---
 # Edelbyte Raises $70M to Build Search and Analytics for AI Agents
 
+<figure class="shot">
+  <img src="{{ '/assets/images/edelbyte/hero.png' | relative_url }}" alt="Edelbyte homepage: What would you build if cost wasn't a problem?" loading="lazy">
+  <figcaption>The Edelbyte homepage. Source: <a href="https://edelbyte.io/">Edelbyte</a>.</figcaption>
+</figure>
+
 ## Technical Overview
 
 - Startup: Edelbyte ([edelbyte.io](https://edelbyte.io/)), Tel Aviv and San Francisco, founded in 2025 according to its press release

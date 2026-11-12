@@ -13,6 +13,25 @@
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
 - type: fund
+  date: 2026-04-29
+  when: "Apr 29"
+  company: definity
+  abbr: DF
+  color: "#3ecf8e"
+  headline: definity raises $12M to use AI agents to optimize and protect Spark data pipelines
+  stage: Series A
+  amount: "$12M"
+  lead: GreatPoint Ventures
+  area: Spark pipeline cost and reliability
+  investors:
+    - {name: GreatPoint Ventures, lead: true}
+    - {name: Dynatrace}
+    - {name: StageOne Ventures}
+    - {name: Hyde Park Venture Partners}
+  signal: Most pipeline tools report after a job finishes. definity runs an agent inside the Spark job so it can change or stop the run while it is happening.
+  post: /blog_posts/fund/041_FUND_definity_12m_series_a.html
+
+- type: fund
   date: 2026-11-11
   # One combined seed and Series A amount; the split was not disclosed. No valuation from a primary source.
   when: "Nov 11"

@@ -31,6 +31,32 @@
   signal: Most pipeline tools report after a job finishes. definity runs an agent inside the Spark job so it can change or stop the run while it is happening.
   post: /blog_posts/fund/041_FUND_definity_12m_series_a.html
 
+- type: acq
+  date: 2026-11-05
+  # EDB did not disclose the price.
+  when: "Nov 5"
+  acquirer: EDB
+  acquirer_abbr: ED
+  acquirer_color: "#2f6fed"
+  target: Altinity
+  target_abbr: AL
+  target_color: "#3aa7d6"
+  value: Undisclosed
+  headline: EDB acquires Altinity to add ClickHouse analytics to its Postgres platform
+  tldr: "EDB, a Postgres company, buys Altinity, a leading independent ClickHouse provider: managed service, support and the Kubernetes operator for open source ClickHouse."
+  signal: "EDB gets an analytics engine to sit next to its Postgres. Altinity stays open source and ClickHouse, Inc. is not part of the deal."
+  take_label: My take
+  take: "ClickHouse's open source base let companies like Altinity build on it, but I think they do not grow much. EDB did this with Postgres and may now build an advanced ClickHouse."
+  facts:
+    - {label: Announced, value: "Nov 5, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Analytics database}
+    - {label: Open source, value: "ClickHouse, Stable Builds and the operator stay Apache 2.0"}
+  links:
+    - {label: Altinity announcement, src: altinity.com, abbr: AL, color: "#3aa7d6", url: "https://altinity.com/news/altinity-and-enterprisedb"}
+    - {label: EDB announcement, src: enterprisedb.com, abbr: ED, color: "#2f6fed", url: "https://www.enterprisedb.com/announces/altinity"}
+  post: /blog_posts/acq/042_ACQ_altinity_by_edb.html
+
 - type: fund
   date: 2026-11-11
   # One combined seed and Series A amount; the split was not disclosed. No valuation from a primary source.

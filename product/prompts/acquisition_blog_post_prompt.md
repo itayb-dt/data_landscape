@@ -62,7 +62,7 @@ If a credible estimate of the deal value exists, state it here and put the sourc
 - End with `### Funding history`, one line per round in this format:
   - `Round - Date - Amount - Link`
   - Example: `Seed - Nov 2021 - $3M - https://...`
-- If no credible public funding data is found, write: `Public Funding Rounds: Not publicly available from credible sources.`
+- If no credible public funding data exists, leave the Funding history out.
 
 ### 3. `## Understanding the Acquisition`
 This title is fixed. Do not add company names.
@@ -72,6 +72,7 @@ This title is fixed. Do not add company names.
 - Include one short quote from a relevant executive if available.
 - Link the official announcement and at least one official page from each company when available.
 - Cover what happens to open source projects, customers and existing products, if relevant.
+- Say what the buyer plans to do with the target, but leave out dates and timelines for integrations, launches or roadmap items. Readers do not care when. The exception is a date that is itself the news.
 
 ### 4. `## Relevant Products and Companies`
 This title is fixed.
@@ -111,7 +112,7 @@ Every article has a hero image and, where they exist, one or two images that exp
 
 ## Content Requirements
 - Use specific facts provided (names, timeline, product names) accurately.
-- If a fact is unknown, say it is not publicly disclosed.
+- If a fact is unknown, leave it out.
 - Keep claims grounded. Do not invent financial terms, performance metrics or download counts.
 - Cite numbers with inline links to the source.
 - Prioritize strategic insight over press-release language.

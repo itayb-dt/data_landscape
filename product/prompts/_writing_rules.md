@@ -67,3 +67,13 @@ Prefer one specific fact to three general statements. If a sentence would fit an
 ## 7. Titles are plain and cannot be misread
 
 A title says who did what, in one clear sentence. Test it by asking whether a reader could take it to mean something else. "Edelbyte raises $70M from the people who built Kusto" reads as if those people were the investors, so it is wrong. Put background and context in the article, not the title. Funding articles follow `<startup> raises <amount> to <what it does>`.
+
+## 8. Links to other articles on this site
+
+Link to another article on this site only when the event is clearly connected to something already written about, and the link helps the reader understand the event. Good reasons:
+
+- An earlier round or deal of the same company (for example, the previous funding round of the startup being acquired).
+- A similar move by another company that the reader should compare against (for example, when Databricks buys Neon, a similar move by Snowflake is worth mentioning).
+- A deal that is the other side of this one (for example, a buyer acquiring a company that its competitor was just linked to).
+
+Not good reasons: both articles mention the same technology, the same investor or the same kind of company, or the link only fills space. Do not add a link to a related article in Relevant Products and Companies just because it exists. If you are unsure, leave it out and tell the author which article you considered linking.

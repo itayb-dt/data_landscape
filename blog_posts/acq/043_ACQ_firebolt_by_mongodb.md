@@ -34,11 +34,7 @@ Customers named on Firebolt's site include Similarweb, which uses it for custome
 
 ### Who Firebolt competes with
 
-It is a crowded market. Firebolt's own site has comparison pages against ClickHouse, Druid, Snowflake, Databricks, BigQuery, Redshift and Athena, so it sees the open source databases, the data platforms and the cloud vendors as its competitors. Benchmarks are left out of this article on purpose, but Firebolt's choice of who to compare itself with is a good way to see who it thinks it is up against.
-
-- **ClickHouse:** the closest one. It is free to run, and Firebolt's own page calls it "a consistent benchmark leader for raw query execution speed".
-- **Databricks and Snowflake:** the platforms most companies already pay for.
-- **The cloud vendors:** AWS with Redshift and Athena, Google with BigQuery, and Microsoft with Azure Data Explorer, built on Kusto.
+It is a crowded market. Firebolt's site has comparison pages against ClickHouse, Druid, Snowflake, Databricks, BigQuery, Redshift and Athena, so it sees open source databases, data platforms and the cloud vendors as its competitors. This article leaves benchmarks out on purpose, but the choice of whom Firebolt compares itself with shows who it thinks it is up against. ClickHouse is the closest, and it is free to run.
 
 ### Funding history
 

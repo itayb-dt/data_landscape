@@ -19,14 +19,9 @@ That was acceptable when the reader of the analytics was an analyst looking at a
 
 [Firebolt](https://www.firebolt.io/) describes itself as "a high performance analytical database". It runs as a single binary on a laptop and scales to hundreds of nodes and petabytes of data in the customer's cloud. Data sits in object storage, and compute is separate from storage, so any compute cluster can read any data. It speaks standard SQL, with a dialect aligned to Postgres.
 
-### What was unique
+### What Firebolt built
 
-Firebolt describes its product as a "Cloud Data Warehouse for Data-Intensive Applications", from its own [engineering post](https://www.firebolt.io/blog/how-we-built-firebolt). It kept the familiar warehouse model, SQL over data in object storage, and tuned it for applications that ask many small questions at once and cannot wait. Four things set it apart, all in Firebolt's own words and not tested by anyone else:
-
-- **Built for applications, not analysts.** The design target is a customer-facing product or an agent, not a dashboard.
-- **Indexes in a warehouse.** Most warehouses scan data. Firebolt lets you define indexes that pre-compute common answers, and the planner uses them automatically.
-- **Real transactions.** Firebolt says it supports full ACID transactions, which it says several warehouses only partly offer.
-- **Isolated engines.** Different workloads run on separate compute engines over the same data, so one heavy user does not slow the others.
+Firebolt calls its product a "Cloud Data Warehouse for Data-Intensive Applications", in its own [engineering post](https://www.firebolt.io/blog/how-we-built-firebolt). Strip away the description and it is a data warehouse: SQL over data in object storage, with compute separate from storage, plus indexes, caching and a query planner tuned for speed. Each of these ideas exists elsewhere. Firebolt combined them and aimed them at applications instead of analysts, but nothing in the description is a new kind of database.
 
 Firebolt also has a free, self-hosted edition, Firebolt Core, since June 2025. It is not open source, and its license forbids only building a competing hosted service on it.
 
@@ -44,26 +39,34 @@ It is a crowded market. Firebolt's site has comparison pages against ClickHouse,
 
 ## Understanding the Acquisition
 
-MongoDB's [announcement](https://www.mongodb.com/company/blog/news/mongodb-acquires-firebolt) says Firebolt's engine "will run right alongside your database", and that MongoDB will "keep it in sync automatically, so there's no pipeline to build or manage". It becomes part of MongoDB's Intelligent Data Platform. In the coming months, MongoDB customers will be able to turn on real-time analytics for their MongoDB data, and there is a waitlist.
+Every database ends up needing two jobs. The first is running the application: saving an order, updating an account, reading one customer's record. This is called OLTP. The second is answering big questions over a lot of data: sales by region, usage trends, which customers are at risk. This is called OLAP, or simply analytics. Most databases are built for the first job, and companies add the second one next to it, either inside the same database or in a separate system.
+
+MongoDB is an operational database, so analytics is the job it has to solve. It already offers several ways to analyze data inside MongoDB: its aggregation pipeline, [analytics nodes](https://www.mongodb.com/docs/atlas/cluster-config/multi-cloud-distribution/) that keep heavy reports away from the application, and a [SQL interface](https://www.mongodb.com/docs/sql-interface/) for BI tools such as Tableau and Power BI.
+
+The question is how fast they answer. When the market talks about analytics today, it means a query over a petabyte of data, or trillions of rows, that returns in seconds or less. That is what ClickHouse and other vendors claim. MongoDB has not said that its own tools reach that level. If they do not, which the purchase suggests, then MongoDB has analytics technically but not at the level the market expects.
+
+The usual way out for a MongoDB customer is to copy the data into another database built for analytics. That means an ETL pipeline, a second system to pay for, more complexity and more things that can break. MongoDB calls this the "data-movement tax". This is the core of the deal: MongoDB buys an engine built for that speed and puts it next to its own database, so customers do not have to leave.
+
+MongoDB's [announcement](https://www.mongodb.com/company/blog/news/mongodb-acquires-firebolt) says what changes. Firebolt's engine "will run right alongside your database", and MongoDB will "keep it in sync automatically, so there's no pipeline to build or manage". Customers will be able to turn on real-time analytics for their MongoDB data, and there is a waitlist. Over time, MongoDB says, they will also be able to analyze data from other sources and formats next to their MongoDB data.
 
 MongoDB is not claiming to replace the warehouse. Its FAQ says traditional warehouses and lakes remain the right fit for internal BI, reporting and data science. Firebolt is for the other side: applications and agents that need answers on live data.
 
 For existing Firebolt customers, MongoDB says nothing changes, with the same support and service. Firebolt CEO Benjamin Wagner told CTech: "Joining MongoDB puts our engine where millions of developers already build."
-
-### Why Firebolt ended up here
-
-Firebolt raised $270 million and was valued at $1.4 billion, and it is now being bought for less. The facts below come from CTech and from Firebolt's own pages. The reading of them is an analysis, not something either company has said.
-
-**The company went through two rounds of cuts.** In September 2022, eight months after the Series C, CTech reported that Firebolt laid off dozens of employees. Then-CEO Eldad Farkash said at the time that the company had over $200 million in the bank and was reacting to the market slowdown. In February 2026, CTech reported more cuts, in Israel and abroad, with more than $100 million still in cash, and wrote that only a small team of developers would remain in Israel. CTech also reported that the founders, Eldad Farkash and Saar Bitner, stepped down from management in 2025.
-
-**It was not a lack of demand.** Real-time analytics for applications has paying customers, and Firebolt's own customer list shows it. MongoDB's reason for the deal is that AI agents need exactly this. The demand looks real. The open question is who gets to serve it.
-
-**The category is crowded, and some of the competition is free.** Firebolt had to win against open source engines (ClickHouse, Druid, Pinot, StarRocks), against warehouses that every customer already pays for (Snowflake, Databricks, BigQuery, Redshift) and against Azure's Kusto-based service. ClickHouse is the strongest of them: it is open source, and it now has its own cloud, Postgres and large funding rounds (see the [ClickHouse Series D]({{ '/blog_posts/fund/039_FUND_clickhouse_400m_series_d.html' | relative_url }})). Firebolt chose to keep its free Core edition closed source. Its own post explains why: "With GenAI accelerating software development, defensibility is more difficult than ever."
-
-**A 2022 valuation set expectations that growth had to meet.** A $1.4 billion valuation that early assumed a large and fast-growing business. The cuts and the leadership change suggest that did not happen. Firebolt has not published revenue, and neither has MongoDB, so how far short it fell is unknown.
 
 ## Relevant Products and Companies
 
 - [ClickHouse](https://clickhouse.com/): the open source analytical database most often used for the same real-time, high-concurrency workloads, and the main competitor named in this space.
 - [Apache Druid](https://druid.apache.org/) and [Apache Pinot](https://pinot.apache.org/): open source real-time analytics databases that applications use for user-facing dashboards.
 - [Snowflake](https://www.snowflake.com/) and [Databricks](https://www.databricks.com/): the warehouses that Firebolt says are not built for low-latency, high-concurrency applications.
+
+## My Take
+
+For a long time Firebolt was a zombie unicorn. It had the unicorn label from 2022, a $1.4 billion valuation, but in practice I think it was a zombie: a company with the status and without the momentum.
+
+The first sign is the founders. CTech reported that both Eldad Farkash and Saar Bitner stepped down from management in 2025, long before this sale. When both founders are gone well before an exit, I think that is a very bad sign. The people who built the company and believed in it were not there at the end.
+
+The second sign is the cuts. CTech reported two rounds of layoffs, in September 2022 and in February 2026. In 2022 Firebolt had more than 200 employees. Looking at LinkedIn today, I count no more than 30, maybe 50.
+
+So this looks to me like a very sad exit. I read it as an acquihire with a bit of technology on top, not the purchase of a growing business. CTech's estimate that the price is significantly lower than $1.4 billion fits that picture.
+
+The market itself was not the problem. MongoDB's reason for the deal is that applications and agents need real-time analytics, so the demand is real. What Firebolt lacked was a way to stand out against ClickHouse, the warehouses and the cloud vendors.

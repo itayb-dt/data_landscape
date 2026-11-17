@@ -26,6 +26,8 @@
   headline: MongoDB acquires Firebolt to bring real-time analytics to its database
   tldr: "MongoDB buys Firebolt, an analytical database built for low-latency queries from many users at once, to run analytics next to its operational data for applications and AI agents."
   signal: "Firebolt raised about $270M and was valued at $1.4B in 2022. CTech reports the price is significantly lower."
+  take_label: My take
+  take: "A zombie unicorn. Both founders left in 2025 and there were two rounds of layoffs, so I read this as an acquihire with a bit of technology on top, a sad exit."
   facts:
     - {label: Announced, value: "Nov 17, 2026"}
     - {label: Value, value: "Undisclosed, reported well below $1.4B"}

@@ -12,6 +12,30 @@
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
+- type: acq
+  date: 2026-11-17
+  # MongoDB did not disclose the price. CTech wrote that the estimated price is significantly lower than the $1.4B valuation from 2022.
+  when: "Nov 17"
+  acquirer: MongoDB
+  acquirer_abbr: MD
+  acquirer_color: "#13aa52"
+  target: Firebolt
+  target_abbr: FB
+  target_color: "#e5322d"
+  value: Undisclosed
+  headline: MongoDB acquires Firebolt to bring real-time analytics to its database
+  tldr: "MongoDB buys Firebolt, an analytical database built for low-latency queries from many users at once, to run analytics next to its operational data for applications and AI agents."
+  signal: "Firebolt raised about $270M and was valued at $1.4B in 2022. CTech reports the price is significantly lower."
+  facts:
+    - {label: Announced, value: "Nov 17, 2026"}
+    - {label: Value, value: "Undisclosed, reported well below $1.4B"}
+    - {label: Category, value: Real-time analytics database}
+    - {label: Raised, value: "About $270M"}
+  links:
+    - {label: MongoDB announcement, src: mongodb.com, abbr: MD, color: "#13aa52", url: "https://www.mongodb.com/company/blog/news/mongodb-acquires-firebolt"}
+    - {label: CTech report, src: calcalistech.com, abbr: CT, color: "#e5322d", url: "https://www.calcalistech.com/ctechnews/article/anq8b3yg3"}
+  post: /blog_posts/acq/043_ACQ_firebolt_by_mongodb.html
+
 - type: fund
   date: 2026-04-29
   when: "Apr 29"

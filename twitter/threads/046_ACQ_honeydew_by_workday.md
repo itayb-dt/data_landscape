@@ -17,6 +17,4 @@ https://itayb-dt.github.io/data_landscape/blog_posts/acq/046_ACQ_honeydew_by_wor
 Ask "what is our headcount?" and the answer depends on a definition. Workday's CTO: "An AI model shouldn't be improvising the calculation behind a payroll number." Honeydew compiles the same question into the same query every time.
 
 ## 3
-I think Honeydew played it right: it built on Snowflake, partnered with Snowflake, and Snowflake Ventures invested. That kind of backing helps win customer trust and hire talent.
-
-Full take, with my disclosure: https://itayb-dt.github.io/data_landscape/blog_posts/acq/046_ACQ_honeydew_by_workday.html
+I think a single version of the truth matters even more once AI agents ask the questions. A person, a dashboard and an agent should get the same number for the same question. Full take, with my disclosure: https://itayb-dt.github.io/data_landscape/blog_posts/acq/046_ACQ_honeydew_by_workday.html

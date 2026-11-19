@@ -12,6 +12,92 @@
 #            post    (URL of our analysis; marks the event as analysed and adds a card
 #                     to the detailed view. A card also needs the card fields below.)
 # `when` is the label shown on the timeline; `date` positions the dot in the overview strip.
+- type: fund
+  date: 2024-03-13
+  # Seed reported by Blocks and Files on Mar 13, 2024. Amount and investors from that report; no valuation.
+  when: "Mar 13"
+  company: DBOS
+  abbr: DB
+  color: "#b8f23a"
+  headline: DBOS raises $8.5M seed to make cloud applications recover from failures
+  stage: Seed
+  amount: "$8.5M"
+  lead: Engine Ventures and Construct Capital
+  area: Durable execution for applications and AI agents
+  investors:
+    - {name: Engine Ventures, lead: true}
+    - {name: Construct Capital, lead: true}
+    - {name: Sinewave}
+    - {name: GutBrain Ventures}
+  signal: A program that records its progress can pick up where it left off after a crash. DBOS, from the creator of Postgres, does this on top of a database.
+  post: /blog_posts/fund/045_FUND_dbos_8m_seed.html
+
+- type: fund
+  date: 2024-07-23
+  # Series A closed May 30, 2024 per the company timeline; TechCrunch reported it on Jul 23, 2024. No valuation from a primary source.
+  when: "Jul 23"
+  company: TigerBeetle
+  abbr: TB
+  color: "#f2a03d"
+  headline: TigerBeetle raises $24M to build a database for financial transactions
+  stage: Series A
+  amount: "$24M"
+  lead: Spark Capital
+  area: Database for financial transactions
+  investors:
+    - {name: Spark Capital, lead: true}
+    - {name: Amplify Partners}
+    - {name: Coil}
+  signal: Most companies record money movement in a general database with their own accounting code. TigerBeetle is a database built only for that job.
+  post: /blog_posts/fund/044_FUND_tigerbeetle_24m_series_a.html
+
+- type: acq
+  date: 2026-11-18
+  # Workday did not disclose the price. Announced as an intent to acquire.
+  when: "Nov 18"
+  acquirer: Workday
+  acquirer_abbr: WD
+  acquirer_color: "#0875e1"
+  target: Honeydew
+  target_abbr: HD
+  target_color: "#a6d233"
+  value: Undisclosed
+  headline: Workday to acquire Honeydew, a semantic layer for AI and BI
+  tldr: "Workday plans to buy Honeydew, a Tel Aviv semantic layer that gives AI agents and BI tools the same business definitions, and embed it in Workday Data Cloud."
+  signal: "An AI agent should not improvise the calculation behind a payroll number. Workday wants the same question to compile to the same query every time."
+  facts:
+    - {label: Announced, value: "Nov 18, 2026"}
+    - {label: Value, value: Undisclosed}
+    - {label: Category, value: Semantic layer}
+    - {label: Plan, value: "Embed in Workday Data Cloud"}
+  links:
+    - {label: Workday announcement, src: newsroom.workday.com, abbr: WD, color: "#0875e1", url: "https://newsroom.workday.com/2026-11-18-Workday-Announces-Intent-to-Acquire-Honeydew,-a-Semantic-Layer-for-AI-and-Business-Intelligence"}
+    - {label: Honeydew announcement, src: honeydew.ai, abbr: HD, color: "#a6d233", url: "https://honeydew.ai/blog/honeydew-to-join-workday/"}
+  post: /blog_posts/acq/046_ACQ_honeydew_by_workday.html
+
+- type: fund
+  date: 2026-11-17
+  # Announced Nov 17 per the company post; one source shows Nov 16. No valuation disclosed.
+  when: "Nov 17"
+  company: LanceDB
+  abbr: LD
+  color: "#e8855a"
+  headline: LanceDB raises $57.5M to build a data platform for multimodal AI
+  stage: Series B
+  amount: "$57.5M"
+  lead: Bessemer Venture Partners and Innovation Endeavors
+  area: Multimodal AI data platform
+  investors:
+    - {name: Bessemer Venture Partners, lead: true}
+    - {name: Innovation Endeavors, lead: true}
+    - {name: Theory Ventures}
+    - {name: Dimension}
+    - {name: Swift Ventures}
+    - {name: CRV}
+    - {name: Y Combinator}
+  signal: AI research works on video, images and embeddings, not tables. LanceDB started as a vector database and now sells the data platform behind model training.
+  post: /blog_posts/fund/047_FUND_lancedb_57m_series_b.html
+
 - type: acq
   date: 2026-11-17
   # MongoDB did not disclose the price. CTech wrote that the estimated price is significantly lower than the $1.4B valuation from 2022.

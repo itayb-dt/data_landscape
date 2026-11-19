@@ -7,8 +7,8 @@ published: 2026-11-18
 Workday [announced on November 18, 2026](https://newsroom.workday.com/2026-11-18-Workday-Announces-Intent-to-Acquire-Honeydew,-a-Semantic-Layer-for-AI-and-Business-Intelligence) that it intends to acquire Honeydew, a startup that gives AI agents and BI tools the same business definitions. The price was not disclosed. The one thing that matters: Workday wants its AI agents to compute a number the same way every time, and not to improvise it.
 
 <figure class="shot">
-  <img src="{{ '/assets/images/honeydew/hero.jpg' | relative_url }}" alt="Honeydew: Compiler and Memory" loading="lazy">
-  <figcaption>Honeydew's homepage image. Source: <a href="https://honeydew.ai/">Honeydew</a>.</figcaption>
+  <img src="{{ '/assets/images/honeydew/hero.png' | relative_url }}" alt="Honeydew homepage: Trust AI with your enterprise data" loading="lazy">
+  <figcaption>The Honeydew homepage. Source: <a href="https://honeydew.ai/">Honeydew</a>.</figcaption>
 </figure>
 
 ## The Problem: The same business question gets different answers

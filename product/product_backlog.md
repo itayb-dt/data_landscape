@@ -1,6 +1,6 @@
 # Product Backlog
 
-Site features and workflow ideas. Priorities are a first proposal: P1 = next, P2 = soon, P3 = later. Article ideas live in [backlog/backlog.md](../backlog/backlog.md).
+Site features and workflow ideas. Priorities are a first proposal: P1 = next, P2 = soon, P3 = later. Article ideas live in [backlog/article_backlog.md](../backlog/article_backlog.md).
 
 ## 1. Add analytics (P1)
 
@@ -20,4 +20,4 @@ A running list of topics for opinion pieces rather than news, for example "What 
 
 ## 5. Ontology of subjects (P3)
 
-A map of the core technologies, such as Flink, Parquet, Kafka and dbt, with short explanations and links to the related articles, companies and events. Open questions: a data file or a page per subject, and how articles get tagged to it.
+A map of the core technologies, such as Flink, Parquet, Kafka and dbt, with short explanations and links to the related articles, companies and events. Open questions: a data file or a page per subject, and how articles get tagged to it. A hard-coded mockup of the Ontology tab already exists, see [REQ-003](requirements/REQ-003-ontology.md).

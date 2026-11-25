@@ -77,3 +77,7 @@ Link to another article on this site only when the event is clearly connected to
 - A deal that is the other side of this one (for example, a buyer acquiring a company that its competitor was just linked to).
 
 Not good reasons: both articles mention the same technology, the same investor or the same kind of company, or the link only fills space. Do not add a link to a related article in Relevant Products and Companies just because it exists. If you are unsure, leave it out and tell the author which article you considered linking.
+
+## 9. Israeli founders get a mention in My Take
+
+When the founders are Israeli, or the company was founded in Israel, add a few warm words about that in My Take: it is the author's community and a source of pride. Keep it short and specific (for example, a team coming out of the Israeli tech scene, or building from Tel Aviv), with no flattery. Base it on facts from trusted sources, such as the company's own announcement or Israeli business press. Do not assume nationality from a name. If a My Take is not drafted for the author, mention the Israeli connection to the author in chat instead.

@@ -53,6 +53,7 @@ Use exactly these sections in this order:
 - Explain the startup's product or architecture in practical terms.
 - Highlight differentiators (for example: semantic layer, knowledge graph, model orchestration, governance, deployment model, integrations).
 - Connect capabilities to measurable business outcomes when data is available.
+- Seed and Series A only: add a few sentences on the business model when the company or its site says how it plans to make money: open source core with a paid cloud or enterprise version, usage-based pricing, licensing, services. Say what is free, what is paid and who pays. No exact prices or price tables. If the company has not said how it will monetize, leave the point out and do not guess.
 
 4. **Competitive Landscape**
 - Identify the main competitors in the same segment.
@@ -73,6 +74,9 @@ Use exactly these sections in this order:
 7. **Summary** (seed and Series A) or **Why This Round Matters** (Series B and later)
 - Seed and Series A: end with a short Summary, 3 to 5 sentences. It must say something, not repeat the facts above it. Make one point about the problem or the market: why this problem is getting bigger, what the existing players do about it today, and how new companies like this one try to change it. Example: "At petabyte scale, cost is the big issue. Every extra query adds to the bill, and AI agents multiply the queries. New players are trying to end that trade-off." It is not a My Take: no verdict on whether the company will win. Do not restate the amount or the investors. Do not title it "Why This Round Matters": every round matters, and the early ones most of all.
 - Series B and later: keep Why This Round Matters. Give a forward-looking but grounded interpretation, and explain what this may signal for customers, partners and the category.
+
+8. **My Take** (optional, the author's view, added after the Summary or Why This Round Matters)
+- Written in the author's voice. If it is drafted for the author, follow [rule 9 in the writing rules](_writing_rules.md) on Israeli founders. Opinions only, no new facts without sources.
 
 ## Content Requirements
 - Validate factual details before using them.

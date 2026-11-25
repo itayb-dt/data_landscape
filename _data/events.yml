@@ -900,3 +900,22 @@
     - {name: Freddy & Helen Holdings}
   signal: Funds go to North America expansion, partnerships and AI and ML enterprise capabilities. In May 2026 the company entered insolvency.
   post: /blog_posts/fund/021_FUND_sqream_45m_series_c.html
+
+- type: fund
+  date: 2026-11-24
+  # Announced Nov 24. One amount for seed and Series A together; no split, lead or valuation given.
+  when: "Nov 24"
+  company: Zipher
+  abbr: ZP
+  color: "#5b6ee8"
+  headline: Zipher raises $53M to let AI agents run data workloads
+  stage: Seed + Series A
+  amount: "$53M"
+  lead: Not named
+  area: Autonomous cost and performance tuning for data jobs
+  investors:
+    - {name: TLV Partners}
+    - {name: Maor Investments}
+    - {name: Glilot Capital Partners}
+  signal: Data jobs get their settings once and then run for years. Agents create jobs faster than people can tune them, so Zipher lets its own agents choose the engine, the resources and the timing.
+  post: /blog_posts/fund/048_FUND_zipher_53m_seed_series_a.html
